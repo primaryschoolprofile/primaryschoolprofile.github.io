@@ -29,7 +29,6 @@ function gen_code(chi, eng, index) {
   return result
 }
   
-  
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
