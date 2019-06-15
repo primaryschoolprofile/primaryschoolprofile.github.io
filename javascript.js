@@ -46,4 +46,4 @@ $(function(){
     eval(gen_code("測考", "assessment", 6));
   });
   
-});
+})
