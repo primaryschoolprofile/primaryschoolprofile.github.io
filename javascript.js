@@ -6,7 +6,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("全選")
+    result = wrap("清除")
   }
   return result
 }
