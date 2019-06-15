@@ -3,8 +3,17 @@ function wrap(item){
   return result
 }
 
+function gen_html_all(options, index){
+  result = ""
+  if (options[index].length > 3) {
+    result = wrap("全選")
+  }
+  return result
+}
+
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
+    $(".` + eng + `").append(gen_html_all(options, ` + index + `));
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }`
