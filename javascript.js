@@ -19,7 +19,7 @@ function gen_code_temp(eng, index){
     for (x in ` + eng + `) {
       $(".` + eng + `").append(wrap(x))
     }`
-  print("gen_html_all: ", code)
+  console.log("gen_code_temp: ", code)
   return code
 }
 
@@ -33,7 +33,7 @@ function gen_html(chi, eng){
         <form class="` + eng + `"></form>
       </div>
     </div>`
-  console.log("get_html: ", html)
+  console.log("gen_html: ", html)
   return html
 }
 
