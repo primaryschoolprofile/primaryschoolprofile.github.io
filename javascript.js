@@ -41,13 +41,13 @@ $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
     $(".test").html(data);
-    options = eval(data);
-    eval(gen_code("地區", "district", 1));
-    eval(gen_code("校網", "net", 2));
-    eval(gen_code("類別", "subsidy", 3));
-    eval(gen_code("宗教", "religion", 4));
-    eval(gen_code("連繫", "connection", 5));
-    eval(gen_code("測考", "assessment", 6));
+    //options = eval(data);
+    //eval(gen_code("地區", "district", 1));
+    //eval(gen_code("校網", "net", 2));
+    //eval(gen_code("類別", "subsidy", 3));
+    //eval(gen_code("宗教", "religion", 4));
+    //eval(gen_code("連繫", "connection", 5));
+    //eval(gen_code("測考", "assessment", 6));
   });
   
 });
