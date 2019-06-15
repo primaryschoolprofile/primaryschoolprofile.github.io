@@ -40,7 +40,6 @@ function gen_code(chi, eng, index) {
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
-    $(".test").html(data);
     options = eval(data);
     console.log("options: ", options)
     eval(gen_code("地區", "district", 1));
