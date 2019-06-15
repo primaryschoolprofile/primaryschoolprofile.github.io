@@ -16,7 +16,7 @@ function gen_html_all(options, index){
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
     $(".` + eng + `").append(gen_html_all(options, ` + index + `));
-    for (i = 0; i < ` + eng + `.length); i++) {
+    for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }`
   console.log("gen_code_temp: ", code)
