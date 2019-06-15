@@ -1,5 +1,6 @@
 function wrap(item){
   return "<label class='checkbox-inline pr-2'><input type='checkbox' value='' checked>" + item + "</label>"
+}
 
 function gen_html_all(options, index){
   if (options[index].length > 3) {
@@ -16,6 +17,7 @@ function gen_code_temp(eng, index){
       $(".` + eng + `").append(wrap(x))
     }`
   return code
+}
 
 function gen_html(chi, eng){
   html = `
@@ -28,7 +30,8 @@ function gen_html(chi, eng){
       </div>
     </div>`
   return html
-    
+}
+
 function gen_code(chi, eng, index) {
   return "$('.filter').append(gen_html(chi, eng)); eval(gen_code_temp(eng, index));"
 }
@@ -46,4 +49,4 @@ $(function(){
     eval(gen_code("測考", "assessment", 6));
   });
   
-})
+});
