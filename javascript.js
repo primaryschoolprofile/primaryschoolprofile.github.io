@@ -42,7 +42,7 @@ $(function(){
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
     $(".test").html(data);
     options = eval(data);
-    console.log("options: ", 
+    console.log("options: ", options)
     eval(gen_code("地區", "district", 1));
     eval(gen_code("校網", "net", 2));
     eval(gen_code("類別", "subsidy", 3));
