@@ -1,12 +1,12 @@
 function wrap(item){
-  result = "<span><label class='checkbox-inline pr-2'><input type='checkbox' value='' checked>" + item + "</label></span>"
+  result = "<label class='checkbox-inline pr-2' onload='clear(this)'><input type='checkbox' checked>" + item + "</label>"
   return result
 }
 
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("<span>", "<span class='clear'>").replace(" checked", "")
+    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2 clear'>").replace(" checked", "")
   }
   return result
 }
@@ -50,10 +50,10 @@ $(function(){
     eval(gen_code("測考", "assessment", 6));
   });
   
-  //$(".clear").click(function(){
-    //$(".test").html("test");
-  //});
+  $(".clear").change(function(){
+    $(".test").html("test");
+  });
   
-  $(".clear").html("test");
+  $("label").function
   
 });
