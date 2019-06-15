@@ -6,7 +6,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("checked", "")
+    result = wrap("清除").replace("checkbox-inline pr-2", "checkbox-inline pr-2 clear").replace(" checked", "")
   }
   return result
 }
@@ -48,6 +48,10 @@ $(function(){
     eval(gen_code("宗教", "religion", 4));
     eval(gen_code("中學", "connection", 5));
     eval(gen_code("測考", "assessment", 6));
+  });
+  
+  $(".clear").click(function(){
+    $(".test").html("test");
   });
   
 });
