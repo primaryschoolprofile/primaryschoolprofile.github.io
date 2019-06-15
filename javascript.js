@@ -1,12 +1,12 @@
 function wrap(item){
-  result = "<label class='checkbox-inline pr-2'><input type='checkbox' value='' checked>" + item + "</label>"
+  result = "<span><label class='checkbox-inline pr-2'><input type='checkbox' value='' checked>" + item + "</label></span>"
   return result
 }
 
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("checkbox-inline pr-2", "checkbox-inline pr-2 clear").replace(" checked", "")
+    result = wrap("清除").replace("<span>", "<span class='clear'>").replace(" checked", "")
   }
   return result
 }
