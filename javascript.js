@@ -1,13 +1,16 @@
 function wrap(item){
-  return "<label class='checkbox-inline pr-2'><input type='checkbox' value='' checked>" + item + "</label>"
+  result = "<label class='checkbox-inline pr-2'><input type='checkbox' value='' checked>" + item + "</label>"
+  console.log("wrap: ", result)
+  return result
 }
 
 function gen_html_all(options, index){
+  result = ""
   if (options[index].length > 3) {
-    return wrap("全選") + wrap("清除")
-  } else {
-    return ""
+    result = wrap("全選") + wrap("清除")
   }
+  console.log("gen_html_all: ", result)
+  return result
 }
 
 function gen_code_temp(eng, index){
@@ -16,6 +19,7 @@ function gen_code_temp(eng, index){
     for (x in ` + eng + `) {
       $(".` + eng + `").append(wrap(x))
     }`
+  print("gen_html_all: ", code)
   return code
 }
 
@@ -29,11 +33,14 @@ function gen_html(chi, eng){
         <form class="` + eng + `"></form>
       </div>
     </div>`
+  console.log("get_html: ", html)
   return html
 }
 
 function gen_code(chi, eng, index) {
-  return "$('.filter').append(gen_html(" + chi + ", " + eng + ")); eval(gen_code_temp(" + eng + ", " + index + "));"
+  result = "$('.filter').append(gen_html(" + chi + ", " + eng + ")); eval(gen_code_temp(" + eng + ", " + index + "));"
+  console.log("gen_code: ", result)
+  return result
 }
   
   
@@ -41,8 +48,7 @@ $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
     options = eval(data);
-    console.log("options: ", options)
-    eval(gen_code("test", "district", 1));
+    eval(gen_code("地區", "district", 1));
     //eval(gen_code("校網", "net", 2));
     //eval(gen_code("類別", "subsidy", 3));
     //eval(gen_code("宗教", "religion", 4));
