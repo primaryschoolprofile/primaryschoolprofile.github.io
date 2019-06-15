@@ -33,7 +33,7 @@ function gen_html(chi, eng){
 }
 
 function gen_code(chi, eng, index) {
-  return "$('.filter').append(gen_html(chi, eng)); eval(gen_code_temp(eng, index));"
+  return "$('.filter').append(gen_html(" + chi + ", " + eng + ")); eval(gen_code_temp(" + eng + ", " + index + "));"
 }
   
   
