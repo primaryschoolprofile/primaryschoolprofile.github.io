@@ -1,13 +1,14 @@
 function clear_all(element){
   $(element).siblings().each(function(){
-    original = $(this).html();
-    console.log(original.replace("type='checkbox' checked", "type='checkbox'"));
-    $(this).html(original.replace("<input type='checkbox' checked=''>", "<input type='checkbox'>"));
+    $(this).find("input").removeAttribute("checked");
+    //original = $(this).html();
+    //console.log(original.replace("type='checkbox' checked", "type='checkbox'"));
+    //$(this).html(original.replace("<input type='checkbox' checked=''>", "<input type='checkbox'>"));
   });
 }
 
 function wrap(item){
-  result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked=''>" + item + "</label>"
+  result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked>" + item + "</label>"
   return result
 }
 
