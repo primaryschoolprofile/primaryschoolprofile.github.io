@@ -1,6 +1,6 @@
 function myFunction(element){
-  status = $(element).prop("checked");
-  $(element).html(status);
+  console.log($(element).prop("checked"))
+  //$(element).html(status);
 }
 
 function wrap(item){
