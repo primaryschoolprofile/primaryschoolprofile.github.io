@@ -1,5 +1,5 @@
 function myFunction(element){
-  console.log($(element).attr('checked'));
+  console.log($(element).attr("checked"));
   //$(".test").html(check);
 }
 
