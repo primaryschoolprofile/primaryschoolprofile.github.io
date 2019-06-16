@@ -1,6 +1,6 @@
 function myFunction(element){
   check = $(element).attr('checked');
-  $(".test").html(check.toString());
+  $(".test").html(check);
 }
 
 function wrap(item){
