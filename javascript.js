@@ -1,3 +1,7 @@
+function clear(element){
+  console.log("onclick");
+}
+
 function wrap(item){
   result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked>" + item + "</label>"
   return result
@@ -6,7 +10,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2 clear'>").replace(" checked", "")
+    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2 clear' onclick='clear(this)'>").replace(" checked", "")
   }
   return result
 }
