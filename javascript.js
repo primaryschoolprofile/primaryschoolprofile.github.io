@@ -62,4 +62,8 @@ $(function(){
     eval(gen_code("測考", "assessment", 6));
   });
   
+  $(".browse").click(function(){
+    $(".test").html("test")
+  });
+    
 });
