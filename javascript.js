@@ -113,7 +113,8 @@ $(function(){
         religion = array[4];
         connection = array[5];
         assessment = array[6];
-        console.log(P("district", district) && P("net", net) && P("subsidy", subsidy) && P("religion", religion) && P("connection", connection) && P("asssessment", assessment))
+        console.log(P("net", net))
+        //console.log(P("district", district) && P("net", net) && P("subsidy", subsidy) && P("religion", religion) && P("connection", connection) && P("asssessment", assessment))
         if (P("district", district) && P("net", net) && P("subsidy", subsidy) && P("religion", religion) && P("connection", connection) && P("asssessment", assessment)) {
           $(".s-" + array[0]).removeClass("d-none");
         }
