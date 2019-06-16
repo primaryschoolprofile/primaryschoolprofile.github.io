@@ -11,7 +11,7 @@ function clear_all(element){
 }
 
 function wrap(item){
-  result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked>" + item + "</label>"
+  result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked='checked'>" + item + "</label>"
   return result
 }
 
