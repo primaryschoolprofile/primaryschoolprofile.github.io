@@ -1,6 +1,5 @@
-function myFunction(element){
-  setTimeout(function(){console.log($(element).prop("checked"));}, 3000)
-  //$(".test").html($(element).attr("checked"));
+function clear_all(element){
+  $(".test").html("test5");
 }
 
 function wrap(item){
@@ -11,7 +10,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = "<span class='pr-2 select_all'>(全選)</span><span class='pr-2 clear_all'>(清除)</span>"
+    result = "<span class='pr-2' onclick='select_all(this)'>(全選)</span><span class='pr-2' onclick='clear_all(this)'>(清除)</span>"
   }
   return result
 }
@@ -53,11 +52,6 @@ $(function(){
     eval(gen_code("宗教", "religion", 4));
     eval(gen_code("中學", "connection", 5));
     eval(gen_code("測考", "assessment", 6));
-  });
-  
-  $(".clear_all").click(function(){
-    alert("The paragraph was clicked.");
-    //$(".test").html("test4");
   });
   
 });
