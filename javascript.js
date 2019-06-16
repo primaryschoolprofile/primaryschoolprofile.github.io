@@ -81,26 +81,26 @@ $(function(){
   });
   
   $(".browse").click(function(){
-    $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
-      display = eval(data);
-      for (i = 0; i < display.length; i++) {
+  $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
+      school = eval(data);
+      for (i = 0; i < school.length; i++) {
         $(".profile").append(`
           <div>
-            <h3>`+ display[i][1] + `</h3>` +
-            myFunction("概覽", 0, display, i) + 
-            myFunction("地區", 3, display, i) + 
-            myFunction("校網", 4, display, i) + 
-            myFunction("類別", 5, display, i) + 
-            myFunction("宗教", 6, display, i) + 
-            myFunction("龍校", 7, display, i) + 
-            myFunction("直屬", 8, display, i) + 
-            myFunction("聯繫", 9, display, i) + 
-            myFunction("測驗", 10, display, i) + 
-            myFunction("考試", 11, display, i) + 
-            myFunction("分班", 12, display, i) + 
-            myFunction("照顧", 13, display, i) +
-            myFunction("融合", 14, display, i) + 
-            myFunction("調適", 15, display, i) + `
+            <h3>`+ school[i][1] + `</h3>` +
+            myFunction("概覽", 0, school, i) + 
+            myFunction("地區", 3, school, i) + 
+            myFunction("校網", 4, school, i) + 
+            myFunction("類別", 5, school, i) + 
+            myFunction("宗教", 6, school, i) + 
+            myFunction("龍校", 7, school, i) + 
+            myFunction("直屬", 8, school, i) + 
+            myFunction("聯繫", 9, school, i) + 
+            myFunction("測驗", 10, school, i) + 
+            myFunction("考試", 11, school, i) + 
+            myFunction("分班", 12, school, i) + 
+            myFunction("照顧", 13, school, i) +
+            myFunction("融合", 14, school, i) + 
+            myFunction("調適", 15, school, i) + `
           </div>
         `);
       }
