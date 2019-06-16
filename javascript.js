@@ -114,8 +114,7 @@ $(function(){
         connection = array[5];
         assessment = array[6];
         console.log("district", P("district", district));
-        console.log("overall", P("district", district) & P("net", net) & P("subsidy", subsidy) & P("religion", religion) & P("connection", connection) & P("asssessment", assessment));
-        if (P("district", district) & P("net", net) & P("subsidy", subsidy) & P("religion", religion) & P("connection", connection) & P("asssessment", assessment)) {
+        if (P("district", district) && P("net", net) && P("subsidy", subsidy) && P("religion", religion) && P("connection", connection) && P("asssessment", assessment)) {
           $(".s-" + array[0]).removeClass("d-none");
         }
       }
