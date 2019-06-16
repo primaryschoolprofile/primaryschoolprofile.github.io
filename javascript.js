@@ -50,7 +50,7 @@ function gen_code_filter(chi, eng, index){
   return result
 }
 
-function myFunction(chi, index, school, i){
+function display_html(chi, index, school, i){
   var html = "";
   if (chi == "概覽") {
     html = '<div class="row"><div class="col-4 col-sm-2 col-lg-1"><h5>概覽</h5></div><div class="col-8 col-sm-10 col-lg-11"><a href="https://www.chsc.hk/psp2018/sch_detail.php?lang_id=2&sch_id=' + school[i][0] + '" target="_blank">按此</a></div></div>'
@@ -58,6 +58,11 @@ function myFunction(chi, index, school, i){
     html = '<div class="row"><div class="col-4 col-sm-2 col-lg-1"><h5>' + chi + '</h5></div><div class="col-8 col-sm-10 col-lg-11">' + school[i][index] + '</div></div>'
   }
   return html
+}
+
+function P(item){
+  check = $("." + item + " label:contains('" + item + "') input").prop("checked"));
+  return check
 }
 
 $(function(){
@@ -76,27 +81,27 @@ $(function(){
     school = eval(data);
     for (i = 0; i < school.length; i++) {
       $(".profile").append(`
-        <div class="py-4 d-none">
+        <div class="py-4 d-none s-` + school[i][0] + `">
           <h3>`+ school[i][1] + `</h3>` +
-          myFunction("概覽", 0, school, i) + 
-          myFunction("地區", 3, school, i) + 
-          myFunction("校網", 4, school, i) + 
-          myFunction("類別", 5, school, i) + 
-          myFunction("宗教", 6, school, i) + 
-          myFunction("龍校", 7, school, i) + 
-          myFunction("直屬", 8, school, i) + 
-          myFunction("聯繫", 9, school, i) + 
-          myFunction("測驗", 10, school, i) + 
-          myFunction("考試", 11, school, i) + 
-          myFunction("分班", 12, school, i) + 
-          myFunction("照顧", 13, school, i) +
-          myFunction("融合", 14, school, i) + 
-          myFunction("調適", 15, school, i) + `
+          display_html("概覽", 0, school, i) + 
+          display_html("地區", 3, school, i) + 
+          display_html("校網", 4, school, i) + 
+          display_html("類別", 5, school, i) + 
+          display_html("宗教", 6, school, i) + 
+          display_html("龍校", 7, school, i) + 
+          display_html("直屬", 8, school, i) + 
+          display_html("聯繫", 9, school, i) + 
+          display_html("測驗", 10, school, i) + 
+          display_html("考試", 11, school, i) + 
+          display_html("分班", 12, school, i) + 
+          display_html("照顧", 13, school, i) +
+          display_html("融合", 14, school, i) + 
+          display_html("調適", 15, school, i) + `
         </div>
       `);
     }
   });
-  
+
   $(".browse").click(function(){
     $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
       filter = eval(data);
@@ -108,9 +113,11 @@ $(function(){
         religion = array[4];
         connection = array[5];
         assessment = array[6];
-        console.log($(".district label:contains('" + district + "') input").prop("checked"));
+        if (P("district") and P("net") and P("subsidy") and P("religion") and P("connection") and P("asssessment")) {
+          $(".s-" + array[0]).removeClass("d-none");
+        }
       }
     });
   });
-  
+
 });
