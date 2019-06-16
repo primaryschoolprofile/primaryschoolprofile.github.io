@@ -56,7 +56,8 @@ $(function(){
   });
   
   $(".clear_all").click(function(){
-    $(".test").html("test4");
+    alert("The paragraph was clicked.");
+    //$(".test").html("test4");
   });
   
 });
