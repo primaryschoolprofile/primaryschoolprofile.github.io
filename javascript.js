@@ -53,7 +53,7 @@ function gen_code_filter(chi, eng, index){
 function myFunction(chi, index, school, i){
   var html = "";
   if (chi == "概覽") {
-    html = '<div class="row"><div class="col-4 col-sm-2 col-lg-1">概覽</div><div class="col-8 col-sm-10 col-lg-11">https://www.chsc.hk/psp2018/sch_detail.php?lang_id=2&sch_id=' + str(school[i][0]) + '</div></div>'
+    html = '<div class="row"><div class="col-4 col-sm-2 col-lg-1">概覽</div><div class="col-8 col-sm-10 col-lg-11">https://www.chsc.hk/psp2018/sch_detail.php?lang_id=2&sch_id=' + school[i][0] + '</div></div>'
   } else {
     html = '<div class="row"><div class="col-4 col-sm-2 col-lg-1">' + chi + '</div><div class="col-8 col-sm-10 col-lg-11">' + school[i][index] + '</div></div>'
   }
