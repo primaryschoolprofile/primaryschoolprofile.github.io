@@ -51,6 +51,7 @@ $(function(){
   });
   
   $(".clear").click(function(){
+    console.log("clicked");
     console.log(this);
     status = this.checked;
     console.log(status);
