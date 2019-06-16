@@ -1,4 +1,4 @@
-function myFunction(element){
+function clear(element){
   console.log($(element).prop("checked"))
   //$(element).html(status);
 }
@@ -11,7 +11,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2' onclick='myFunction(this)'>").replace(" checked", "")
+    result = wrap("清除").replace("<input type='checkbox' checked>", "<input type='checkbox' onclick='clear(this)'>"
   }
   return result
 }
