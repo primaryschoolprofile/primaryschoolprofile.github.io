@@ -1,3 +1,7 @@
+function myFunction(element){
+  $(element).html("test");
+}
+
 function wrap(item){
   result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked>" + item + "</label>"
   return result
@@ -6,9 +10,8 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2 clear'>").replace(" checked", "")
+    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2' onclick='myFunction(this)'>").replace(" checked", "")
   }
-  console.log(result)
   return result
 }
 
