@@ -1,5 +1,5 @@
 function clear(element){
-  status = $(element).prop("checked");
+  status = element.prop("checked");
   $(element).html(status);
 }
 
