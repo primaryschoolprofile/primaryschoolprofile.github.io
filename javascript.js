@@ -57,5 +57,6 @@ $(function(){
     $(this).siblings.each(function(){
       $(this).prop("checked", !status)
     });
+  });
   
 });
