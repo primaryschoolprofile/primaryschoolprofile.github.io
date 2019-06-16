@@ -1,6 +1,6 @@
 function myFunction(element){
-  console.log($(element).attr("checked"));
-  $(".test").html($(element).attr("checked"));
+  setTimeout(function(){console.log($(element).attr("checked"));}, 3000)
+  //$(".test").html($(element).attr("checked"));
 }
 
 function wrap(item){
