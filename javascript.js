@@ -1,5 +1,5 @@
 function myFunction(element){
-  setTimeout(function(){console.log($(element).attr("checked"));}, 3000)
+  setTimeout(function(){console.log($(element).prop("checked"));}, 3000)
   //$(".test").html($(element).attr("checked"));
 }
 
