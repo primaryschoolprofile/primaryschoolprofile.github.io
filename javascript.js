@@ -52,17 +52,15 @@ function gen_code_filter(chi, eng, index){
 
 function myFunction(chi, index, school, i){
   if (chi == "概覽") {
-    html = `
-      <div class="row">
+    html = `<div class="row">
         <div class="col-4 col-sm-2 col-lg-1">概覽</div>
-        <div class="col-8 col-sm-10 col-lg-11">https://www.chsc.hk/psp2018/sch_detail.php?lang_id=2&sch_id=` + str(school[i][index]) + `</div>
+        <div class="col-8 col-sm-10 col-lg-11">https://www.chsc.hk/psp2018/sch_detail.php?lang_id=2&sch_id=` + str(school[i][0]) + `</div>
       </div>
     `
   } else {
-    html = `
-      <div class="row">
+    html = `<div class="row">
         <div class="col-4 col-sm-2 col-lg-1">` + chi + `</div>
-        <div class="col-8 col-sm-10 col-lg-11">` + display[i][index] + `</div>
+        <div class="col-8 col-sm-10 col-lg-11">` + school[i][index] + `</div>
       </div>
     `
   }
@@ -85,8 +83,7 @@ $(function(){
   $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
       school = eval(data);
       for (i = 0; i < school.length; i++) {
-        $(".profile").append(`
-          <div>
+        $(".profile").append(`<div>
             <h3>`+ school[i][1] + `</h3>` +
             myFunction("概覽", 0, school, i) + 
             myFunction("地區", 3, school, i) + 
