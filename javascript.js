@@ -1,6 +1,7 @@
 function clear_all(element){
   $(element).siblings().each(function(){
     $(this).children().removeAttribute("checked");
+  });
 }
 
 function wrap(item){
