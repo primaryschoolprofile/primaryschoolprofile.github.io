@@ -1,5 +1,5 @@
 function myFunction(element){
-  status = element.checked;
+  status = $(element).prop("checked");
   $(element).html(status.toString());
 }
 
