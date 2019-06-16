@@ -60,8 +60,8 @@ function display_html(chi, index, school, i){
   return html
 }
 
-function P(item){
-  check = $("." + item + " label:contains('" + item + "') input").prop("checked");
+function P(key, value){
+  check = $("." + key + " label:contains('" + value + "') input").prop("checked");
   return check
 }
 
@@ -113,14 +113,14 @@ $(function(){
         religion = array[4];
         connection = array[5];
         assessment = array[6];
-        console.log("district", P("district"));
-        console.log("net", P("net"));
-        console.log("subsidy", P("subsidy"));
-        console.log("religion", P("religion"));
-        console.log("connection", P("connection"));
-        console.log("assessment", P("assessment"));
-        console.log("overall", P("district") & P("net") & P("subsidy") & P("religion") & P("connection") & P("asssessment"));
-        if (P("district") & P("net") & P("subsidy") & P("religion") & P("connection") & P("asssessment")) {
+        //console.log("district", P("district"));
+        //console.log("net", P("net"));
+        //console.log("subsidy", P("subsidy"));
+        //console.log("religion", P("religion"));
+        //console.log("connection", P("connection"));
+        //console.log("assessment", P("assessment"));
+        console.log("overall", P("district", district) & P("net", net) & P("subsidy", subsidy) & P("religion", religion) & P("connection", connection) & P("asssessment", assessment));
+        if (P("district", district) & P("net", net) & P("subsidy", subsidy) & P("religion", religion) & P("connection", connection) & P("asssessment", assessment)) {
           $(".s-" + array[0]).removeClass("d-none");
         }
       }
