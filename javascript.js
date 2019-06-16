@@ -11,7 +11,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("<input type='checkbox' checked>", "<input type='checkbox' onclick='clear(this)'>"
+    result = wrap("清除").replace("<input type='checkbox' checked>", "<input type='checkbox' onclick='clear(this)'>")
   }
   return result
 }
