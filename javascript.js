@@ -1,5 +1,5 @@
 function wrap(item){
-  result = "<label class='checkbox-inline pr-2' onload='clear(this)'><input type='checkbox' checked>" + item + "</label>"
+  result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked>" + item + "</label>"
   return result
 }
 
