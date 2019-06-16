@@ -1,9 +1,12 @@
+function select_all(element){
+  $(element).siblings().each(function(){
+    $(this).find("input").attr("checked");
+  });
+}
+
 function clear_all(element){
   $(element).siblings().each(function(){
     $(this).find("input").removeAttr("checked");
-    //original = $(this).html();
-    //console.log(original.replace("type='checkbox' checked", "type='checkbox'"));
-    //$(this).html(original.replace("<input type='checkbox' checked=''>", "<input type='checkbox'>"));
   });
 }
 
