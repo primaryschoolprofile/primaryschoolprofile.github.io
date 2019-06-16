@@ -58,8 +58,4 @@ $(function(){
     eval(gen_code("測考", "assessment", 6));
   });
   
-  $(".clear").click(function(){
-    $(".test").html("test");
-  });
-  
 });
