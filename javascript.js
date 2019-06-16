@@ -51,7 +51,7 @@ function gen_code_filter(chi, eng, index){
 }
 
 function myFunction(chi, index, school, i){
-  var html;
+  var html = "";
   if (chi == "概覽") {
     html = `<div class="row">
         <div class="col-4 col-sm-2 col-lg-1">概覽</div>
