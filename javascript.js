@@ -1,6 +1,6 @@
 function myFunction(element){
   check = $(element).prop('checked');
-  $(".test").html(check);
+  $(".test").html(check.toString());
 }
 
 function wrap(item){
