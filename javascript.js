@@ -1,5 +1,5 @@
 function myFunction(element){
-  $(element).html("test3");
+  $(".test").html("test3");
 }
 
 function wrap(item){
