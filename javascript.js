@@ -11,7 +11,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2' onclick='myFunction(this)'>").replace(" checked", "")
+    result = "<button type='button' class='btn btn-primary clear'>清除</button>"
   }
   return result
 }
@@ -53,6 +53,10 @@ $(function(){
     eval(gen_code("宗教", "religion", 4));
     eval(gen_code("中學", "connection", 5));
     eval(gen_code("測考", "assessment", 6));
+  });
+  
+  $(".clear").click(function(){
+    $(".test").html("test4");
   });
   
 });
