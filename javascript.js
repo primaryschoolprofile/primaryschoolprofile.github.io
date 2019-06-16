@@ -1,6 +1,8 @@
 function clear_all(element){
   $(element).siblings().each(function(){
-    $(this).children().removeAttribute("checked");
+    original = $(this).html();
+    new = original.replace("<input type='checkbox' checked>", "<input type='checkbox'>");
+    $(this).html(new);
   });
 }
 
