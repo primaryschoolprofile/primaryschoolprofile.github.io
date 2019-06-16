@@ -50,12 +50,12 @@ function gen_code_filter(chi, eng, index){
   return result
 }
 
-function myFunction(chi, index, display, i){
+function myFunction(chi, index, school, i){
   if (chi == "概覽") {
     html = `
       <div class="row">
         <div class="col-4 col-sm-2 col-lg-1">` + chi + `</div>
-        <div class="col-8 col-sm-10 col-lg-11">https://www.chsc.hk/psp2018/sch_detail.php?lang_id=2&sch_id=` + str(display[i][index]) + `</div>
+        <div class="col-8 col-sm-10 col-lg-11">https://www.chsc.hk/psp2018/sch_detail.php?lang_id=2&sch_id=` + str(school[i][index]) + `</div>
       </div>
     `
   } else {
