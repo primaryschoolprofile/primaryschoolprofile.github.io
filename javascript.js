@@ -1,5 +1,5 @@
 function myFunction(element){
-  check = $(element).prop('checked');
+  check = $(element).attr('checked');
   $(".test").html(check.toString());
 }
 
