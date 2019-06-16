@@ -72,30 +72,45 @@ $(function(){
     eval(gen_code_filter("測考", "assessment", 6));
   });
   
+  $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
+    school = eval(data);
+    for (i = 0; i < school.length; i++) {
+      $(".profile").append(`
+        <div class="py-4 d-none">
+          <h3>`+ school[i][1] + `</h3>` +
+          myFunction("概覽", 0, school, i) + 
+          myFunction("地區", 3, school, i) + 
+          myFunction("校網", 4, school, i) + 
+          myFunction("類別", 5, school, i) + 
+          myFunction("宗教", 6, school, i) + 
+          myFunction("龍校", 7, school, i) + 
+          myFunction("直屬", 8, school, i) + 
+          myFunction("聯繫", 9, school, i) + 
+          myFunction("測驗", 10, school, i) + 
+          myFunction("考試", 11, school, i) + 
+          myFunction("分班", 12, school, i) + 
+          myFunction("照顧", 13, school, i) +
+          myFunction("融合", 14, school, i) + 
+          myFunction("調適", 15, school, i) + `
+        </div>
+      `);
+    }
+  });
+  
   $(".browse").click(function(){
-    $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
-      school = eval(data);
-      for (i = 0; i < school.length; i++) {
-        $(".profile").append(`
-          <div class="py-4">
-            <h3>`+ school[i][1] + `</h3>` +
-            myFunction("概覽", 0, school, i) + 
-            myFunction("地區", 3, school, i) + 
-            myFunction("校網", 4, school, i) + 
-            myFunction("類別", 5, school, i) + 
-            myFunction("宗教", 6, school, i) + 
-            myFunction("龍校", 7, school, i) + 
-            myFunction("直屬", 8, school, i) + 
-            myFunction("聯繫", 9, school, i) + 
-            myFunction("測驗", 10, school, i) + 
-            myFunction("考試", 11, school, i) + 
-            myFunction("分班", 12, school, i) + 
-            myFunction("照顧", 13, school, i) +
-            myFunction("融合", 14, school, i) + 
-            myFunction("調適", 15, school, i) + `
-          </div>
-        `);
+    $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
+      filter = eval(data);
+      for (i = 0; i < filter.length; i++) {
+        array = filter[i];
+        district = array[1];
+        net = array[2];
+        subsidy = array[3];
+        religion = array[4];
+        connection = array[5];
+        assessment = array[6];
+        console.log($(".district label:contains('" + district + "') input").prop("checked"));
       }
     });
   });
+  
 });
