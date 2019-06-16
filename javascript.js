@@ -1,12 +1,3 @@
-function clear(element){
-  console.log(element);
-  status = element.checked;
-  console.log(status);
-  $(element).siblings.each(function(){
-    $(this).prop("checked", !status)
-  });
-}
-
 function wrap(item){
   result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked>" + item + "</label>"
   return result
@@ -15,7 +6,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2' onclick='clear(this)'>").replace(" checked", "")
+    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2 clear'>").replace(" checked", "")
   }
   return result
 }
@@ -58,5 +49,13 @@ $(function(){
     eval(gen_code("中學", "connection", 5));
     eval(gen_code("測考", "assessment", 6));
   });
+  
+  $(".clear").click(function(){
+    console.log(this);
+    status = this.checked;
+    console.log(status);
+    $(this).siblings.each(function(){
+      $(this).prop("checked", !status)
+    });
   
 });
