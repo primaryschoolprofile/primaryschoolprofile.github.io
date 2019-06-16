@@ -1,5 +1,5 @@
 function clear(element){
-  console.log("onclick");
+  $(elemtnt).html("test");
 }
 
 function wrap(item){
