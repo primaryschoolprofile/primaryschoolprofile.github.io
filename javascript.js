@@ -8,6 +8,7 @@ function gen_html_all(options, index){
   if (options[index].length > 3) {
     result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2 clear'>").replace(" checked", "")
   }
+  console.log(result)
   return result
 }
 
@@ -53,7 +54,5 @@ $(function(){
   $(".clear").change(function(){
     $(".test").html("test");
   });
-  
-  $("label").function
   
 });
