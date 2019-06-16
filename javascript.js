@@ -1,6 +1,6 @@
 function clear_all(element){
   $(element).siblings().each(function(){
-    original = $(this).html();
+    original = $(this).html().toString();
     console.log(original)
     $(this).html(original.replace("<input type='checkbox' checked=''>", "<input type='checkbox'>"));
   });
