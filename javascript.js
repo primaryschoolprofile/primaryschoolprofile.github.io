@@ -1,4 +1,5 @@
 function clear(element){
+  console.log(element);
   status = element.checked;
   console.log(status);
   $(element).siblings.each(function(){
