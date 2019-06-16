@@ -17,7 +17,7 @@ function wrap(item){
 
 function gen_html_all(options, index){
   result = ""
-  if (options[index].length > 3) {
+  if (options[index].length > 3){
     result = "<span class='pr-2' onclick='select_all(this)'>(全選)</span><span class='pr-2' onclick='clear_all(this)'>(清除)</span>"
   }
   return result
@@ -45,25 +45,66 @@ function gen_html(chi, eng){
   return html
 }
 
-function gen_code(chi, eng, index) {
+function gen_code_filter(chi, eng, index){
   result = "$('.filter').append(gen_html('" + chi + "', '" + eng + "')); eval(gen_code_temp('" + eng + "', '" + index + "'));"
   return result
 }
-  
+
+function myFunction(chi, index, display, i){
+  if (chi == "概覽") {
+    html = `
+      <div class="row">
+        <div class="col-4 col-sm-2 col-lg-1">` + chi + `</div>
+        <div class="col-8 col-sm-10 col-lg-11">https://www.chsc.hk/psp2018/sch_detail.php?lang_id=2&sch_id=` + str(display[i][index]) + `</div>
+      </div>
+    `
+  } else {
+    html = `
+      <div class="row">
+        <div class="col-4 col-sm-2 col-lg-1">` + chi + `</div>
+        <div class="col-8 col-sm-10 col-lg-11">` + display[i][index] + `</div>
+      </div>
+    `
+  }
+  return html
+
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
     options = eval(data);
-    eval(gen_code("地區", "district", 1));
-    eval(gen_code("校網", "net", 2));
-    eval(gen_code("類別", "subsidy", 3));
-    eval(gen_code("宗教", "religion", 4));
-    eval(gen_code("中學", "connection", 5));
-    eval(gen_code("測考", "assessment", 6));
+    eval(gen_code_filter("地區", "district", 1));
+    eval(gen_code_filter("校網", "net", 2));
+    eval(gen_code_filter("類別", "subsidy", 3));
+    eval(gen_code_filter("宗教", "religion", 4));
+    eval(gen_code_filter("中學", "connection", 5));
+    eval(gen_code_filter("測考", "assessment", 6));
   });
   
   $(".browse").click(function(){
-    $(".test").html("test")
+    $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
+      display = eval(data);
+      for (i = 0; i < display.length; i++) {
+        $(".profile").append(`
+          <div>
+            <h3>`+ display[i][1] + `</h3>` +
+            myFunction("概覽", 0, display, i) + 
+            myFunction("地區", 3, display, i) + 
+            myFunction("校網", 4, display, i) + 
+            myFunction("類別", 5, display, i) + 
+            myFunction("宗教", 6, display, i) + 
+            myFunction("龍校", 7, display, i) + 
+            myFunction("直屬", 8, display, i) + 
+            myFunction("聯繫", 9, display, i) + 
+            myFunction("測驗", 10, display, i) + 
+            myFunction("考試", 11, display, i) + 
+            myFunction("分班", 12, display, i) + 
+            myFunction("照顧", 13, display, i) +
+            myFunction("融合", 14, display, i) + 
+            myFunction("調適", 15, display, i) + `
+          </div>
+        `);
+      }
+    });
   });
     
 });
