@@ -113,8 +113,7 @@ $(function(){
         religion = array[4];
         connection = array[5];
         assessment = array[6];
-        //if (P("district") and P("net") and P("subsidy") and P("religion") and P("connection") and P("asssessment")) {
-        if (P("district")) {
+        if (P("district") & P("net") & P("subsidy") & P("religion") & P("connection") & P("asssessment")) {
           $(".s-" + array[0]).removeClass("d-none");
         }
       }
