@@ -61,7 +61,7 @@ function display_html(chi, index, school, i){
 }
 
 function P(item){
-  check = $("." + item + " label:contains('" + item + "') input").prop("checked"));
+  check = $("." + item + " label:contains('" + item + "') input").prop("checked");
   return check
 }
 
