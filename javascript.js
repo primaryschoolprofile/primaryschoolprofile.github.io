@@ -1,5 +1,9 @@
-function myFunction(element){
-  $(element).html("test");
+function clear(element){
+  status = element.checked;
+  console.log(status);
+  $(element).siblings.each(function(){
+    $(this).prop("checked", not status)
+  });
 }
 
 function wrap(item){
@@ -10,7 +14,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2' onclick='myFunction(this)'>").replace(" checked", "")
+    result = wrap("清除").replace("<label class='checkbox-inline pr-2'>", "<label class='checkbox-inline pr-2' onclick='clear(this)'>").replace(" checked", "")
   }
   return result
 }
