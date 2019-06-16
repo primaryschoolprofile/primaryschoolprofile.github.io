@@ -1,7 +1,6 @@
 function select_all(element){
   $(element).siblings().each(function(){
     $(this).find("input").prop("checked", true);
-    console.log($(this).find("input").prop("checked"));
   });
 }
 
