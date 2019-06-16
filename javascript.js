@@ -55,7 +55,7 @@ $(function(){
     eval(gen_code("測考", "assessment", 6));
   });
   
-  $(".clear").click(function(){
+  $(".clear_all").click(function(){
     $(".test").html("test4");
   });
   
