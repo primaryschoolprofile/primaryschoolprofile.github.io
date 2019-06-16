@@ -1,6 +1,6 @@
 function myFunction(element){
   console.log($(element).attr("checked"));
-  //$(".test").html(check);
+  $(".test").html($(element).attr("checked"));
 }
 
 function wrap(item){
