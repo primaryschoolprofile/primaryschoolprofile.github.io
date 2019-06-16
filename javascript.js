@@ -1,6 +1,6 @@
 function select_all(element){
   $(element).siblings().each(function(){
-    $(this).find("input").attr("checked");
+    $(this).find("input").attr("checked", "checked");
   });
 }
 
