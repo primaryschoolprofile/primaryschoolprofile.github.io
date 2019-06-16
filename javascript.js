@@ -2,7 +2,7 @@ function clear(element){
   status = element.checked;
   console.log(status);
   $(element).siblings.each(function(){
-    $(this).prop("checked", not status)
+    $(this).prop("checked", !status)
   });
 }
 
