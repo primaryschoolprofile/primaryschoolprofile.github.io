@@ -67,6 +67,7 @@ function myFunction(chi, index, school, i){
     `
   }
   return html
+}
 
 $(function(){
 
@@ -107,4 +108,3 @@ $(function(){
     });
   });
 });
-})
