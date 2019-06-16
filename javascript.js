@@ -55,7 +55,7 @@ $(function(){
   });
   
   $(".clear").click(function(){
-    $("test").html("test2");
+    $(".test").html("test2");
   });
   
 });
