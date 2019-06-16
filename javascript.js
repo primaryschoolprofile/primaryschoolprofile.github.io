@@ -1,13 +1,13 @@
 function select_all(element){
   $(element).siblings().each(function(){
-    $(this).find("input").attr("checked", "checked");
+    $(this).find("input").prop("checked", true);
     console.log($(this).find("input").prop("checked"));
   });
 }
 
 function clear_all(element){
   $(element).siblings().each(function(){
-    $(this).find("input").removeAttr("checked");
+    $(this).find("input").prop("checked", false);
   });
 }
 
