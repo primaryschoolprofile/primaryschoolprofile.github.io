@@ -55,13 +55,7 @@ $(function(){
   });
   
   $(".clear").click(function(){
-    console.log("clicked");
-    console.log(this);
-    status = this.checked;
-    console.log(status);
-    $(this).siblings.each(function(){
-      $(this).prop("checked", !status)
-    });
+    $(this).html("test2");
   });
   
 });
