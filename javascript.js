@@ -1,11 +1,13 @@
 function select_all(element){
   $(element).siblings().each(function(){
+    console.log($(this).find("input").prop("checked"));
     $(this).find("input").prop("checked", true);
   });
 }
 
 function clear_all(element){
   $(element).siblings().each(function(){
+    console.log($(this).find("input").prop("checked"));
     $(this).find("input").prop("checked", false);
   });
 }
