@@ -11,7 +11,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3) {
-    result = "<span class='clear'>>(清除)</span>"
+    result = "<span class='pr-2 clear'>(清除)</span>"
   }
   return result
 }
