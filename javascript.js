@@ -60,8 +60,8 @@ function display_html(chi, index, school, i){
   return html
 }
 
-function P(key, value){
-  check = $("." + key + " label:contains('" + value + "') input").prop("checked");
+function P(item){
+  check = $("." + item + " label:contains('" + eval(item) + "') input").prop("checked");
   return check
 }
 
@@ -81,7 +81,7 @@ $(function(){
     school = eval(data);
     for (i = 0; i < school.length; i++) {
       $(".profile").append(`
-        <div class="py-4 d-none s-` + school[i][0] + `">
+        <div class="py-4 s-` + school[i][0] + `">
           <h3>`+ school[i][1] + `</h3>` +
           display_html("概覽", 0, school, i) + 
           display_html("地區", 3, school, i) + 
@@ -107,16 +107,17 @@ $(function(){
       filter = eval(data);
       for (i = 0; i < filter.length; i++) {
         array = filter[i];
+        id = array[0]
         district = array[1];
         net = array[2];
         subsidy = array[3];
         religion = array[4];
         connection = array[5];
         assessment = array[6];
-        console.log(P("district", district) && P("net", net) && P("subsidy", subsidy) && P("religion", religion) && P("connection", connection) && P("assessment", assessment));
-        if (P("district", district) && P("net", net) && P("subsidy", subsidy) && P("religion", religion) && P("connection", connection) && P("assessment", assessment)) {
-          $(".s-" + array[0]).removeClass("d-none");
-        }
+        if (P("district") && P("net") && P("subsidy") && P("religion") && P("connection") && P("assessment")) {
+          $(".s-" + id).removeClass("d-none");
+        } else {
+          $(".s-" + id).addClass("d-none");
       }
     });
   });
