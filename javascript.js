@@ -65,7 +65,7 @@ function P(item){
   return check
 }
 
-async function check(i, filter){
+async function loop(i, filter){
   array = filter[i];
   id = array[0];
   district = array[1];
@@ -79,6 +79,10 @@ async function check(i, filter){
   } else {
     $(".s-" + id).addClass("d-none");
   }  
+}
+
+function invoke_loop(i, filter){
+  loop(i, filter);
 }
 
 $(function(){
@@ -122,7 +126,7 @@ $(function(){
     $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
       filter = eval(data);
       for (i = 0; i < filter.length; i++) {
-        check(i, filter);
+        invoke_loop(i, filter);
       }
     });
   });
