@@ -18,7 +18,7 @@ function wrap(item){
 function gen_html_all(options, index){
   result = ""
   if (options[index].length > 3){
-    result = "<a class='pr-2' onclick='select_all(this)'>(全選)</a><a class='pr-2' onclick='clear_all(this)'>(清除)</a>"
+    result = "<span class='pr-2' onclick='select_all(this)'>(全選)</span><span class='pr-2' onclick='clear_all(this)'>(清除)</span>"
   }
   return result
 }
