@@ -125,15 +125,14 @@ $(function(){
   $(".browse").click(function(){
     $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
       filter = eval(data);
-      filter.foreach(async function(array){
-        array = filter[i];
-        id = array[0];
-        district = array[1];
-        net = array[2];
-        subsidy = array[3];
-        religion = array[4];
-        connection = array[5];
-        assessment = array[6];
+      filter.foreach(async function(currentValue, index, array){
+        id = currentValue[0];
+        district = currentValue[1];
+        net = currentValue[2];
+        subsidy = currentValue[3];
+        religion = currentValue[4];
+        connection = currentValue[5];
+        assessment = currentValue[6];
         if (P("district") && P("net") && P("subsidy") && P("religion") && P("connection") && P("assessment")) {
           $(".s-" + id).removeClass("d-none");
         } else {
