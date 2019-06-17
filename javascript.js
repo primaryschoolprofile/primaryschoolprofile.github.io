@@ -81,7 +81,7 @@ async function loop(filter, i){
   }  
 }
 
-function invoke_loop(filter){
+async function invoke_loop(filter){
   for (i = 0; i < filter.length; i++) {
     loop(filter, i);
   }
@@ -127,7 +127,7 @@ $(function(){
   $(".browse").click(function(){
     $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
       filter = eval(data);
-      invoke_loop(filter)
+      invoke_loop(filter);
     });
   });
 
