@@ -36,7 +36,7 @@ function gen_html(chi, eng){
   html = `
     <div class="row">
       <div class="col-4 col-sm-2 col-lg-1">
-        <h5>` + chi + `</h5>
+        <h5>篩選` + chi + `</h5>
       </div>
       <div class="col-8 col-sm-10 col-lg-11">
         <form class="` + eng + `"></form>
