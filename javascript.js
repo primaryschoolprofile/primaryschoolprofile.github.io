@@ -118,6 +118,7 @@ $(function(){
           $(".s-" + id).removeClass("d-none");
         } else {
           $(".s-" + id).addClass("d-none");
+        }
       }
     });
   });
