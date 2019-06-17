@@ -106,7 +106,7 @@ $(function(){
     $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
       filter = eval(data);
       number = filter.length;
-      $(".portion").html("<div><span class='progress'><span><span>/" + number + "</span>");
+      $(".portion").html("<span class='progress'><span><span>/" + number + "</span>");
       for (i = 0; i < number; i++) {
         array = filter[i];
         id = array[0];
