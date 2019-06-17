@@ -105,9 +105,11 @@ $(function(){
   $(".browse").click(function(){
     $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
       filter = eval(data);
-      for (i = 0; i < filter.length; i++) {
+      number = filter.length;
+      $(".browse").append("<div><span class='progress'><span><span>/" + number + "</span>");
+      for (i = 0; i < number; i++) {
         array = filter[i];
-        id = array[0]
+        id = array[0];
         district = array[1];
         net = array[2];
         subsidy = array[3];
@@ -119,6 +121,7 @@ $(function(){
         } else {
           $(".s-" + id).addClass("d-none");
         }
+        $(".progress").html(i + 1);
       }
     });
   });
