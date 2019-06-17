@@ -65,21 +65,25 @@ function P(item){
   return check
 }
 
-async function loop(filter){
+async function loop(filter, i){
+  array = filter[i];
+  id = array[0];
+  district = array[1];
+  net = array[2];
+  subsidy = array[3];
+  religion = array[4];
+  connection = array[5];
+  assessment = array[6];
+  if (P("district") && P("net") && P("subsidy") && P("religion") && P("connection") && P("assessment")) {
+    $(".s-" + id).removeClass("d-none");
+  } else {
+    $(".s-" + id).addClass("d-none");
+  }  
+}
+
+function invoke_loop(filter){
   for (i = 0; i < filter.length; i++) {
-    array = filter[i];
-    id = array[0];
-    district = array[1];
-    net = array[2];
-    subsidy = array[3];
-    religion = array[4];
-    connection = array[5];
-    assessment = array[6];
-    if (P("district") && P("net") && P("subsidy") && P("religion") && P("connection") && P("assessment")) {
-      $(".s-" + id).removeClass("d-none");
-    } else {
-      $(".s-" + id).addClass("d-none");
-    }
+    loop(filter, i);
   }
 }
 
@@ -123,7 +127,7 @@ $(function(){
   $(".browse").click(function(){
     $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
       filter = eval(data);
-      loop(filter)
+      invoke_loop(filter)
     });
   });
 
