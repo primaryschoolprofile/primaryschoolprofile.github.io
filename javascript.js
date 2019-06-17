@@ -32,11 +32,33 @@ function gen_code_temp(eng, index){
   return code
 }
 
+function sorting(item){
+  selected = []
+  $(item).parent().siblings("label").each(function(){
+    if ($(this).find("input").prop("checked")) {
+      selected = selected + [$(this).text()];
+    }
+  });
+  $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
+    filter = eval(data);
+    for (i = 0; i < filter.length; i++) {
+      array = filter[i];
+      id = array[0];
+      district = array[1];
+      net = array[2];
+      subsidy = array[3];
+      religion = array[4];
+      connection = array[5];
+      assessment = array[6];
+      if 
+  });
+}
+
 function gen_html(chi, eng){
   html = `
     <div class="row">
       <div class="col-4 col-sm-2 col-lg-1">
-        <h5 class="text-primary">` + chi + `</h5>
+        <h5 class="text-primary" onclick="sorting(this)">` + chi + `</h5>
       </div>
       <div class="col-8 col-sm-10 col-lg-11">
         <form class="` + eng + `"></form>
@@ -125,9 +147,9 @@ $(function(){
   });
 
   $(".browse").click(function(){
-    $.get("https://primaryschoolprofile.github.io/filter.txt", async function(data, status){
-      invoke_loop(eval(data));
-    });
+      $.get("https://primaryschoolprofile.github.io/filter.txt", async function(data, status){
+        invoke_loop(eval(data));
+      });
   });
 
 });
