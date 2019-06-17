@@ -125,9 +125,8 @@ $(function(){
   });
 
   $(".browse").click(function(){
-    $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
-      filter = eval(data);
-      invoke_loop(filter);
+    $.get("https://primaryschoolprofile.github.io/filter.txt", async function(data, status){
+      invoke_loop(eval(data));
     });
   });
 
