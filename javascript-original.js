@@ -107,7 +107,7 @@ $(function(){
       filter = eval(data);
       for (i = 0; i < filter.length; i++) {
         array = filter[i];
-        id = array[0]
+        id = array[0];
         district = array[1];
         net = array[2];
         subsidy = array[3];
