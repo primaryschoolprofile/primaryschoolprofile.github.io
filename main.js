@@ -124,7 +124,7 @@ $(function(){
           w.postMessage([array, district, net, subsidy, religion, connection, assessment]);
           console.log("verify", i)
           w.onmessage = function(event){
-            console.log("test", i)
+            console.log(event.data);
             if (event.data) {
               $(".s-" + id).addClass("d-none");
             } else {
