@@ -121,6 +121,7 @@ $(function(){
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([filter[i], district, net, subsidy, religion, connection, assessment]);
           w.onMessage = function(event){
+            console.log(event.data);
             if (event.data) {
               $(".s-" + id).addClass("d-none");
             } else {
