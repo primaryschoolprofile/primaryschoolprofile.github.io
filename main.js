@@ -109,8 +109,8 @@ $(function(){
 
   $(".browse").click(function(){
     if (window.Worker) {
-      $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
-        filter = eval(data);
+      $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
+        filter = eval(info);
         district = myfunction("地區");
         net = myfunction("校網");
         subsidy = myfunction("類別");
@@ -120,6 +120,13 @@ $(function(){
         for (i = 0; i < filter.length; i++) {
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([filter[i], district, net, subsidy, religion, connection, assessment]);
+          w.onMessage = function(event){
+            if (event.data) {
+              $(".s-" + id).addClass("d-none");
+            } else {
+              $(".s-" + id).removeClass("d-none");
+            }
+          }
         }
       });
     } else {
