@@ -109,7 +109,7 @@ $(function(){
         var w;
         while (true) {
           if (typeof(w) == "undefined") {
-            w = new Worker("demo_workers.js");
+            w = new Worker("https://primaryschoolprofile.github.io/loop.js");
           }
           w.onmessage = function(event) {
             if (event.data == filter.length);
