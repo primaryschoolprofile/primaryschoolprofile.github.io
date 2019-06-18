@@ -103,7 +103,7 @@ $(function(){
   });
 
   $(".browse").click(function(){
-    $(".browse").append("瀏覽器不支援");
+    $(".browse").append("<div>瀏覽器不支援</div>");
     //$.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
       //filter = eval(data);
       //for (i = 0; i < filter.length; i++) {
