@@ -15,5 +15,7 @@ function loop(){
   } else {
     $(".s-" + id).addClass("d-none");
   }
+  postMessage(i);
+}
   
-  loop()
+loop()
