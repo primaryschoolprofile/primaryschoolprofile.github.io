@@ -122,10 +122,8 @@ $(function(){
           w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
           w.onmessage = function(event){
             if (event.data[1]) {
-              console.log("hide", event.data[0]);
               $(".s-" + event.data[0]).addClass("d-none");
             } else {
-              console.log("show", event.data[0]);
               $(".s-" + event.data[0]).removeClass("d-none");
             }
           }
