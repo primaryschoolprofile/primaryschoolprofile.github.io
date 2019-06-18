@@ -103,25 +103,28 @@ $(function(){
   });
 
   $(".browse").click(function(){
-    $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
-    //$.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
-      //filter = eval(data);
-      //for (i = 0; i < filter.length; i++) {
-        //array = filter[i];
-        //id = array[0];
-        //district = array[1];
-        //net = array[2];
-        //subsidy = array[3];
-        //religion = array[4];
-        //connection = array[5];
-        //assessment = array[6];
-        //if (P("district") && P("net") && P("subsidy") && P("religion") && P("connection") && P("assessment")) {
-          //$(".s-" + id).removeClass("d-none");
-        //} else {
-          //$(".s-" + id).addClass("d-none");
-        //}
-      //}
-    //});
+    if (window.Worker) {
+      $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
+        filter = eval(data);
+        for (i = 0; i < filter.length; i++) {
+          array = filter[i];
+          id = array[0];
+          district = array[1];
+          net = array[2];
+          subsidy = array[3];
+          religion = array[4];
+          connection = array[5];
+          assessment = array[6];
+          if (P("district") && P("net") && P("subsidy") && P("religion") && P("connection") && P("assessment")) {
+            $(".s-" + id).removeClass("d-none");
+          } else {
+            $(".s-" + id).addClass("d-none");
+          }
+        }
+      });
+    } else {
+      $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
+    }
   });
 
 });
