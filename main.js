@@ -120,6 +120,16 @@ $(function(){
         for (i = 0; i < filter.length; i++) {
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
+          w.onmessage = function(event){
+            data = event.data;
+            if (data[1]) {
+              $(".s-" + data[0]).addClass("d-none");
+              console.log("hide", data[0])
+            } else {
+              $(".s-" + data[0]).removeClass("d-none");
+              console.log("show", data[0])
+            }
+          }
         }
       });
     } else {
