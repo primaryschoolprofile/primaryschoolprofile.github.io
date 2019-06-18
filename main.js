@@ -107,7 +107,7 @@ $(function(){
       $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
         filter = eval(data);
         for (i = 0; i < filter.length; i++) {
-          const w = new Worker;
+          const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage(filter[i]);
         }
       });
