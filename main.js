@@ -117,14 +117,18 @@ $(function(){
         religion = myfunction("宗教");
         connection = myfunction("中學");
         assessment = myfunction("測考");
+        console.log(district);
+        console.log(net);
+        console.log(subsidy);
+        console.log(religion);
+        console.log(connection);
+        console.log(assessment);
         for (i = 0; i < filter.length; i++) {
           array = filter[i];
           id = array[0];
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([array, district, net, subsidy, religion, connection, assessment]);
-          console.log("verify", i)
           w.onmessage = function(event){
-            console.log(event.data);
             if (event.data) {
               $(".s-" + id).addClass("d-none");
             } else {
