@@ -21,6 +21,6 @@ onmessage = function(event){
   if (P("district") || P("net") || P("subsidy") || P("religion") || P("connection") || P("assessment") {
     $(".s-" + id).addClass("d-none");
   } else {
-    $(".s-" + data[0]).removeClass("d-none");
+    $(".s-" + id).removeClass("d-none");
   }
 }
