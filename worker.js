@@ -11,6 +11,7 @@ onmessage = function(event){
   religion_chosen = data[4];
   connection_chosen = data[5];
   assessment_chosen = data[6]
+  id = array[0];
   district = array[1];
   net = array[2].toString();
   subsidy = array[3];
