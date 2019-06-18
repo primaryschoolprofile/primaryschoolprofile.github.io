@@ -120,9 +120,9 @@ $(function(){
         for (i = 0; i < filter.length; i++) {
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([filter[i], district, net, subsidy, religion, connection, assessment]);
-          console.log("mid", i);
-          w.onMessage = function(event){
-            console.log("final", i)
+          //console.log("mid", i);
+          onmessage = function(event){
+            //console.log("final", i)
             if (event.data) {
               $(".s-" + id).addClass("d-none");
             } else {
