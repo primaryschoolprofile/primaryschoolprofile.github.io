@@ -1,7 +1,8 @@
-function P(item) {
+function P(item){
   return eval(item + "_chosen.indexOf(" + item + ") == -1")
+}
 
-onmessage = function(event) {
+onmessage = function(event){
   data = event.data;
   array = data[0];
   district_chosen = data[1];
