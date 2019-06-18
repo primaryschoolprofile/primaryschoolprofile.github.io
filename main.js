@@ -104,17 +104,11 @@ $(function(){
 
   $(".browse").click(function(){
     if (window.Worker) {
-      $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
-        filter = eval(info);
-        var w;
-        while (true) {
-          if (typeof(w) == "undefined") {
-            w = new Worker("https://primaryschoolprofile.github.io/loop.js");
-          }
-          w.onmessage = function(event) {
-            if (event.data == filter.length);
-              break;
-          };
+      $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
+        filter = eval(data);
+        for (i = 0; i < filter.length; i++) {
+          const w = new Worker;
+          w.postMessage(filter[i]);
         }
       });
     } else {
