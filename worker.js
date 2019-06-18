@@ -18,5 +18,5 @@ onmessage = function(event){
   religion = array[4];
   connection = array[5];
   assessment = array[6];
-  poseMessage(P("district") || P("net") || P("subsidy") || P("religion") || P("connection") || P("assessment"));
+  postMessage(P("district") || P("net") || P("subsidy") || P("religion") || P("connection") || P("assessment"));
 }
