@@ -123,8 +123,10 @@ $(function(){
           w.onmessage = function(event){
             if (event.data[1]) {
               $(".s-" + event.data[0]).addClass("d-none");
+              console.log("hide", i)
             } else {
               $(".s-" + event.data[0]).removeClass("d-none");
+              console.log("show", i)
             }
           }
         }
