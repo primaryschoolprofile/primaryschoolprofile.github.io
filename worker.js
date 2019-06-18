@@ -18,9 +18,5 @@ onmessage = function(event){
   religion = array[4];
   connection = array[5];
   assessment = array[6];
-  if (P("district") || P("net") || P("subsidy") || P("religion") || P("connection") || P("assessment")) {
-    $(".s-" + id).addClass("d-none");
-  } else {
-    $(".s-" + id).removeClass("d-none");
-  }
+  poseMessage(P("district") || P("net") || P("subsidy") || P("religion") || P("connection") || P("assessment"));
 }
