@@ -104,8 +104,8 @@ $(function(){
 
   $(".browse").click(function(){
     if (window.Worker) {
-      $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
-        filter = eval(data);
+      $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
+        filter = eval(info);
         for (i = 0; i < filter.length; i++) {
           array = filter[i];
           id = array[0];
