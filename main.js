@@ -122,8 +122,9 @@ $(function(){
           id = array[0];
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([array, district, net, subsidy, religion, connection, assessment]);
+          console.log("verify", i)
           w.onmessage = function(event){
-            console.log(i)
+            console.log("test", i)
             if (event.data) {
               $(".s-" + id).addClass("d-none");
             } else {
