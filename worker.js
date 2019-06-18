@@ -18,5 +18,9 @@ onmessage = function(event){
   religion = array[4];
   connection = array[5];
   assessment = array[6].toString();
-  postMessage([id, P("district") || P("net") || P("subsidy") || P("religion") || P("connection") || P("assessment")]);
+  if (P("district") || P("net") || P("subsidy") || P("religion") || P("connection") || P("assessment") {
+    $(".s-" + id).addClass("d-none");
+  } else {
+    $(".s-" + data[0]).removeClass("d-none");
+  }
 }
