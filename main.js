@@ -119,11 +119,10 @@ $(function(){
         assessment = myfunction("測考");
         for (i = 0; i < filter.length; i++) {
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
-          x = w;
           w.postMessage([filter[i], district, net, subsidy, religion, connection, assessment]);
-          y = w;
-          console.log(x == y);
+          console.log("mid", i);
           w.onMessage = function(event){
+            console.log("final", i)
             if (event.data) {
               $(".s-" + id).addClass("d-none");
             } else {
