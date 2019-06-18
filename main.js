@@ -146,7 +146,7 @@ $(function(){
 
 function myfunction(item){
   result = [];
-  $(".filter row:contains(" + item + ") input").each(function(){
+  $(".filter .row:contains(" + item + ") input").each(function(){
     if ($(this).prop("checked")) {
       result = result.concat([$(this).parent().text()])
     }
