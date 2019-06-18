@@ -1,3 +1,8 @@
+function P(item){
+  check = $("." + item + " label:contains('" + eval(item) + "') input").prop("checked");
+  return check
+}
+
 onmessage = function(event) {
   array = event.data;
   id = array[0];
