@@ -60,9 +60,14 @@ function display_html(chi, index, school, i){
   return html
 }
 
-function P(item){
-  check = $("." + item + " label:contains('" + eval(item) + "') input").prop("checked");
-  return check
+function myfunction(item){
+  result = [];
+  $(".filter row:contains(" + item + ") input").each(function(){
+    if ($(this).prop("checked")) {
+      result = result.concat([$(this).parent().text()])
+    }
+  });
+  return result
 }
 
 $(function(){
@@ -106,9 +111,15 @@ $(function(){
     if (window.Worker) {
       $.get("https://primaryschoolprofile.github.io/filter.txt", function(data, status){
         filter = eval(data);
+        district = myfunction("地區");
+        net = myfunction("校網");
+        subsidy = myfunction("類別");
+        religion = myfunction("宗教");
+        connection = myfunction("中學");
+        assessment = myfunction("測考");
         for (i = 0; i < filter.length; i++) {
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
-          w.postMessage(filter[i]);
+          w.postMessage([filter[i], district, net, subsidy, religion, connection, assessment]);
         }
       });
     } else {
@@ -117,3 +128,13 @@ $(function(){
   });
 
 });
+
+function myfunction(item){
+  result = [];
+  $(".filter row:contains(" + item + ") input").each(function(){
+    if ($(this).prop("checked")) {
+      result = result.concat([$(this).parent().text()])
+    }
+  });
+  return result
+}
