@@ -118,10 +118,12 @@ $(function(){
         connection = myfunction("中學");
         assessment = myfunction("測考");
         for (i = 0; i < filter.length; i++) {
+          console.log("elementary", i)
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
+          console.log("intermediate", i)
           w.postMessage([filter[i], district, net, subsidy, religion, connection, assessment]);
+          console.log("advanced", i)
           w.onMessage = function(event){
-            console.log(event.data);
             if (event.data) {
               $(".s-" + id).addClass("d-none");
             } else {
