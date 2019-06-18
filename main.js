@@ -111,29 +111,20 @@ $(function(){
     if (window.Worker) {
       $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
         filter = eval(info);
-        district = myfunction("地區");
-        net = myfunction("校網");
-        subsidy = myfunction("類別");
-        religion = myfunction("宗教");
-        connection = myfunction("中學");
-        assessment = myfunction("測考");
-        console.log(district);
-        console.log(net);
-        console.log(subsidy);
-        console.log(religion);
-        console.log(connection);
-        console.log(assessment);
+        district_chosen = myfunction("地區");
+        net_chosen = myfunction("校網");
+        subsidy_chosen = myfunction("類別");
+        religion_chosen = myfunction("宗教");
+        connection_chosen = myfunction("中學");
+        assessment_chosen = myfunction("測考");
         for (i = 0; i < filter.length; i++) {
-          array = filter[i];
-          id = array[0];
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
-          w.postMessage([array, district, net, subsidy, religion, connection, assessment]);
+          w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
           w.onmessage = function(event){
-            console.log(event.data);
-            if (event.data) {
-              $(".s-" + id).addClass("d-none");
+            if (event.data[1]) {
+              $(".s-" + event.data[0]).addClass("d-none");
             } else {
-              $(".s-" + id).removeClass("d-none");
+              $(".s-" + event.data[0]).removeClass("d-none");
             }
           }
         }
