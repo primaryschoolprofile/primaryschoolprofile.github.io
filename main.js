@@ -121,12 +121,13 @@ $(function(){
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
           w.onmessage = function(event){
-            if (event.data[1]) {
-              $(".s-" + event.data[0]).addClass("d-none");
-              console.log("hide", i)
+            data = event.data;
+            if (data[1]) {
+              $(".s-" + data[0]).addClass("d-none");
+              console.log("hide", data[0])
             } else {
-              $(".s-" + event.data[0]).removeClass("d-none");
-              console.log("show", i)
+              $(".s-" + data[0]).removeClass("d-none");
+              console.log("show", data[0])
             }
           }
         }
