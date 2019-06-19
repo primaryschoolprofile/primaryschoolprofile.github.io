@@ -138,7 +138,7 @@ function chosen(item){
   return result
 }
 
-fucntion code(chi, eng){
+function code(chi, eng){
   return eng + "_chosen = chosen(" + chi + "; " + eng + " = []; for (i = 0; i < " + eng + "_chosen.length; i++) {" + eng + " = " + eng + ".concat(eval(" + eng + "_chosen[i]))}"
 }
 
