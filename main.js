@@ -60,35 +60,13 @@ function display_html(chi, index, school, i){
   return html
 }
 
-function chosen(item){
+function myfunction(item){
   result = [];
-  $(".filter .row:contains(" + item + ") input").each(function(){
+  $(".filter row:contains(" + item + ") input").each(function(){
     if ($(this).prop("checked")) {
       result = result.concat([$(this).parent().text()])
     }
   });
-  return result
-}
-
-function coding(chi, eng){
-  return eng + "_chosen = chosen('" + chi + "'); " + eng + " = []; for (i = 0; i < " + eng + "_chosen.length; i++) {" + eng + " = " + eng + ".concat(eval(" + eng + "_chosen[i]))}"
-}
-
-function intersection_of_two_arrays(array1, array2){
-  result = [];
-  for (i = 0; i < array1.length; i++) {
-    if (array2.indexOf(array1[i]) != -1) {
-      result = result.concat(array1[i]);
-    }
-  }
-  return result
-}
-
-function intersection(array_of_arrays) {
-  result = array_of_arrays[0];
-  for (i = 1; i < array_of_arrays.length; i++) {
-    result = intersection_of_two_arrays(result, array_of_arrays[i]);
-  }
   return result
 }
 
@@ -130,23 +108,43 @@ $(function(){
   });
 
   $(".browse").click(function(){
-    $.get("https://primaryschoolprofile.github.io/data.txt", function(info2, status2){
-      eval(info2);
-      console.log(coding("地區", "district"));
-      eval(coding("地區", "district"));
-      eval(coding("校網", "net"));
-      eval(coding("類別", "subsidy"));
-      eval(coding("宗教", "religion"));
-      eval(coding("中學", "connection"));
-      eval(coding("測考", "assessment"));
-      result = intersection([district, net, subsidy, religion, connection, assessment]);
-      $(".profile > div").each(function(){
-        $(this).addClass("d-none");
+    if (window.Worker) {
+      $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
+        filter = eval(info);
+        district_chosen = myfunction("地區");
+        net_chosen = myfunction("校網");
+        subsidy_chosen = myfunction("類別");
+        religion_chosen = myfunction("宗教");
+        connection_chosen = myfunction("中學");
+        assessment_chosen = myfunction("測考");
+        for (i = 0; i < filter.length; i++) {
+          const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
+          w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
+          w.onmessage = function(event){
+            data = event.data;
+            if (data[1]) {
+              $(".s-" + data[0]).addClass("d-none");
+              console.log("hide", data[0])
+            } else {
+              $(".s-" + data[0]).removeClass("d-none");
+              console.log("show", data[0])
+            }
+          }
+        }
       });
-      for (i = 0; i < result.length; i++) {
-        $(".s-" + result[i]).removeClass("d-none");
-      }
-    });
+    } else {
+      $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
+    }
   });
 
 });
+
+function myfunction(item){
+  result = [];
+  $(".filter .row:contains(" + item + ") input").each(function(){
+    if ($(this).prop("checked")) {
+      result = result.concat([$(this).parent().text()])
+    }
+  });
+  return result
+}
