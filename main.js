@@ -70,6 +70,39 @@ function chosen(item){
   return result
 }
 
+
+function chosen(item){
+  result = [];
+  $(".filter .row:contains(" + item + ") input").each(function(){
+    if ($(this).prop("checked")) {
+      result = result.concat([$(this).parent().text()])
+    }
+  });
+  return result
+}
+
+function code(chi, eng){
+  return eng + "_chosen = chosen(" + chi + "; " + eng + " = []; for (i = 0; i < " + eng + "_chosen.length; i++) {" + eng + " = " + eng + ".concat(eval(" + eng + "_chosen[i]))}"
+}
+
+function intersection_of_two_arrays(array1, array2){
+  result = [];
+  for (i = 0; i < array1.length; i++) {
+    if (array2.indexOf(array1[i]) != -1) {
+      result = result.concat(array1[i]);
+    }
+  }
+  return result
+}
+
+function intersection(array_of_arrays) {
+  result = array_of_arrays[0];
+  for (i = 1; i < array_of_arrays.length; i++) {
+    result = intersection_of_two_arrays(result, array_of_arrays[i]);
+  }
+  return result
+}
+
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
@@ -127,37 +160,3 @@ $(function(){
   });
 
 });
-
-function chosen(item){
-  result = [];
-  $(".filter .row:contains(" + item + ") input").each(function(){
-    if ($(this).prop("checked")) {
-      result = result.concat([$(this).parent().text()])
-    }
-  });
-  return result
-}
-
-function code(chi, eng){
-  return eng + "_chosen = chosen(" + chi + "; " + eng + " = []; for (i = 0; i < " + eng + "_chosen.length; i++) {" + eng + " = " + eng + ".concat(eval(" + eng + "_chosen[i]))}"
-}
-
-function intersection_of_two_arrays(array1, array2){
-  result = [];
-  for (i = 0; i < array1.length; i++) {
-    if (array2.indexOf(array1[i]) != -1) {
-      result = result.concat(array1[i]);
-    }
-  }
-  return result
-}
-
-function intersection(array_of_arrays) {
-  result = array_of_arrays[0];
-  for (i = 1; i < array_of_arrays.length; i++) {
-    result = intersection_of_two_arrays(result, array_of_arrays[i]);
-  }
-  return result
-}
-
-
