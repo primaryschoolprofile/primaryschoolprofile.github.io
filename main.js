@@ -72,8 +72,8 @@ function myfunction(item){
 
 $(function(){
 
-  $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
-    options = eval(data);
+  $.get("https://primaryschoolprofile.github.io/options.json", function(data, status){
+    options = JSON.parse(data);
     eval(gen_code_filter("地區", "district", 1));
     eval(gen_code_filter("校網", "net", 2));
     eval(gen_code_filter("類別", "subsidy", 3));
@@ -82,8 +82,8 @@ $(function(){
     eval(gen_code_filter("測考", "assessment", 6));
   });
   
-  $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
-    school = eval(data);
+  $.get("https://primaryschoolprofile.github.io/display.json", function(data, status){
+    school = JSON.parse(data);
     for (i = 0; i < school.length; i++) {
       $(".profile").append(`
         <div class="py-4 s-` + school[i][0] + `">
@@ -109,8 +109,8 @@ $(function(){
 
   $(".browse").click(function(){
     if (window.Worker) {
-      $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
-        filter = eval(info);
+      $.get("https://primaryschoolprofile.github.io/filter.json", function(info, status){
+        filter = JSON.parse(info);
         district_chosen = myfunction("地區");
         net_chosen = myfunction("校網");
         subsidy_chosen = myfunction("類別");
