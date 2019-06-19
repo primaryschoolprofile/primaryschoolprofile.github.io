@@ -119,7 +119,7 @@ $(function(){
       result = intersection([district, net, subsidy, religion, connection, assessment]);
       $(".profile > div").each(function(){
         $(this).addClass("d-none");
-      }
+      });
       for (i = 0; i < result.length; i++) {
         $(".s-" + result[i]).removeClass("d-none");
       }
