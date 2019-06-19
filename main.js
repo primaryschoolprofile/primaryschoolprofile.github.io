@@ -81,7 +81,7 @@ function chosen(item){
   return result
 }
 
-function code(chi, eng){
+function coding(chi, eng){
   return eng + "_chosen = chosen(" + chi + "; " + eng + " = []; for (i = 0; i < " + eng + "_chosen.length; i++) {" + eng + " = " + eng + ".concat(eval(" + eng + "_chosen[i]))}"
 }
 
@@ -143,12 +143,12 @@ $(function(){
   $(".browse").click(function(){
     $.get("https://primaryschoolprofile.github.io/data.txt", function(info2, status2){
       eval(info2);
-      eval(code("地區", "district"));
-      eval(code("校網", "net"));
-      eval(code("類別", "subsidy"));
-      eval(code("宗教", "religion"));
-      eval(code("中學", "connection"));
-      eval(code("測考", "assessment"));
+      eval(coding("地區", "district"));
+      eval(coding("校網", "net"));
+      eval(coding("類別", "subsidy"));
+      eval(coding("宗教", "religion"));
+      eval(coding("中學", "connection"));
+      eval(coding("測考", "assessment"));
       result = intersection([district, net, subsidy, religion, connection, assessment]);
       $(".profile > div").each(function(){
         $(this).addClass("d-none");
