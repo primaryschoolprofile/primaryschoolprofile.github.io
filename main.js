@@ -62,17 +62,6 @@ function display_html(chi, index, school, i){
 
 function chosen(item){
   result = [];
-  $(".filter row:contains(" + item + ") input").each(function(){
-    if ($(this).prop("checked")) {
-      result = result.concat([$(this).parent().text()])
-    }
-  });
-  return result
-}
-
-
-function chosen(item){
-  result = [];
   $(".filter .row:contains(" + item + ") input").each(function(){
     if ($(this).prop("checked")) {
       result = result.concat([$(this).parent().text()])
