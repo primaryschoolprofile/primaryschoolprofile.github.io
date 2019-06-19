@@ -131,8 +131,9 @@ $(function(){
 
   $(".browse").click(function(){
     $.get("https://primaryschoolprofile.github.io/data.txt", function(info2, status2){
+      console.log(info2);
       eval(info2);
-      console.log(chosen("地區"));
+      console.log(地區);
       eval(coding("地區", "district"));
       eval(coding("校網", "net"));
       eval(coding("類別", "subsidy"));
