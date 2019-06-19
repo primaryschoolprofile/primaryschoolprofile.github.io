@@ -71,7 +71,7 @@ function chosen(item){
 }
 
 function coding(chi, eng){
-  return eng + "_chosen = chosen(" + chi + "); " + eng + " = []; for (i = 0; i < " + eng + "_chosen.length; i++) {" + eng + " = " + eng + ".concat(eval(" + eng + "_chosen[i]))}"
+  return eng + "_chosen = chosen('" + chi + "'); " + eng + " = []; for (i = 0; i < " + eng + "_chosen.length; i++) {" + eng + " = " + eng + ".concat(eval(" + eng + "_chosen[i]))}"
 }
 
 function intersection_of_two_arrays(array1, array2){
