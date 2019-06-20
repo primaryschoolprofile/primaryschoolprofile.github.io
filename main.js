@@ -132,7 +132,9 @@ $(function(){
             w.onmessage = function(event){
               data = event.data;
               if (data[1]) {
+                console.log("test1")
                 id_selected = id_selected + [data[0]];
+                console.log("test2")
               }
             }
           }
