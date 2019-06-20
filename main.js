@@ -71,24 +71,9 @@ function chosen(item){
 }
 
 function profile(index, school){
-  html = `s-` + index + ` = '
-    <div class="py-4">
-      <h3>`+ school[i][1] + `</h3>` +
-      display_html("概覽", 0, school, i) +
-      display_html("地區", 3, school, i) + 
-      display_html("校網", 4, school, i) + 
-      display_html("類別", 5, school, i) + 
-      display_html("宗教", 6, school, i) + 
-      display_html("龍校", 7, school, i) + 
-      display_html("直屬", 8, school, i) + 
-      display_html("聯繫", 9, school, i) + 
-      display_html("測驗", 10, school, i) + 
-      display_html("考試", 11, school, i) + 
-      display_html("分班", 12, school, i) + 
-      display_html("照顧", 13, school, i) +
-      display_html("融合", 14, school, i) + 
-      display_html("調適", 15, school, i) + `
-    </div>'`
+  html = `s-` + index + ` = '<div class="py-4"><h3>`+ school[i][1] + `</h3>` + display_html("概覽", 0, school, i) + display_html("地區", 3, school, i) + display_html("校網", 4, school, i) + display_html("類別", 5, school, i) + display_html("宗教", 6, school, i) + display_html("龍校", 7, school, i) + display_html("直屬", 8, school, i) + display_html("聯繫", 9, school, i) + 
+display_html("測驗", 10, school, i) + display_html("考試", 11, school, i) + display_html("分班", 12, school, i) + display_html("照顧", 13, school, i) +
+ display_html("融合", 14, school, i) + display_html("調適", 15, school, i) + `</div>'`
   return html
 }
     
@@ -111,7 +96,7 @@ $(function(){
       console.log(index);
       console.log(profile(index, school));
       eval(profile(index, school));
-      $(".profile").append(eval("s-" + index.toString()));
+      $(".profile").append(eval("s-" + index));
     }
   });
 
