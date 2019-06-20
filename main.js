@@ -33,7 +33,9 @@ function gen_code_temp(eng, index){
     $(".` + eng + `").append(gen_html_all());
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
-    }`
+    }
+    $(".` + eng + `").append(<span class="d-none">(確定)</span>)
+    `
   return code
 }
 
