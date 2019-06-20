@@ -131,19 +131,18 @@ $(function(){
             w.onmessage = function(event){
               data = event.data;
               if (data[1]) {
-                $(".profile").append("<div class='temp'>" + data[0] + "</div>");
+                $(".profile").append("<span>" + data[0] + ",</span>");
               }
             }
           }
-          id_selected = []
-          $(".temp").each(function(){
-            id_selected = id_selected + [Number($(this).text())]
-          });
+          id_selected = eval("[" + $(".profile").text() + "1000]");
+          id_selected.pop();
           console.log("test", id_selected);
-          //id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
-          //for (i = 0; i < id_selected.length; i++) {
-            //$(".profile").append(profile(id_selected[i], school));
-          //}
+          id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
+          $(".profile").html("");
+          for (i = 0; i < id_selected.length; i++) {
+            $(".profile").append(profile(id_selected[i], school));
+          }
         });
       } else {
         $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
