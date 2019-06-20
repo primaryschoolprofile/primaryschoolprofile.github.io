@@ -130,7 +130,7 @@ $(function(){
             w.onmessage = function(event){
               data = event.data;
               if (data[1]) {
-                $(".profile").append(profile(data[0], school_original));
+                $(".profile").append(profile(data[0], school));
               }
             }
           }
