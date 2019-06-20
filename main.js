@@ -124,17 +124,21 @@ $(function(){
           connection_chosen = chosen("中學");
           assessment_chosen = chosen("測考");
           $(".profile").html("");
+          id_selected = []
           for (i = 0; i < filter.length; i++) {
             const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
             //console.log([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
             w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
             w.onmessage = function(event){
               data = event.data;
-              console.log(data);
               if (data[1]) {
-                $(".profile").append(profile(data[0], school));
+                id_selected = id_selected + [data[0]];
               }
             }
+          }
+          id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
+          for (i = 0; i < id_selected.length; i++) {
+            $(".profile").append(profile(id_selected[i], school));
           }
         });
       } else {
