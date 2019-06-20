@@ -70,7 +70,7 @@ function chosen(item){
   return result
 }
 
-function profile(index, school){
+function profile(i, school){
   console.log(school);
   html = `
     <div class="py-4">
