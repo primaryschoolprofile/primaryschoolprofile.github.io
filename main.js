@@ -13,6 +13,9 @@ function clear_all(element){
 function wrap(item){
   result = `<span class='pr-2 option d-none' onclick="
     temp = true;
+    if ($(this).find('input').prop('checked') == false) {
+      temp = false;
+    }
     $(this).siblings('.option').each(function(){
       if ($(this).find('input').prop('checked') == false) {
         temp = false;
