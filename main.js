@@ -22,9 +22,11 @@ function gen_html_all(options, index){
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
     $(".` + eng + `").append(gen_html_all(options, ` + index + `));
+    $(".` + eng + `").append("<div class='d-none'>");
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }`
+    $(".` + eng + `").append("</div>")
   console.log(code)
   return code
 }
