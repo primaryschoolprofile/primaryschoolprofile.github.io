@@ -60,7 +60,7 @@ function display_html(chi, index, school, i){
   return html
 }
 
-function myfunction(item){
+function chosen(item){
   result = [];
   $(".filter row:contains(" + item + ") input").each(function(){
     if ($(this).prop("checked")) {
@@ -70,6 +70,28 @@ function myfunction(item){
   return result
 }
 
+function profile(index, school){
+  html = `s-` + index + ` = '
+    <div class="py-4">
+      <h3>`+ school[i][1] + `</h3>` +
+      display_html("概覽", 0, school, i) +
+      display_html("地區", 3, school, i) + 
+      display_html("校網", 4, school, i) + 
+      display_html("類別", 5, school, i) + 
+      display_html("宗教", 6, school, i) + 
+      display_html("龍校", 7, school, i) + 
+      display_html("直屬", 8, school, i) + 
+      display_html("聯繫", 9, school, i) + 
+      display_html("測驗", 10, school, i) + 
+      display_html("考試", 11, school, i) + 
+      display_html("分班", 12, school, i) + 
+      display_html("照顧", 13, school, i) +
+      display_html("融合", 14, school, i) + 
+      display_html("調適", 15, school, i) + `
+    </div>'`
+  return html
+}
+    
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
@@ -83,27 +105,11 @@ $(function(){
   });
   
   $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
-    school = eval(data);
+    school = eval(data)[1];
     for (i = 0; i < school.length; i++) {
-      $(".profile").append(`
-        <div class="py-4 s-` + school[i][0] + `">
-          <h3>`+ school[i][1] + `</h3>` +
-          display_html("概覽", 0, school, i) + 
-          display_html("地區", 3, school, i) + 
-          display_html("校網", 4, school, i) + 
-          display_html("類別", 5, school, i) + 
-          display_html("宗教", 6, school, i) + 
-          display_html("龍校", 7, school, i) + 
-          display_html("直屬", 8, school, i) + 
-          display_html("聯繫", 9, school, i) + 
-          display_html("測驗", 10, school, i) + 
-          display_html("考試", 11, school, i) + 
-          display_html("分班", 12, school, i) + 
-          display_html("照顧", 13, school, i) +
-          display_html("融合", 14, school, i) + 
-          display_html("調適", 15, school, i) + `
-        </div>
-      `);
+      index = school[i][0];
+      eval(profile(index, school));
+      $(".profile").append(eval("s-" + index));
     }
   });
 
@@ -111,12 +117,12 @@ $(function(){
     if (window.Worker) {
       $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
         filter = eval(info);
-        district_chosen = myfunction("地區");
-        net_chosen = myfunction("校網");
-        subsidy_chosen = myfunction("類別");
-        religion_chosen = myfunction("宗教");
-        connection_chosen = myfunction("中學");
-        assessment_chosen = myfunction("測考");
+        district_chosen = chosen("地區");
+        net_chosen = chosen("校網");
+        subsidy_chosen = chosen("類別");
+        religion_chosen = chosen("宗教");
+        connection_chosen = chosen("中學");
+        assessment_chosen = chosen("測考");
         for (i = 0; i < filter.length; i++) {
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
