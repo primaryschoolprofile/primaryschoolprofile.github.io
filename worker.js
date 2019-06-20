@@ -13,10 +13,10 @@ onmessage = function(event){
   assessment_chosen = data[6]
   id = array[0];
   district = array[1];
-  net = array[2].toString();
+  net = array[2];
   subsidy = array[3];
   religion = array[4];
   connection = array[5];
-  assessment = array[6].toString();
+  assessment = array[6];
   postMessage([id, P("district") && P("net") && P("subsidy") && P("religion") && P("connection") && P("assessment")]);
 }
