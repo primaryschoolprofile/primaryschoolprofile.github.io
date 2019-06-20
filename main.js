@@ -19,11 +19,12 @@ function gen_html_all(){
   return `<span class='pr-2' onclick='
   if ($(this).find("input").prop("checked")) {
     $(this).siblings().each(function(){
-      $(this).addClass("d-none")
+      $(this).addClass("d-none");
     });
   } else {
+    $(this).addClass("d-none");
     $(this).siblings().each(function(){
-      $(this).removeClass("d-none")
+      $(this).removeClass("d-none");
     });
   }'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>`
 }
@@ -33,9 +34,7 @@ function gen_code_temp(eng, index){
     $(".` + eng + `").append(gen_html_all());
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
-    }
-    $(".` + eng + `").append('<span class="d-none">(確定)</span>')
-    `
+    }`
   return code
 }
 
