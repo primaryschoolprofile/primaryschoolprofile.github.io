@@ -42,7 +42,10 @@ function gen_html_all(){
 }
 
 function clear(){
-  return "$(this).siblings('.option').find('input').prop('checked', false);"
+  return `
+  $(this).siblings('.option').each(function(){
+    $(this).find('input').prop('checked', false);
+  });`
 }
 
 function gen_code_temp(eng, index){
