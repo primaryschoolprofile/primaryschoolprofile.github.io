@@ -71,6 +71,7 @@ function chosen(item){
 }
 
 function profile(index, school){
+  console.log(school);
   html = `
     <div class="py-4">
       <h3>`+ school[i][1] + `</h3>` + 
