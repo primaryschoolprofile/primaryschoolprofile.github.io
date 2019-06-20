@@ -109,8 +109,8 @@ $(function(){
     for (i = 0; i < school.length; i++) {
       index = school[i][0];
       console.log(profile(index, school));
-      eval(profile(index, school));
-      $(".profile").append(eval("s-" + index));
+      //eval(profile(index, school));
+      //$(".profile").append(eval("s-" + index));
     }
   });
 
@@ -145,13 +145,3 @@ $(function(){
   });
 
 });
-
-function myfunction(item){
-  result = [];
-  $(".filter .row:contains(" + item + ") input").each(function(){
-    if ($(this).prop("checked")) {
-      result = result.concat([$(this).parent().text()])
-    }
-  });
-  return result
-}
