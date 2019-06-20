@@ -147,7 +147,7 @@ $(function(){
             for (i = 0; i < id_selected.length; i++) {
               $(".profile").append(profile(id_selected[i], school));
             }
-          }, 3000)
+          }, 10000)
         });
       } else {
         $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
