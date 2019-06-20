@@ -131,11 +131,11 @@ $(function(){
             w.onmessage = function(event){
               data = event.data;
               if (data[1]) {
-                $(".profile").append("<span>" + data[0] + ",</span>");
+                $(".profile").append(data[0] + ",");
               }
             }
           }
-          console.log("test0", $(".profile").text())
+          console.log("test0", $(".profile").html())
           id_selected = eval("[" + $(".profile").text() + "1000]");
           console.log("test1", id_selected)
           id_selected.pop();
