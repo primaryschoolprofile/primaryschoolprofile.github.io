@@ -70,25 +70,26 @@ function chosen(item){
   return result
 }
 
-function profile(i, school){
-  console.log(school);
+function profile(index, school){
+  i = school[0].indexOf(index);
+  school_original = school[1]
   html = `
     <div class="py-4">
-      <h3>`+ school[i][1] + `</h3>` + 
-      display_html("概覽", 0, school, i) + 
-      display_html("地區", 3, school, i) + 
-      display_html("校網", 4, school, i) + 
-      display_html("類別", 5, school, i) + 
-      display_html("宗教", 6, school, i) + 
-      display_html("龍校", 7, school, i) + 
-      display_html("直屬", 8, school, i) + 
-      display_html("聯繫", 9, school, i) + 
-      display_html("測驗", 10, school, i) + 
-      display_html("考試", 11, school, i) + 
-      display_html("分班", 12, school, i) + 
-      display_html("照顧", 13, school, i) + 
-      display_html("融合", 14, school, i) + 
-      display_html("調適", 15, school, i) + `
+      <h3>`+ school[1][i][1] + `</h3>` + 
+      display_html("概覽", 0, school_original, i) + 
+      display_html("地區", 3, school_original, i) + 
+      display_html("校網", 4, school_original, i) + 
+      display_html("類別", 5, school_original, i) + 
+      display_html("宗教", 6, school_original, i) + 
+      display_html("龍校", 7, school_original, i) + 
+      display_html("直屬", 8, school_original, i) + 
+      display_html("聯繫", 9, school_original, i) + 
+      display_html("測驗", 10, school_original, i) + 
+      display_html("考試", 11, school_original, i) + 
+      display_html("分班", 12, school_original, i) + 
+      display_html("照顧", 13, school_original, i) + 
+      display_html("融合", 14, school_original, i) + 
+      display_html("調適", 15, school_original, i) + `
     </div>`
   return html
 }
@@ -106,9 +107,10 @@ $(function(){
   });
   
   $.get("https://primaryschoolprofile.github.io/display.txt", function(datum, status){
-    school = eval(datum)[1];
-    for (i = 0; i < school.length; i++) {
-      index = school[i][0];
+    school = eval(datum);
+    school_original = school[1];
+    for (i = 0; i < school_original.length; i++) {
+      index = school_original[i][0];
       $(".profile").append(profile(index, school));
     }
     $(".browse").click(function(){
@@ -128,7 +130,7 @@ $(function(){
             w.onmessage = function(event){
               data = event.data;
               if (data[1]) {
-                $(".profile").append(profile(data[0], school));
+                $(".profile").append(profile(data[0], school_original));
               }
             }
           }
