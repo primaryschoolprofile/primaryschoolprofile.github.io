@@ -124,7 +124,6 @@ $(function(){
           connection_chosen = chosen("中學");
           assessment_chosen = chosen("測考");
           $(".profile").html("");
-          id_selected = []
           for (i = 0; i < filter.length; i++) {
             const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
             //console.log([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
@@ -132,17 +131,14 @@ $(function(){
             w.onmessage = function(event){
               data = event.data;
               if (data[1]) {
-                console.log("test1")
-                id_selected = id_selected + [data[0]];
-                console.log("test2")
+                $(".profile").append("<div class='temp'>" + data[0] + "</div>");
               }
             }
           }
-          console.log(id_selected)
-          id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
-          for (i = 0; i < id_selected.length; i++) {
-            $(".profile").append(profile(id_selected[i], school));
-          }
+          //id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
+          //for (i = 0; i < id_selected.length; i++) {
+            //$(".profile").append(profile(id_selected[i], school));
+          //}
         });
       } else {
         $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
