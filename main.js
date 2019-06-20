@@ -25,8 +25,8 @@ function gen_code_temp(eng, index){
     $(".` + eng + `").append("<div class='d-none'>");
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
-    }`
-    $(".` + eng + `").append("</div>")
+    }
+    $(".` + eng + `").append("</div>");`
   console.log(code)
   return code
 }
