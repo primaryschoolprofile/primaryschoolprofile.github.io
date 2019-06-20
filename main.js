@@ -69,7 +69,25 @@ function gen_html(chi, eng){
   html = `
     <div class="row">
       <div class="col-4 col-sm-2 col-lg-1">
-        <h5>` + chi + `</h5>
+        <h5 class="text-primary" onclick="
+          if (eindow.Worker) {
+            $.get('filter.txt'), function(info, status){
+              filter = eval(info);
+              options_chosen = chosen('` + chi + `');
+              for (i = 0; i < filter.length; i++) {
+                const w = new Worker('worker.js');
+                w.postMessage([filter[i], options_chosen]);
+                w.onmessage = function(event){
+                  data = event.data;
+                  if (data[1]) {
+                    $('.s-' + data[0]).addClass('d-none');
+                  }
+                }
+              }
+            });
+          } else {
+            $('.browse').html('<h5>瀏覽器不支援</h5>')
+          }">` + chi + `</h5>
       </div>
       <div class="col-8 col-sm-10 col-lg-11">
         <form class="` + eng + `"></form>
