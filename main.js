@@ -22,11 +22,12 @@ function wrap(item){
       }
     });
     if (temp) {
-      $(this).addClass('d-none');
-      $(this).siblings('.option').addClass('d-none');
-      $(this).siblings('.all').removeClass('d-none');
       $(this).siblings('.all').find('input').prop('checked', true);
-    }"><label class='checkbox-inline'><input type='checkbox'>` + item + `</label></span>`
+    } else {
+      $(this).siblings('.all').find('input').prop('checked', false);
+    }
+
+"><label class='checkbox-inline'><input type='checkbox'>` + item + `</label></span>`
   return result
 }
 
