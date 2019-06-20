@@ -25,8 +25,7 @@ function gen_html_all(){
       $(this).siblings().each(function(){
         $(this).removeClass("d-none")
       });
-    }
-  }`
+    }'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>`
 
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
