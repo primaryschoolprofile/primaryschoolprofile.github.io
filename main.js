@@ -58,7 +58,7 @@ function display_html(chi, index, school, i){
   return html
 }
 
-function myfunction(item){
+function chosen(item){
   result = [];
   $(".filter row:contains(" + item + ") input").each(function(){
     if ($(this).prop("checked")) {
@@ -142,13 +142,3 @@ $(function(){
   });
 
 });
-
-function chosen(item){
-  result = [];
-  $(".filter .row:contains(" + item + ") input").each(function(){
-    if ($(this).prop("checked")) {
-      result = result.concat([$(this).parent().text()])
-    }
-  });
-  return result
-}
