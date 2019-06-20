@@ -11,12 +11,12 @@ function clear_all(element){
 }
 
 function wrap(item){
-  result = "<label class='checkbox-inline pr-2 d-none'><input type='checkbox'>" + item + "</label>"
+  result = "<span class='pr-2 d-none'><label class='checkbox-inline'><input type='checkbox'>" + item + "</label></span>"
   return result
 }
 
 function gen_html_all(){
-  return "<label class='checkbox-inline pr-2'><input type='checkbox' checked='checked' onclick='all(this)'>全選</label>"
+  return "<span class='pr-2 all'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>"
 }
 
 function gen_code_temp(eng, index){
@@ -105,6 +105,14 @@ $(function(){
     }
   });
 
+  $(".all").click(function(){
+    console.log("test1");
+    $(this).siblings().each(function(){
+      console.log("test2")
+      $(this).removeClass("d-none");
+    });
+  });
+  
   $(".browse").click(function(){
     if (window.Worker) {
       $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
@@ -134,11 +142,3 @@ $(function(){
   });
 
 });
-
-function all(item){
-  console.log("test1");
-  $(item).siblings().each(function(){
-    console.log("test2")
-    $(this).removeClass("d-none");
-  });
-}
