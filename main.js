@@ -43,8 +43,7 @@ function gen_html_all(){
 
 function clear(){
   return `
-  $(this).siblings(".options").each(function(){
-    $(this).find('input').prop('checked', false);
+  $(this).siblings('.options').find('input').prop('checked', false);
   });`
 }
 
@@ -54,7 +53,7 @@ function gen_code_temp(eng, index){
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }
-    $(".` + eng + `").append("<span class='d-none' onclick='` + clear() + `'><label class='checkbox-inline'>(清除)</label><span>")`
+    $(".` + eng + `").append("<span class='d-none' onclick='` + clear() + `'>(清除)</span>")`
   console.log(code);
   return code
 }
