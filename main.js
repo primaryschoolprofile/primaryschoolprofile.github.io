@@ -36,7 +36,7 @@ function gen_html_all(){
   } else {
     $(this).siblings().each(function(){
       $(this).removeClass("d-none");
-      $(this).find("input").prop("checked", false);
+      $(this).find("input").prop("checked", true);
     });
   }'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>`
 }
@@ -44,6 +44,7 @@ function gen_html_all(){
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
     $(".` + eng + `").append(gen_html_all());
+    $(".` + eng + `").append("<span class='d-none'><label class='checkbox-inline'>(清除)</label><span>")
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }`
@@ -54,7 +55,7 @@ function gen_html(chi, eng){
   html = `
     <div class="row">
       <div class="col-4 col-sm-2 col-lg-1">
-        <h5>` + chi + `</h5>
+        <h5 onclick=">` + chi + `</h5>
       </div>
       <div class="col-8 col-sm-10 col-lg-11">
         <form class="` + eng + `"></form>
