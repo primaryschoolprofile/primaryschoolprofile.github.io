@@ -135,6 +135,7 @@ $(function(){
               }
             }
           }
+          console.log("test0", $(".profile").text())
           id_selected = eval("[" + $(".profile").text() + "1000]");
           console.log("test1", id_selected)
           id_selected.pop();
