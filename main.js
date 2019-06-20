@@ -63,6 +63,7 @@ function display_html(chi, index, school, i){
 function chosen(item){
   result = [];
   $(".filter row:contains(" + item + ") input").each(function(){
+    console.log($(this).prop("checked"))
     if ($(this).prop("checked")) {
       result = result.concat([$(this).parent().text()])
     }
