@@ -48,17 +48,22 @@ function clear(){
   });`
 }
 
+function gen_html_clear(){
+  return `<span class='d-none option' onclick='
+  $(this).siblings(".option").each(function(){
+    $(this).find("input").prop("checked", false);
+  });'>(清除)</span>`
+}
+
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
     $(".` + eng + `").append(gen_html_all());
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }
-    $(".` + eng + `").append("<span class='d-none option clear'>(清除)</span>")`
-  console.log(code);
+    $(".` + eng + `").append(gen_html_clear());`
   return code
 }
-
 
 function gen_html(chi, eng){
   html = `
