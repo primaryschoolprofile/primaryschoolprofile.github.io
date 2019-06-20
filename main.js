@@ -135,6 +135,7 @@ $(function(){
               }
             }
           }
+          setTimeout(function(){}, 3000)
           console.log("test0", $(".profile").html())
           id_selected = eval("[" + $(".profile").text() + "1000]");
           console.log("test1", id_selected)
