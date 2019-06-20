@@ -149,4 +149,4 @@ function all(item){
     console.log("test2")
     $(this).removeClass("d-none");
   });
-});
+}
