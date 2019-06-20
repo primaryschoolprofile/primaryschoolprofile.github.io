@@ -27,7 +27,6 @@ function gen_code_temp(eng, index){
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }
     $(".` + eng + `").append("</div>");`
-  console.log(code)
   return code
 }
 
@@ -46,6 +45,7 @@ function gen_html(chi, eng){
 
 function gen_code_filter(chi, eng, index){
   result = "$('.filter').append(gen_html('" + chi + "', '" + eng + "')); eval(gen_code_temp('" + eng + "', '" + index + "'));"
+  console.log(result);
   return result
 }
 
