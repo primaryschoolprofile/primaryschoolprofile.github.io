@@ -17,10 +17,10 @@ function wrap(item){
 
 function gen_html_all(){
   return `<span class='pr-2' onclick='
-    if ($(this).prop("checked")) {
+    if ($(this).find("input").prop("checked")) {
       $(this).siblings().each(function(){
         $(this).addClass("d-none")
-      });      
+      });
     } else {
       $(this).siblings().each(function(){
         $(this).removeClass("d-none")
