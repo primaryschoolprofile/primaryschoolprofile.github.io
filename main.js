@@ -108,8 +108,6 @@ $(function(){
     school = eval(data)[1];
     for (i = 0; i < school.length; i++) {
       index = school[i][0];
-      console.log(index);
-      console.log(profile(index, school));
       $(".profile").append(profile(index, school));
     }
   });
