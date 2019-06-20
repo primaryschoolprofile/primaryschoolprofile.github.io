@@ -135,18 +135,19 @@ $(function(){
               }
             }
           }
-          setTimeout(function(){}, 3000)
-          console.log("test0", $(".profile").html())
-          id_selected = eval("[" + $(".profile").text() + "1000]");
-          console.log("test1", id_selected)
-          id_selected.pop();
-          console.log("test2", id_selected);
-          id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
-          console.log("test3", id_selected)
-          $(".profile").html("");
-          for (i = 0; i < id_selected.length; i++) {
-            $(".profile").append(profile(id_selected[i], school));
-          }
+          setTimeout(function(){
+            console.log("test0", $(".profile").html())
+            id_selected = eval("[" + $(".profile").text() + "1000]");
+            console.log("test1", id_selected)
+            id_selected.pop();
+            console.log("test2", id_selected);
+            id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
+            console.log("test3", id_selected)
+            $(".profile").html("");
+            for (i = 0; i < id_selected.length; i++) {
+              $(".profile").append(profile(id_selected[i], school));
+            }
+          }, 3000)
         });
       } else {
         $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
