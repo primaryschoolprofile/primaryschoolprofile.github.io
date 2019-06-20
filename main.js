@@ -42,7 +42,7 @@ function gen_html_all(){
 }
 
 function clear(item){
-  console.log("
+  console.log("test")
   $(item).siblings(".options").each(function(){
     $(this).find('input').prop('checked', false);
   });
