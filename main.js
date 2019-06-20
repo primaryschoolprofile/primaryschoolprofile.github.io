@@ -110,8 +110,8 @@ $(function(){
       index = school[i][0];
       console.log(index);
       console.log(profile(index, school));
-      //eval(profile(index, school));
-      //$(".profile").append(eval("s-" + index));
+      eval(profile(index, school));
+      $(".profile").append(eval("s-" + index));
     }
   });
 
