@@ -11,12 +11,23 @@ function clear_all(element){
 }
 
 function wrap(item){
-  result = "<span class='pr-2 d-none'><label class='checkbox-inline'><input type='checkbox'>" + item + "</label></span>"
+  result = `<span class='pr-2 option d-none' onclick="
+    temp = true;
+    $(this).siblings('.option').each(function(){
+      if ($(this).find('input').prop('checked') == false) {
+        temp = false;
+      }
+    });
+    if (temp) {
+      $(this).siblings('.option').addClass('d-none');
+      $(this).siblings('.all').removeClass('d-none');
+      $(this).siblings('.all').find('input').prop('checked', true);
+    }"><label class='checkbox-inline'><input type='checkbox'>` + item + `</label></span>`
   return result
 }
 
 function gen_html_all(){
-  return `<span class='pr-2' onclick='
+  return `<span class='pr-2 all' onclick='
   if ($(this).find("input").prop("checked")) {
     $(this).siblings().each(function(){
       $(this).addClass("d-none");
