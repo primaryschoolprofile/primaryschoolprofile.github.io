@@ -111,7 +111,7 @@ $(function(){
       console.log(index);
       console.log(profile(index, school));
       eval(profile(index, school));
-      $(".profile").append(eval("s-" + index));
+      $(".profile").append(eval("s-" + index.toString()));
     }
   });
 
