@@ -45,7 +45,6 @@ function gen_code_filter(chi, eng, index){
   result = `
     $('.filter').append(gen_html('` + chi + `', '` + eng + `'));
     eval(gen_code_temp('` + eng + `', '` + index + `'));`
-  console.log(result);
   return result
 }
 
@@ -107,7 +106,9 @@ $(function(){
   });
 
   $(".all").click(function(){
+    console.log("test1");
     $(this).siblings().each(function(){
+      console.log("test2")
       $(this).removeClass("d-none");
     });
   });
@@ -129,10 +130,8 @@ $(function(){
             data = event.data;
             if (data[1]) {
               $(".s-" + data[0]).addClass("d-none");
-              console.log("hide", data[0])
             } else {
               $(".s-" + data[0]).removeClass("d-none");
-              console.log("show", data[0])
             }
           }
         }
