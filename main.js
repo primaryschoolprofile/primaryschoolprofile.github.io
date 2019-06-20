@@ -25,8 +25,7 @@ function gen_code_temp(eng, index){
     $(".` + eng + `").append("<div class='d-none'>");
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
-    }
-    $(".` + eng + `").append("</div>");`
+    }`
   return code
 }
 
@@ -44,7 +43,10 @@ function gen_html(chi, eng){
 }
 
 function gen_code_filter(chi, eng, index){
-  result = "$('.filter').append(gen_html('" + chi + "', '" + eng + "')); eval(gen_code_temp('" + eng + "', '" + index + "'));"
+  result = `
+    $('.filter').append(gen_html('` + chi + `', '` + eng + `'));
+    eval(gen_code_temp('` + eng + `', '` + index + `')); 
+    $(".` + eng + `").append("</div>");`
   console.log(result);
   return result
 }
