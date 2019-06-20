@@ -126,11 +126,11 @@ $(function(){
           $(".profile").html("");
           for (i = 0; i < filter.length; i++) {
             const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
-            console.log([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
+            //console.log([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
             w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
             w.onmessage = function(event){
               data = event.data;
-              //console.log(data);
+              console.log(data);
               if (data[1]) {
                 $(".profile").append(profile(data[0], school));
               }
