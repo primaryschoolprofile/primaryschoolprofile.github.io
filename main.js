@@ -17,15 +17,16 @@ function wrap(item){
 
 function gen_html_all(){
   return `<span class='pr-2' onclick='
-    if ($(this).find("input").prop("checked")) {
-      $(this).siblings().each(function(){
-        $(this).addClass("d-none")
-      });
-    } else {
-      $(this).siblings().each(function(){
-        $(this).removeClass("d-none")
-      });
-    }'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>`
+  if ($(this).find("input").prop("checked")) {
+    $(this).siblings().each(function(){
+      $(this).addClass("d-none")
+    });
+  } else {
+    $(this).siblings().each(function(){
+      $(this).removeClass("d-none")
+    });
+  }'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>`
+}
 
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
