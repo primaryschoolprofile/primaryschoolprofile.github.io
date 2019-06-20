@@ -34,7 +34,7 @@ function gen_code_temp(eng, index){
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }
-    $(".` + eng + `").append(<span class="d-none">(確定)</span>)
+    $(".` + eng + `").append('<span class="d-none">(確定)</span>')
     `
   return code
 }
