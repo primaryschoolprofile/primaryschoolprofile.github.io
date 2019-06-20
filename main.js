@@ -54,7 +54,7 @@ function gen_code_temp(eng, index){
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }
-    $(".` + eng + `").append("<span class='d-none' onclick='` + clear() + `'>(清除)</span>")`
+    $(".` + eng + `").append("<span class='d-none clear'>(清除)</span>")`
   console.log(code);
   return code
 }
