@@ -16,7 +16,7 @@ function wrap(item){
 }
 
 function gen_html_all(){
-  return "<span class='pr-2 all'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>"
+  return "<span class='pr-2' onclick='all(this)'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>"
 }
 
 function gen_code_temp(eng, index){
@@ -141,4 +141,12 @@ $(function(){
     }
   });
 
+});
+
+function all(item){
+  console.log("test1");
+  $(item).siblings().each(function(){
+    console.log("test2")
+    $(this).removeClass("d-none");
+  });
 });
