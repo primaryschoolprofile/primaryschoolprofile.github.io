@@ -60,6 +60,7 @@ function gen_code_temp(eng, index){
   return code
 }
 
+
 function gen_html(chi, eng){
   html = `
     <div class="row">
