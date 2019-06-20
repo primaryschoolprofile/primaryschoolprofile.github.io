@@ -136,9 +136,11 @@ $(function(){
             }
           }
           id_selected = eval("[" + $(".profile").text() + "1000]");
+          console.log("test1", id_selected)
           id_selected.pop();
-          console.log("test", id_selected);
+          console.log("test2", id_selected);
           id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
+          console.log("test3", id_selected)
           $(".profile").html("");
           for (i = 0; i < id_selected.length; i++) {
             $(".profile").append(profile(id_selected[i], school));
