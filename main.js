@@ -22,7 +22,6 @@ function gen_html_all(){
       $(this).addClass("d-none");
     });
   } else {
-    $(this).addClass("d-none");
     $(this).siblings().each(function(){
       $(this).removeClass("d-none");
     });
@@ -113,6 +112,10 @@ $(function(){
         </div>
       `);
     }
+  });
+  
+  $("input").click(function(){
+    console.log(test);
   });
   
   $(".browse").click(function(){
