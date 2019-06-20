@@ -1,5 +1,5 @@
 function P(item){
-  return eval(item + "_chosen.indexOf(" + item + ") == -1")
+  return eval(item + "_chosen.indexOf(" + item + ") != -1")
 }
 
 onmessage = function(event){
@@ -18,5 +18,5 @@ onmessage = function(event){
   religion = array[4];
   connection = array[5];
   assessment = array[6].toString();
-  postMessage([id, P("district") || P("net") || P("subsidy") || P("religion") || P("connection") || P("assessment")]);
+  postMessage([id, P("district") && P("net") && P("subsidy") && P("religion") && P("connection") && P("assessment")]);
 }
