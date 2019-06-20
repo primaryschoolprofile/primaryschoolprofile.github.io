@@ -116,12 +116,12 @@ $(function(){
     if (window.Worker) {
       $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
         filter = eval(info);
-        district_chosen = myfunction("地區");
-        net_chosen = myfunction("校網");
-        subsidy_chosen = myfunction("類別");
-        religion_chosen = myfunction("宗教");
-        connection_chosen = myfunction("中學");
-        assessment_chosen = myfunction("測考");
+        district_chosen = chosen("地區");
+        net_chosen = chosen("校網");
+        subsidy_chosen = chosen("類別");
+        religion_chosen = chosen("宗教");
+        connection_chosen = chosen("中學");
+        assessment_chosen = chosen("測考");
         for (i = 0; i < filter.length; i++) {
           const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
           w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
@@ -144,7 +144,7 @@ $(function(){
 
 });
 
-function myfunction(item){
+function chosen(item){
   result = [];
   $(".filter .row:contains(" + item + ") input").each(function(){
     if ($(this).prop("checked")) {
