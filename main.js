@@ -68,6 +68,14 @@ function chosen(item){
   return result
 }
 
+function all(item){
+  console.log("test1");
+  $(item).siblings().each(function(){
+    console.log("test2")
+    $(this).removeClass("d-none");
+  });
+}
+
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
@@ -143,10 +151,4 @@ $(function(){
 
 });
 
-function all(item){
-  console.log("test1");
-  $(item).siblings().each(function(){
-    console.log("test2")
-    $(this).removeClass("d-none");
-  });
-}
+
