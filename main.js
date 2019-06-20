@@ -104,42 +104,38 @@ $(function(){
     eval(gen_code_filter("測考", "assessment", 6));
   });
   
-  $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
-    school = eval(data)[1];
+  $.get("https://primaryschoolprofile.github.io/display.txt", function(datum, status){
+    school = eval(datum)[1];
     for (i = 0; i < school.length; i++) {
       index = school[i][0];
       $(".profile").append(profile(index, school));
     }
-  });
-
-  $(".browse").click(function(){
-    if (window.Worker) {
-      $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
-        filter = eval(info);
-        district_chosen = chosen("地區");
-        net_chosen = chosen("校網");
-        subsidy_chosen = chosen("類別");
-        religion_chosen = chosen("宗教");
-        connection_chosen = chosen("中學");
-        assessment_chosen = chosen("測考");
-        for (i = 0; i < filter.length; i++) {
-          const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
-          w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
-          w.onmessage = function(event){
-            data = event.data;
-            if (data[1]) {
-              $(".s-" + data[0]).addClass("d-none");
-              console.log("hide", data[0])
-            } else {
-              $(".s-" + data[0]).removeClass("d-none");
-              console.log("show", data[0])
+    $(".browse").click(function(){
+      if (window.Worker) {
+        $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
+          filter = eval(info);
+          district_chosen = chosen("地區");
+          net_chosen = chosen("校網");
+          subsidy_chosen = chosen("類別");
+          religion_chosen = chosen("宗教");
+          connection_chosen = chosen("中學");
+          assessment_chosen = chosen("測考");
+          $(".profile").html("");
+          for (i = 0; i < filter.length; i++) {
+            const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
+            w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
+            w.onmessage = function(event){
+              data = event.data;
+              if (data[1]) {
+                $(".profile").append(profile(data[0], school));
+              }
             }
           }
-        }
-      });
-    } else {
-      $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
-    }
+        });
+      } else {
+        $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
+      }
+    });
   });
 
 });
