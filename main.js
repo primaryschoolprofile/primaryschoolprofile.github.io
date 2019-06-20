@@ -129,6 +129,7 @@ $(function(){
             w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
             w.onmessage = function(event){
               data = event.data;
+              console.log(data);
               if (data[1]) {
                 $(".profile").append(profile(data[0], school));
               }
