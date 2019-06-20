@@ -137,7 +137,7 @@ $(function(){
           }
           setTimeout(function(){
             console.log("test0", $(".profile").html())
-            id_selected = eval("[" + $(".profile").text() + "1000]");
+            id_selected = eval("[" + $(".profile").html() + "1000]");
             console.log("test1", id_selected)
             id_selected.pop();
             console.log("test2", id_selected);
@@ -146,8 +146,9 @@ $(function(){
             $(".profile").html("");
             for (i = 0; i < id_selected.length; i++) {
               $(".profile").append(profile(id_selected[i], school));
+              console.log(i)
             }
-          }, 10000)
+          }, 3000)
         });
       } else {
         $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
