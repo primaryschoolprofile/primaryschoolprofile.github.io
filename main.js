@@ -16,8 +16,17 @@ function wrap(item){
 }
 
 function gen_html_all(){
-  return `<span class='pr-2' onclick='$(this).siblings().each(function(){$(this).removeClass("d-none")})'><label class='checkbox-inline'><input type='checkbox' checked='checked'>全選</label></span>`
-}
+  return `<span class='pr-2' onclick='
+    if ($(this).prop("checked")) {
+      $(this).siblings().each(function(){
+        $(this).addClass("d-none")
+      });      
+    } else {
+      $(this).siblings().each(function(){
+        $(this).removeClass("d-none")
+      });
+    }
+  }`
 
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
@@ -68,14 +77,6 @@ function chosen(item){
   return result
 }
 
-function all(item){
-  console.log("test1");
-  $(item).siblings().each(function(){
-    console.log("test2")
-    $(this).removeClass("d-none");
-  });
-}
-
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
@@ -111,11 +112,6 @@ $(function(){
         </div>
       `);
     }
-  });
-
-  $(".special").click(function(){
-    console.log("test1");
-    $(this).siblings().each(function(){$(this).removeClass("d-none")})
   });
   
   $(".browse").click(function(){
