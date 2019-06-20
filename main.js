@@ -136,6 +136,7 @@ $(function(){
               }
             }
           }
+          console.log(id_selected)
           id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
           for (i = 0; i < id_selected.length; i++) {
             $(".profile").append(profile(id_selected[i], school));
