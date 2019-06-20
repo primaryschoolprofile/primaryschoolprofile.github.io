@@ -11,7 +11,7 @@ function clear_all(element){
 }
 
 function wrap(item){
-  result = `<span class='pr-2 option d-none' onclick="
+  result = `<span class='pr-2 option' onclick="
     temp = true;
     if ($(this).find('input').prop('checked') == false) {
       temp = false;
