@@ -16,7 +16,7 @@ function wrap(item){
 }
 
 function gen_html_all(){
-  return "<label class='checkbox-inline pr-2' onclick='><input type='checkbox' checked='checked'>全選</label>"
+  return "<label class='checkbox-inline pr-2' onclick='all(this)'><input type='checkbox' checked='checked'>全選</label>"
 }
 
 function gen_code_temp(eng, index){
