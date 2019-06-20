@@ -11,18 +11,17 @@ function clear_all(element){
 }
 
 function wrap(item){
-  result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked='checked'>" + item + "</label>"
+  result = "<label class='checkbox-inline pr-2 d-none'><input type='checkbox'>" + item + "</label>"
   return result
 }
 
-function gen_html_all(options, index){
-  return wrap("全選")
+function gen_html_all(){
+  return "<label class='checkbox-inline pr-2'><input type='checkbox' checked='checked'>全選</label>"
 }
 
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
-    $(".` + eng + `").append(gen_html_all(options, ` + index + `));
-    $(".` + eng + `").append("<div class='d-none'>");
+    $(".` + eng + `").append(gen_html_all());
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }`
@@ -45,8 +44,7 @@ function gen_html(chi, eng){
 function gen_code_filter(chi, eng, index){
   result = `
     $('.filter').append(gen_html('` + chi + `', '` + eng + `'));
-    eval(gen_code_temp('` + eng + `', '` + index + `')); 
-    $(".` + eng + `").append("</div>");`
+    eval(gen_code_temp('` + eng + `', '` + index + `'));`
   console.log(result);
   return result
 }
