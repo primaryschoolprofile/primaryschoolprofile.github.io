@@ -106,8 +106,8 @@ $(function(){
     eval(gen_code_filter("測考", "assessment", 6));
   });
   
-  $.get("https://primaryschoolprofile.github.io/display.txt", function(datum, status){
-    school = eval(datum);
+  $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
+    school = eval(data);
     school_original = school[1];
     for (i = 0; i < school_original.length; i++) {
       index = school_original[i][0];
@@ -115,40 +115,13 @@ $(function(){
     }
     $(".browse").click(function(){
       if (window.Worker) {
-        $.get("https://primaryschoolprofile.github.io/filter.txt", function(info, status){
-          filter = eval(info);
-          district_chosen = chosen("地區");
-          net_chosen = chosen("校網");
-          subsidy_chosen = chosen("類別");
-          religion_chosen = chosen("宗教");
-          connection_chosen = chosen("中學");
-          assessment_chosen = chosen("測考");
+        $.get("https://primaryschoolprofile.github.io/data.txt", function(info, status){
+          eval(info)
+          pass = intersection([union(chosen("地區")), union(chosen("校網")), union(chosen("類別")), union(chosen("宗教")), union(chosen("中學")), union(chosen("測考"))]); 
           $(".profile").html("");
-          for (i = 0; i < filter.length; i++) {
-            const w = new Worker("https://primaryschoolprofile.github.io/worker.js");
-            //console.log([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
-            w.postMessage([filter[i], district_chosen, net_chosen, subsidy_chosen, religion_chosen, connection_chosen, assessment_chosen]);
-            w.onmessage = function(event){
-              data = event.data;
-              if (data[1]) {
-                $(".profile").append(data[0] + ",");
-              }
-            }
+          for (i = 0; i < pass.length; i++) {
+            $(".profile").append(profile(pass[i], school));
           }
-          setTimeout(function(){
-            console.log("test0", $(".profile").html())
-            id_selected = eval("[" + $(".profile").html() + "1000]");
-            console.log("test1", id_selected)
-            id_selected.pop();
-            console.log("test2", id_selected);
-            id_selected.sort(function(a, b){return school[0].indexOf(a) - school[0].indexOf(b)});
-            console.log("test3", id_selected)
-            $(".profile").html("");
-            for (i = 0; i < id_selected.length; i++) {
-              $(".profile").append(profile(id_selected[i], school));
-              console.log(i)
-            }
-          }, 5000)
         });
       } else {
         $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
@@ -157,3 +130,31 @@ $(function(){
   });
 
 });
+
+function union(array_of_chosen) {
+  result = eval(array_of_chosen[0]);
+  for (i = 1; i < array_of_chosen.length; i++) {
+    result = result.concat(eval(array_of_chosen[i]));
+  }
+  return result
+}
+
+function intersection_of_two_arrays(array1, array2){
+  result = [];
+  for (i = 0; i = array1.length; i++) {
+    element = array1[i];
+    if (array2.indexOf(element) != -1) {
+      result = result + [element];
+    }
+  }
+  return result
+}
+
+function intersection(array_of_arrays) {
+  result = array_of_arrays[0];
+  for (i = 1; i < array_of_arrays.length; i++) {
+    result = intersection_of_two_arrays(result, array_of_arrays(i));
+  }
+  return result
+}
+
