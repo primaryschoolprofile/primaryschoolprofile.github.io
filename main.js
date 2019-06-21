@@ -16,9 +16,7 @@ function wrap(item){
   result = `<label class='checkbox-inline pr-2 option' onclick='
     all_chosen = true;
     none_chosen = true;
-    console.log("test1");
     if ($(this).find("input").prop("checked")) {
-      console.log("test2");
       none_chosen = false;
       $(this).siblings(".option").each(function(){
         if ($(this).find("input").prop("checked") == false) {
@@ -158,6 +156,7 @@ $(function(){
               input_items = input_items + [union(chosen(input_item))];
             }
           }
+          console.log(input_items);
           pass = intersection(input_items); 
           console.log(pass);
           $(".profile").html("");
