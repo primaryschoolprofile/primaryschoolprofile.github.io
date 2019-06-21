@@ -206,9 +206,10 @@ function intersection_of_two_arrays(array1, array2){
 }
 
 function intersection(array_of_arrays) {
-  result = array_of_arrays[0];
-  for (i = 1; i < array_of_arrays.length; i++) {
-    result = intersection_of_two_arrays(result, array_of_arrays[i]);
+  sorted = array_of_arrays.sort(function(a, b){return a.length-b.length});
+  result = sorted[0];
+  for (i = 1; i < sorted.length; i++) {
+    result = intersection_of_two_arrays(result, sorted[i]);
   }
   return result
 }
