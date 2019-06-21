@@ -6,6 +6,7 @@ function select_all(element){
 }
 
 function clear_all(element){
+  $(element).find("input").prop("checked", true);
   $(element).siblings().each(function(){
     $(this).find("input").prop("checked", false);
   });
@@ -14,29 +15,41 @@ function clear_all(element){
 function wrap(item){
   result = `<label class='checkbox-inline pr-2 option' onclick='
     all_chosen = true;
-    if ($(this).find("input").prop("checked") == false) {
-      all_chosen = false;
-    } else {
+    none_chosen = true;
+    if ($(this).find("input").prop("checked")) {
+      none_chosen = false;
       $(this).siblings(".option").each(function(){
         if ($(this).find("input").prop("checked") == false) {
           all_chosen = false;
         }
-      });
+      });      
+    } else {
+      all_chosen = false;
+      $(this).siblings(".option").each(function(){
+        if ($(this).find("input").prop("checked") == true) {
+          none_chosen = false;      
     }
     if (all_chosen) {
       $(this).siblings(".all").find("input").prop("checked", true);
     } else {
       $(this).siblings(".all").find("input").prop("checked", false);
+    }
+    if (none_chosen) {
+      $(this).siblings(".clear").find("input").prop("checked", true);
+    } else {
+      $(this).siblings(".clear").find("input").prop("checked", false);
     }'><input type='checkbox' checked='checked'>` + item + `</label>`
   return result
 }
 
 function gen_html_all(options, index){
-  result = "<label class='checkbox-inline pr-2 all' onclick='select_all(this)'><input type='checkbox' checked='checked'>全選</label>"
+  result = `<label class='checkbox-inline pr-2 all' onclick='select_all(this)'><input type='checkbox' checked='checked'>全選</label>
+            <label class='checkbox-inline pr-2 clear' onclick='clear_all(this)'><input type='checkbox' checked='checked'>清除</label>`
   return result
 }
 
 function gen_html_clear(options, index){
+  
   result = "<span class='pr-2' onclick='clear_all(this)'>(清除)</span>"
   return result
 }
