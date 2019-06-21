@@ -222,11 +222,10 @@ $(function(){
             temp5 = union(temp4);
             //temp5: [id_0, id_1, id_2, ...]
             temp6 = concatenate(temp6, temp5);
-            console.log("temp6", temp6)
           }
           //temp6: [[id, id, ...], [id, id, ...], ...]
-          console.log("final temp6", temp6)
           pass = intersection(temp6);
+          console.log("pass", pass)
           $(".profile").html("");
           for (i = 0; i < pass.length; i++) {
             $(".profile").append(profile(pass[i], school));
