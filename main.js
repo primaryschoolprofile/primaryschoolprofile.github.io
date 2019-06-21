@@ -127,6 +127,11 @@ function all_selected(item){
   return result
 }
 
+function none_selected(item){
+  result = $(".filter .row:contains(" + item + ") .clear input").prop("checked");
+  return result
+}
+
 function array_of_chosen(array){
   result = array;
   for (i = 0; i < array.length; i++) {
@@ -171,16 +176,6 @@ function concatenate(matrix, array){
   result = result + "array]"
   return eval(result)
 }
-/*
-function profile_of_array(array, school){
-  result = array;
-  for (i = 0; i < array.length; i++) {
-    result[i] = profile(array[i], school);
-  }
-  console.log(result);
-  return result
-}
-*/
 
 function profile_code(pass){
   code = ""
@@ -215,34 +210,44 @@ $(function(){
         items_chi = ["地區", "校網", "類別", "宗教", "中學", "測考"];
         items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
         temp1 = [];
+        none_chosen = false;
         for (i = 0; i < items_chi.length; i++) {
-          temp2 = items_chi[i];
-          if (all_selected(temp2) == false) {
-            temp1.push(temp2);
+          if (none_selected(items_chi[i])) {
+            none_chosen = true;
           }
         }
-        //temp1: ["宗教", "測考"]
-        if (temp1.length == 0) {
+        if (none_chosen) {
           $(".profile").html("");
-          for (i = 0; i < school_original.length; i++) {
-            index = school_original[i][0];
-            $(".profile").append(profile(index, school));
-          }
         } else {
-          temp6 = []
-          for (i = 0; i < temp1.length; i++) {
-            temp3 = temp1[i];
-            //temp3: "宗教"
-            temp4 = chosen(temp3);
-            //temp4: ["不適用", ...]
-            temp5 = union(temp4);
-            //temp5: [id_0, id_1, id_2, ...]
-            temp6 = concatenate(temp6, temp5);
+          for (i = 0; i < items_chi.length; i++) {
+            temp2 = items_chi[i];
+            if (all_selected(temp2) == false) {
+              temp1.push(temp2);
+            }
           }
-          //temp6: [[id, id, ...], [id, id, ...], ...]
-          pass = intersection(temp6);
-          $(".profile").html("");
-          eval(profile_code(pass))
+          //temp1: ["宗教", "測考"]
+          if (temp1.length == 0) {
+            $(".profile").html("");
+            for (i = 0; i < school_original.length; i++) {
+              index = school_original[i][0];
+              $(".profile").append(profile(index, school));
+            }
+          } else {
+            temp6 = []
+            for (i = 0; i < temp1.length; i++) {
+              temp3 = temp1[i];
+              //temp3: "宗教"
+              temp4 = chosen(temp3);
+              //temp4: ["不適用", ...]
+              temp5 = union(temp4);
+              //temp5: [id_0, id_1, id_2, ...]
+              temp6 = concatenate(temp6, temp5);
+            }
+            //temp6: [[id, id, ...], [id, id, ...], ...]
+            pass = intersection(temp6);
+            $(".profile").html("");
+            eval(profile_code(pass))
+          }
         }
       });
     });
