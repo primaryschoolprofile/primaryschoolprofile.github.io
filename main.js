@@ -171,7 +171,7 @@ function concatenate(matrix, array){
   result = result + "array]"
   return eval(result)
 }
-
+/*
 function profile_of_array(array, school){
   result = array;
   for (i = 0; i < array.length; i++) {
@@ -180,7 +180,7 @@ function profile_of_array(array, school){
   console.log(result);
   return result
 }
-
+*/
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
@@ -232,7 +232,11 @@ $(function(){
           }
           //temp6: [[id, id, ...], [id, id, ...], ...]
           pass = intersection(temp6);
-          $(".profile").html(profile_of_array(pass, school));
+          $(".profile").html("");
+          for (i = 1; i < pass.length; i++) {
+            index = pass[i];
+            $(".profile").append(profile(index, school));
+          }
         }
       });
     });
