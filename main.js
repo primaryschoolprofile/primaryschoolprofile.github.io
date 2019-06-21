@@ -215,7 +215,7 @@ function intersection(array_of_arrays) {
 
 function concatenate(matrix, array){
   result = "["
-  for (i = 0, i < matrix.length; i++) {
+  for (i = 0; i < matrix.length; i++) {
     result = result + "matrix[" + i + "], "
   }
   result = result + "array]"
