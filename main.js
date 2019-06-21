@@ -137,7 +137,7 @@ $(function(){
     eval(gen_code_filter("測考", "assessment", 6));
   });
   
-  $.get("https://primaryschoolprofile.github.io/display.txt", function(data, status){
+  $.get("display.txt", function(data, status){
     school = eval(data);
     school_original = school[1];
     for (i = 0; i < school_original.length; i++) {
@@ -154,13 +154,41 @@ $(function(){
           temp1 = temp1.concat([temp2]);
         }
       }
-      console.log(temp1);      
+      //temp1: ["宗教", "測考"]
+      temp6 = []
+      for (i = 0; i < temp1.length; i++) {
+        temp3 = temp1[i];
+        //temp3: "宗教"
+        $.get(items_eng[items_chi.indexOf(temp3)] + ".txt"), function(info, status){
+          eval(info)
+          //不適用 = [..., ..., ...]; ...
+          temp4 = chosen(temp3);
+          //temp4: ["不適用", ...]
+          temp5 = union(temp4);
+          //temp5: [id_0, id_1, id_2, ...]
+          temp6 = temp6.concat([temp5]);
+        });
+      }
+      //temp6: [[id, id, ...], [id, id, ...], ...]
+      pass = intersection(temp6);
+      console.log(pass);
+            
+          
+          
     });
   });
 
 });
 
-function union(array_of_chosen) {
+function array_of_chosen(array){
+  result = array;
+  for (i = 0; i < array.length; i++) {
+    result[i] = chosen(result[i]);
+  }
+  return result
+}
+
+function union(array_of_chosen){
   result = eval(array_of_chosen[0]);
   for (i = 1; i < array_of_chosen.length; i++) {
     result = result.concat(eval(array_of_chosen[i]));
