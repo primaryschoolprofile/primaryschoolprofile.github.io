@@ -194,7 +194,6 @@ $(function(){
     }
     $(".browse").click(function(){
       $.get("data.txt", function(info, status){
-        console.log(school)
         eval(info)
         items_chi = ["地區", "校網", "類別", "宗教", "中學", "測考"];
         items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
@@ -230,7 +229,6 @@ $(function(){
           //console.log(pass.length)
 
           for (i = 0; i < pass.length; i++) {
-            console.log(school)
             setTimeout(function(){$(".profile").append(profile(pass[i], school))}, i*100);
            //console.log($(".profile").html()))
           }
