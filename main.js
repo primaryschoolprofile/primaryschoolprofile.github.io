@@ -205,7 +205,7 @@ $(function(){
           console.log(temp2, all_selected(temp2))
           if (all_selected(temp2) == false) {
             console.log("test")
-            temp1 = concatenate(temp1, temp2);
+            temp1.push(temp2));
             console.log("temp1", temp1)
             
           }
