@@ -11,15 +11,32 @@ function clear_all(element){
 }
 
 function wrap(item){
-  result = "<label class='checkbox-inline pr-2'><input type='checkbox' checked='checked'>" + item + "</label>"
+  result = `<label class='checkbox-inline pr-2 option' onclick='
+    all_chosen = true;
+    if ($(this).find("input").prop("checked") == false) {
+      all_chosen = false;
+    } else {
+      $(this).siblings(".option").each(function(){
+        if ($(this).find("input").prop("checked") == false) {
+          all_chosen = false;
+        }
+      });
+    }
+    if (all_chosen) {
+      $(this).siblings(".all").find("input").prop("checked", true);
+    } else {
+      $(this).siblings(".all").find("input").prop("checked", false);
+    }'><input type='checkbox' checked='checked'>` + item + `</label>`
   return result
 }
 
 function gen_html_all(options, index){
-  result = ""
-  if (options[index].length > 3){
-    result = "<span class='pr-2' onclick='select_all(this)'>(全選)</span><span class='pr-2' onclick='clear_all(this)'>(清除)</span>"
-  }
+  result = "<label class='checkbox-inline pr-2 all' onclick='select_all(this)'><input type='checkbox' checked='checked'>全選</label>"
+  return result
+}
+
+function gen_html_clear(options, index){
+  result = "<span class='pr-2' onclick='clear_all(this)'>(清除)</span>"
   return result
 }
 
@@ -28,7 +45,8 @@ function gen_code_temp(eng, index){
     $(".` + eng + `").append(gen_html_all(options, ` + index + `));
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
-    }`
+    }
+    `
   return code
 }
 
@@ -159,3 +177,4 @@ function intersection(array_of_arrays) {
   return result
 }
 
+function all(item)
