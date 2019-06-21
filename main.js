@@ -232,7 +232,7 @@ $(function(){
           }
           //temp6: [[id, id, ...], [id, id, ...], ...]
           pass = intersection(temp6);
-          $(".profile").html(profile_of_array(pass));
+          $(".profile").html(profile_of_array(pass, school));
         }
       });
     });
