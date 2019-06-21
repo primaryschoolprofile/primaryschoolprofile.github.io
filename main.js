@@ -204,21 +204,23 @@ $(function(){
           }
         }
         //temp1: ["宗教", "測考"]
-        temp6 = []
-        for (i = 0; i < temp1.length; i++) {
-          temp3 = temp1[i];
-          //temp3: "宗教"
-          temp4 = chosen(temp3);
-          //temp4: ["不適用", ...]
-          temp5 = union(temp4);
-          //temp5: [id_0, id_1, id_2, ...]
-          temp6 = concatenate(temp6, temp5);
-        }
-        //temp6: [[id, id, ...], [id, id, ...], ...]
-        pass = intersection(temp6);
-        $(".profile").html("");
-        for (i = 0; i < pass.length; i++) {
-          $(".profile").append(profile(pass[i], school));
+        if (temp1 != []) {
+          temp6 = []
+          for (i = 0; i < temp1.length; i++) {
+            temp3 = temp1[i];
+            //temp3: "宗教"
+            temp4 = chosen(temp3);
+            //temp4: ["不適用", ...]
+            temp5 = union(temp4);
+            //temp5: [id_0, id_1, id_2, ...]
+            temp6 = concatenate(temp6, temp5);
+          }
+          //temp6: [[id, id, ...], [id, id, ...], ...]
+          pass = intersection(temp6);
+          $(".profile").html("");
+          for (i = 0; i < pass.length; i++) {
+            $(".profile").append(profile(pass[i], school));
+          }
         }
       });
     });
