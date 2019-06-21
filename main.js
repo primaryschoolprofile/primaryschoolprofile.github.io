@@ -36,11 +36,11 @@ function wrap(item){
     } else {
       $(this).siblings(".all").find("input").prop("checked", false);
     }
-    if (none_chosen) {
-      $(this).siblings(".clear").find("input").prop("checked", true);
-    } else {
-      $(this).siblings(".clear").find("input").prop("checked", false);
-    }'><input type='checkbox' checked='checked'>` + item + `</label>`
+    //if (none_chosen) {
+      //$(this).siblings(".clear").find("input").prop("checked", true);
+    //} else {
+      //$(this).siblings(".clear").find("input").prop("checked", false);
+    //}'><input type='checkbox' checked='checked'>` + item + `</label>`
   return result
 }
 
