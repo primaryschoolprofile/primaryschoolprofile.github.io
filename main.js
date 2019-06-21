@@ -1,4 +1,5 @@
 function select_all(element){
+  $(this).find("input").prop("checked", true);
   $(element).siblings().each(function(){
     $(this).find("input").prop("checked", true);
   });
@@ -46,6 +47,7 @@ function gen_code_temp(eng, index){
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
     }
+    $(".` + eng + `").append(gen_html_clear(options, ` + index + `));
     `
   return code
 }
