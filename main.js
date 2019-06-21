@@ -176,5 +176,3 @@ function intersection(array_of_arrays) {
   }
   return result
 }
-
-function all(item)
