@@ -145,31 +145,30 @@ $(function(){
       $(".profile").append(profile(index, school));
     }
     $(".browse").click(function(){
-      items_chi = ["地區", "校網", "類別", "宗教", "中學", "測考"];
-      items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
-      temp1 = [];
-      for (i = 0; i < items_chi.length; i++) {
-        temp2 = items_chi[i];
-        if (all_selected(temp2) == false) {
-          temp1 = temp1.concat([temp2]);
+      $.get("data.txt", function(info, status){
+        eval(info)
+        items_chi = ["地區", "校網", "類別", "宗教", "中學", "測考"];
+        items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
+        temp1 = [];
+        for (i = 0; i < items_chi.length; i++) {
+          temp2 = items_chi[i];
+          if (all_selected(temp2) == false) {
+            temp1 = temp1.concat([temp2]);
+          }
         }
-      }
-      //temp1: ["宗教", "測考"]
-      temp6 = []
-      for (i = 0; i < temp1.length; i++) {
-        temp3 = temp1[i];
-        //temp3: "宗教"
-        $.get(items_eng[items_chi.indexOf(temp3)] + ".txt", function(info, status){
-          eval(info)
-          //不適用 = [..., ..., ...]; ...
+        //temp1: ["宗教", "測考"]
+        temp6 = []
+        for (i = 0; i < temp1.length; i++) {
+          temp3 = temp1[i];
+          //temp3: "宗教"
           temp4 = chosen(temp3);
           //temp4: ["不適用", ...]
           temp5 = union(temp4);
           //temp5: [id_0, id_1, id_2, ...]
           console.log("temp5", temp5)
           temp6 = temp6.concat([temp5]);
-        });
-      }
+        }
+      });
       //temp6: [[id, id, ...], [id, id, ...], ...]
       console.log("temp6", temp6);
       pass = intersection(temp6);
