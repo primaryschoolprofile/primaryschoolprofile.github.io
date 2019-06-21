@@ -171,7 +171,7 @@ $(function(){
         //temp6: [[id, id, ...], [id, id, ...], ...]
         console.log("temp6", temp6);
         pass = intersection(temp6);
-        console.log(pass);        
+        console.log(pass);
       });
     });
   });
