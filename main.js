@@ -206,7 +206,7 @@ $(function(){
             temp1 = concatenate(temp1, temp2);
           }
         }
-        console.log("temp1", temp1)
+        //console.log("temp1", temp1)
         //temp1: ["宗教", "測考"]
         if (temp1.length == 0) {
           $(".profile").html("");
