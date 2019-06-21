@@ -128,7 +128,6 @@ function all_selected(item){
   return result
 }
 
-
 function array_of_chosen(array){
   result = array;
   for (i = 0; i < array.length; i++) {
@@ -156,7 +155,7 @@ function intersection_of_two_arrays(array1, array2){
   return result
 }
 
-function intersection(array_of_arrays) {
+function intersection(array_of_arrays){
   sorted = array_of_arrays.sort(function(a, b){return a.length-b.length});
   result = sorted[0];
   for (i = 1; i < sorted.length; i++) {
@@ -222,10 +221,11 @@ $(function(){
             //temp4: ["不適用", ...]
             temp5 = union(temp4);
             //temp5: [id_0, id_1, id_2, ...]
-            console.log(temp5)
             temp6 = concatenate(temp6, temp5);
+            console.log("temp6", temp6)
           }
           //temp6: [[id, id, ...], [id, id, ...], ...]
+          console.log("final temp6", temp6)
           pass = intersection(temp6);
           $(".profile").html("");
           for (i = 0; i < pass.length; i++) {
