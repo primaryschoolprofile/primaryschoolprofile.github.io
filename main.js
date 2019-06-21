@@ -118,6 +118,7 @@ $(function(){
         $.get("https://primaryschoolprofile.github.io/data.txt", function(info, status){
           eval(info)
           pass = intersection([union(chosen("地區")), union(chosen("校網")), union(chosen("類別")), union(chosen("宗教")), union(chosen("中學")), union(chosen("測考"))]); 
+          console.log(pass);
           $(".profile").html("");
           for (i = 0; i < pass.length; i++) {
             $(".profile").append(profile(pass[i], school));
