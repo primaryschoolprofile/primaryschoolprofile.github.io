@@ -227,8 +227,33 @@ $(function(){
           $(".profile").html("");
           //console.log("initial", $(".profile").html());
           //console.log(pass.length)
+          console.log(0, pass[0], profile(pass[0], school));
+          console.log(1, pass[1], profile(pass[1], school));
+          console.log(2, pass[2], profile(pass[2], school));
+          console.log(3, pass[3], profile(pass[3], school));
+          console.log(4, pass[4], profile(pass[4], school));
+                    console.log(5, pass[5], profile(pass[5], school));
+                    console.log(6, pass[6], profile(pass[6], school));
+                    console.log(7, pass[7], profile(pass[7], school));
+                    console.log(8, pass[8], profile(pass[8], school));
+                    console.log(9, pass[9], profile(pass[9], school));
+                    console.log(10, pass[10], profile(pass[10], school));
+                    console.log(11, pass[11], profile(pass[11], school));
+                    console.log(12, pass[12], profile(pass[12], school));
+                    console.log(13, pass[13], profile(pass[13], school));
+                    console.log(14, pass[14], profile(pass[14], school));
+          console.log(15, pass[15], profile(pass[15], school));
+                    console.log(16, pass[16], profile(pass[16], school));
+                    console.log(17, pass[17], profile(pass[17], school));
+          console.log(18, pass[18], profile(pass[18], school));
+                    console.log(19, pass[19], profile(pass[19], school));
+                    console.log(20, pass[20], profile(pass[20], school));
+                    console.log(21, pass[21], profile(pass[21], school));
+                    console.log(22, pass[22], profile(pass[22], school));
+                    console.log(23, pass[23], profile(pass[23], school));
+                    console.log(24, pass[24], profile(pass[24], school));
           for (i = 0; i < pass.length; i++) {
-            console.log(i, pass[i], profile(pass[i], school))
+            //console.log(i, pass[i], profile(pass[i], school))
             //$(".profile").append(profile(pass[i], school));
            //console.log($(".profile").html())
           }
