@@ -159,7 +159,7 @@ $(function(){
       for (i = 0; i < temp1.length; i++) {
         temp3 = temp1[i];
         //temp3: "宗教"
-        $.get(items_eng[items_chi.indexOf(temp3)] + ".txt"), function(info, status){
+        $.get(items_eng[items_chi.indexOf(temp3)] + ".txt", function(info, status){
           eval(info)
           //不適用 = [..., ..., ...]; ...
           temp4 = chosen(temp3);
