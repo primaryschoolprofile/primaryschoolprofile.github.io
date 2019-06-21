@@ -210,6 +210,7 @@ $(function(){
             
           }
         }
+        console.log("final temp1", temp1)
         //console.log("temp1", temp1)
         //temp1: ["宗教", "測考"]
         if (temp1.length == 0) {
