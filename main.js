@@ -124,7 +124,6 @@ function profile(index, school){
 
 function all_selected(item){
   result = $(".filter .row:contains(" + item + ") .all input").prop("checked");
-  //console.log(item, result);
   return result
 }
 
@@ -174,10 +173,11 @@ function concatenate(matrix, array){
 }
 
 function profile_of_array(array, school){
-  result = "";
+  result = array;
   for (i = 0; i < array.length; i++) {
-    result = result + profile(array[i], school);
+    result[i] = profile(array[i], school);
   }
+  console.l
   return result
 }
 
