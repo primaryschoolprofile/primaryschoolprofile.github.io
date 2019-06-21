@@ -3,6 +3,7 @@ function select_all(element){
   $(element).siblings().each(function(){
     $(this).find("input").prop("checked", true);
   });
+  $(element).siblings(".all").prop("checked, false);
 }
 
 function clear_all(element){
@@ -125,6 +126,52 @@ function all_selected(item){
   return $(".filter .row:contains(" + item + ") .all input").prop("checked")
 }
 
+
+function array_of_chosen(array){
+  result = array;
+  for (i = 0; i < array.length; i++) {
+    result[i] = chosen(result[i]);
+  }
+  return result
+}
+
+function union(array_of_chosen){
+  result = eval(array_of_chosen[0]);
+  for (i = 1; i < array_of_chosen.length; i++) {
+    result = result.concat(eval(array_of_chosen[i]));
+  }
+  return result
+}
+
+function intersection_of_two_arrays(array1, array2){
+  result = [];
+  for (i = 0; i < array1.length; i++) {
+    element = array1[i];
+    if (array2.indexOf(element) != -1) {
+      result.push(element);
+    }
+  }
+  return result
+}
+
+function intersection(array_of_arrays) {
+  sorted = array_of_arrays.sort(function(a, b){return a.length-b.length});
+  result = sorted[0];
+  for (i = 1; i < sorted.length; i++) {
+    result = intersection_of_two_arrays(result, sorted[i]);
+  }
+  return result
+}
+
+function concatenate(matrix, array){
+  result = "["
+  for (i = 0; i < matrix.length; i++) {
+    result = result + "matrix[" + i + "], "
+  }
+  result = result + "array]"
+  return eval(result)
+}
+
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
@@ -165,7 +212,6 @@ $(function(){
           //temp4: ["不適用", ...]
           temp5 = union(temp4);
           //temp5: [id_0, id_1, id_2, ...]
-          console.log("temp5", temp5)
           temp6 = concatenate(temp6, temp5);
         }
         //temp6: [[id, id, ...], [id, id, ...], ...]
@@ -179,51 +225,3 @@ $(function(){
   });
 
 });
-
-function array_of_chosen(array){
-  result = array;
-  for (i = 0; i < array.length; i++) {
-    result[i] = chosen(result[i]);
-  }
-  return result
-}
-
-function union(array_of_chosen){
-  result = eval(array_of_chosen[0]);
-  for (i = 1; i < array_of_chosen.length; i++) {
-    result = result.concat(eval(array_of_chosen[i]));
-  }
-  return result
-}
-
-function intersection_of_two_arrays(array1, array2){
-  result = [];
-  for (i = 0; i < array1.length; i++) {
-    element = array1[i];
-    if (array2.indexOf(element) != -1) {
-      result.push(element);
-    }
-  }
-  return result
-}
-
-function intersection(array_of_arrays) {
-  console.log("test")
-  sorted = array_of_arrays.sort(function(a, b){return a.length-b.length});
-  result = sorted[0];
-  for (i = 1; i < sorted.length; i++) {
-    console.log(i)
-    console.log(result)
-    result = intersection_of_two_arrays(result, sorted[i]);
-  }
-  return result
-}
-
-function concatenate(matrix, array){
-  result = "["
-  for (i = 0; i < matrix.length; i++) {
-    result = result + "matrix[" + i + "], "
-  }
-  result = result + "array]"
-  return eval(result)
-}
