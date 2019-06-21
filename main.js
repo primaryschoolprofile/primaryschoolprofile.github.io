@@ -123,6 +123,10 @@ function profile(index, school){
   return html
 }
 
+function all_selected(item){
+  return $(".filter .row:contains(" + item + ") .all input").prop("checked")
+}
+
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
@@ -146,7 +150,15 @@ $(function(){
       if (window.Worker) {
         $.get("https://primaryschoolprofile.github.io/data.txt", function(info, status){
           eval(info)
-          pass = intersection([union(chosen("地區")), union(chosen("校網")), union(chosen("類別")), union(chosen("宗教")), union(chosen("中學")), union(chosen("測考"))]); 
+          items = ["地區", "校網", "類別", "宗教", "中學", "測考"];
+          input_items = [];
+          for (i = 0; i < items.length; i++) {
+            input_item = items[i];
+            if (all_selected(input_item) == false) {
+              input_items = input_items + [union(chosen(input_item))];
+            }
+          }
+          pass = intersection(input_items); 
           console.log(pass);
           $(".profile").html("");
           for (i = 0; i < pass.length; i++) {
