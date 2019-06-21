@@ -210,8 +210,6 @@ $(function(){
             
           }
         }
-        console.log("final temp1", temp1)
-        //console.log("temp1", temp1)
         //temp1: ["宗教", "測考"]
         if (temp1.length == 0) {
           $(".profile").html("");
@@ -224,8 +222,10 @@ $(function(){
           for (i = 0; i < temp1.length; i++) {
             temp3 = temp1[i];
             //temp3: "宗教"
+            console.log("temp3", temp3)
             temp4 = chosen(temp3);
             //temp4: ["不適用", ...]
+            console.log("temp4", temp4)
             temp5 = union(temp4);
             //temp5: [id_0, id_1, id_2, ...]
             temp6 = concatenate(temp6, temp5);
