@@ -145,28 +145,16 @@ $(function(){
       $(".profile").append(profile(index, school));
     }
     $(".browse").click(function(){
-      if (window.Worker) {
-        $.get("https://primaryschoolprofile.github.io/data.txt", function(info, status){
-          eval(info)
-          items = ["地區", "校網", "類別", "宗教", "中學", "測考"];
-          input_items = [];
-          for (i = 0; i < items.length; i++) {
-            input_item = items[i];
-            if (all_selected(input_item) == false) {
-              input_items = input_items + [union(chosen(input_item))];
-            }
-          }
-          console.log(input_items);
-          pass = intersection(input_items); 
-          console.log(pass);
-          $(".profile").html("");
-          for (i = 0; i < pass.length; i++) {
-            $(".profile").append(profile(pass[i], school));
-          }
-        });
-      } else {
-        $(".browse").append("<div class='py-4'><h5>瀏覽器不支援</h5></div>");
+      items_chi = ["地區", "校網", "類別", "宗教", "中學", "測考"];
+      items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
+      temp1 = [];
+      for (i = 0; i < items_chi.length; i++) {
+        temp2 = items_chi[i];
+        if (all_selected(temp2) == false) {
+          temp1 = temp1 + [temp2];
+        }
       }
+      console.log(temp2);      
     });
   });
 
