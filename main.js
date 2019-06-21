@@ -225,12 +225,13 @@ $(function(){
           //temp6: [[id, id, ...], [id, id, ...], ...]
           pass = intersection(temp6);
           $(".profile").html("");
-          console.log("initial", $(".profile").html());
+          //console.log("initial", $(".profile").html());
+          console.log(pass.length)
           for (i = 0; i < pass.length; i++) {
             $(".profile").append(profile(pass[i], school));
-           console.log($(".profile").html())
+           //console.log($(".profile").html())
           }
-         console.log("final", $(".profile").html())
+         //console.log("final", $(".profile").html())
         }
       });
     });
