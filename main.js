@@ -229,7 +229,7 @@ $(function(){
           //console.log(pass.length)
           for (i = 0; i < pass.length; i++) {
             console.log(i)
-            $(".profile").append(profile(pass[i], school));
+            //$(".profile").append(profile(pass[i], school));
            //console.log($(".profile").html())
           }
          //console.log("final", $(".profile").html())
