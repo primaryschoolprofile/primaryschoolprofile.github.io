@@ -3,7 +3,7 @@ function select_all(element){
   $(element).siblings().each(function(){
     $(this).find("input").prop("checked", true);
   });
-  $(element).siblings(".all").prop("checked, false);
+  $(element).siblings(".all").prop("checked", false);
 }
 
 function clear_all(element){
