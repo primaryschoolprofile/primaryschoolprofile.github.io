@@ -188,6 +188,7 @@ $(function(){
   $.get("display.txt", function(data, status){
     school = eval(data);
     school_original = school[1];
+    console.log(school)
     for (i = 0; i < school_original.length; i++) {
       index = school_original[i][0];
       $(".profile").append(profile(index, school));
