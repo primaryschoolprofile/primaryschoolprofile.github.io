@@ -169,9 +169,11 @@ $(function(){
           temp6 = concatenate(temp6, temp5);
         }
         //temp6: [[id, id, ...], [id, id, ...], ...]
-        console.log("temp6", temp6);
         pass = intersection(temp6);
-        console.log(pass);
+        $(".profile").html("");
+        for (i = 0; i < pass.length; i++) {
+          $(".profile").append(profile(pass[i], school));
+        }
       });
     });
   });
