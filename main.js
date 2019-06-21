@@ -177,7 +177,7 @@ function profile_of_array(array, school){
   for (i = 0; i < array.length; i++) {
     result[i] = profile(array[i], school);
   }
-  console.l
+  console.log(result);
   return result
 }
 
