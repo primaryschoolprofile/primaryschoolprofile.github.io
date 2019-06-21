@@ -151,10 +151,10 @@ $(function(){
       for (i = 0; i < items_chi.length; i++) {
         temp2 = items_chi[i];
         if (all_selected(temp2) == false) {
-          temp1 = temp1 + [temp2];
+          temp1 = temp1.concat([temp2]);
         }
       }
-      console.log(typeof temp1);      
+      console.log(temp1);      
     });
   });
 
@@ -173,7 +173,7 @@ function intersection_of_two_arrays(array1, array2){
   for (i = 0; i = array1.length; i++) {
     element = array1[i];
     if (array2.indexOf(element) != -1) {
-      result = result + [element];
+      result = result.concat([element]);
     }
   }
   return result
