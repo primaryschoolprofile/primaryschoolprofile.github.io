@@ -196,7 +196,7 @@ function union(array_of_chosen){
 
 function intersection_of_two_arrays(array1, array2){
   result = [];
-  for (i = 0; i = array1.length; i++) {
+  for (i = 0; i < array1.length; i++) {
     element = array1[i];
     if (array2.indexOf(element) != -1) {
       result.push(element);
