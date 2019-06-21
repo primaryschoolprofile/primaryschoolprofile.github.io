@@ -227,7 +227,8 @@ $(function(){
           $(".profile").html("");
           //console.log("initial", $(".profile").html());
           //console.log(pass.length)
-
+$(".profile").append(profile(pass[0], school))
+          $(".profile").append(profile(pass[0], school))
           for (i = 0; i < pass.length; i++) {
             setTimeout(function(){$(".profile").append(profile(pass[i], school))}, i*100);
            //console.log($(".profile").html()))
