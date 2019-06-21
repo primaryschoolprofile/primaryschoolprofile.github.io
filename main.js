@@ -199,7 +199,6 @@ $(function(){
         items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
         temp1 = [];
         for (i = 0; i < items_chi.length; i++) {
-          console.log(i)
           temp2 = items_chi[i];
           if (all_selected(temp2) == false) {
             temp1.push(temp2);
@@ -225,11 +224,13 @@ $(function(){
           }
           //temp6: [[id, id, ...], [id, id, ...], ...]
           pass = intersection(temp6);
-          console.log("pass", pass)
           $(".profile").html("");
+          console.log("initial", $(".profile").html());
           for (i = 0; i < pass.length; i++) {
             $(".profile").append(profile(pass[i], school));
+           console.log($(".profile").html())
           }
+         console.log("final", $(".profile").html())
         }
       });
     });
