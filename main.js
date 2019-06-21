@@ -166,7 +166,7 @@ $(function(){
           temp5 = union(temp4);
           //temp5: [id_0, id_1, id_2, ...]
           console.log("temp5", temp5)
-          temp6.push(temp5);
+          temp6 = concatenate(temp6, temp5);
         }
         //temp6: [[id, id, ...], [id, id, ...], ...]
         console.log("temp6", temp6);
@@ -211,4 +211,13 @@ function intersection(array_of_arrays) {
     result = intersection_of_two_arrays(result, array_of_arrays[i]);
   }
   return result
+}
+
+function concatenate(matrix, array){
+  result = "["
+  for (i = 0, i < matrix.length; i++) {
+    result = result + "matrix[" + i + "], "
+  }
+  result = result + "array]"
+  return eval(result)
 }
