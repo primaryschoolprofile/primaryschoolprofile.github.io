@@ -202,7 +202,7 @@ $(function(){
         for (i = 0; i < items_chi.length; i++) {
           temp2 = items_chi[i];
           if (all_selected(temp2) == false) {
-            temp1.push(temp2);
+            temp1 = concatenate(temp1, temp2);
           }
         }
         console.log("temp1", temp1)
