@@ -206,9 +206,11 @@ function intersection_of_two_arrays(array1, array2){
 }
 
 function intersection(array_of_arrays) {
+  console.log("test")
   sorted = array_of_arrays.sort(function(a, b){return a.length-b.length});
   result = sorted[0];
   for (i = 1; i < sorted.length; i++) {
+    console.log(i)
     result = intersection_of_two_arrays(result, sorted[i]);
   }
   return result
