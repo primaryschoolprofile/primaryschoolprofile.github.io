@@ -123,7 +123,9 @@ function profile(index, school){
 }
 
 function all_selected(item){
-  return $(".filter .row:contains(" + item + ") .all input").prop("checked")
+  result = $(".filter .row:contains(" + item + ") .all input").prop("checked");
+  console.log(result);
+  return result
 }
 
 
