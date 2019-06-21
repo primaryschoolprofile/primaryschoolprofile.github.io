@@ -211,6 +211,7 @@ function intersection(array_of_arrays) {
   result = sorted[0];
   for (i = 1; i < sorted.length; i++) {
     console.log(i)
+    console.log(result)
     result = intersection_of_two_arrays(result, sorted[i]);
   }
   return result
