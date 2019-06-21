@@ -188,13 +188,13 @@ $(function(){
   $.get("display.txt", function(data, status){
     school = eval(data);
     school_original = school[1];
-    console.log(school)
     for (i = 0; i < school_original.length; i++) {
       index = school_original[i][0];
       $(".profile").append(profile(index, school));
     }
     $(".browse").click(function(){
       $.get("data.txt", function(info, status){
+        console.log(school)
         eval(info)
         items_chi = ["地區", "校網", "類別", "宗教", "中學", "測考"];
         items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
