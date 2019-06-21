@@ -203,6 +203,7 @@ $(function(){
             temp1 = temp1.push(temp2);
           }
         }
+        console.log(temp1)
         //temp1: ["宗教", "測考"]
         if (temp1 != []) {
           temp6 = []
