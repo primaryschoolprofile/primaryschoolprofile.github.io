@@ -204,6 +204,7 @@ $(function(){
           temp2 = items_chi[i];
           console.log(temp2, all_selected(temp2))
           if (all_selected(temp2) == false) {
+            console.log("test")
             temp1 = concatenate(temp1, temp2);
           }
         }
