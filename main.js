@@ -166,7 +166,7 @@ $(function(){
           temp5 = union(temp4);
           //temp5: [id_0, id_1, id_2, ...]
           console.log("temp5", temp5)
-          temp6 = temp6.concat([temp5]);
+          temp6 = temp6.push(temp5);
         }
         //temp6: [[id, id, ...], [id, id, ...], ...]
         console.log("temp6", temp6);
@@ -199,7 +199,7 @@ function intersection_of_two_arrays(array1, array2){
   for (i = 0; i = array1.length; i++) {
     element = array1[i];
     if (array2.indexOf(element) != -1) {
-      result = result.concat([element]);
+      result.push(element);
     }
   }
   return result
