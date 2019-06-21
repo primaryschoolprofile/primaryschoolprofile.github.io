@@ -202,12 +202,8 @@ $(function(){
         for (i = 0; i < items_chi.length; i++) {
           console.log(i)
           temp2 = items_chi[i];
-          console.log(temp2, all_selected(temp2))
           if (all_selected(temp2) == false) {
-            console.log("test")
             temp1.push(temp2);
-            console.log("temp1", temp1)
-            
           }
         }
         //temp1: ["宗教", "測考"]
@@ -222,12 +218,11 @@ $(function(){
           for (i = 0; i < temp1.length; i++) {
             temp3 = temp1[i];
             //temp3: "宗教"
-            console.log("temp3", temp3)
             temp4 = chosen(temp3);
             //temp4: ["不適用", ...]
-            console.log("temp4", temp4)
             temp5 = union(temp4);
             //temp5: [id_0, id_1, id_2, ...]
+            console.log(temp5)
             temp6 = concatenate(temp6, temp5);
           }
           //temp6: [[id, id, ...], [id, id, ...], ...]
