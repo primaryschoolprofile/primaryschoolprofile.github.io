@@ -226,8 +226,9 @@ $(function(){
           pass = intersection(temp6);
           $(".profile").html("");
           //console.log("initial", $(".profile").html());
-          console.log(pass.length)
+          //console.log(pass.length)
           for (i = 0; i < pass.length; i++) {
+            console.log(i)
             $(".profile").append(profile(pass[i], school));
            //console.log($(".profile").html())
           }
