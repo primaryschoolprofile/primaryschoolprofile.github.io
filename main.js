@@ -166,11 +166,12 @@ $(function(){
           //temp4: ["不適用", ...]
           temp5 = union(temp4);
           //temp5: [id_0, id_1, id_2, ...]
+          console.log("temp5", temp5)
           temp6 = temp6.concat([temp5]);
         });
       }
       //temp6: [[id, id, ...], [id, id, ...], ...]
-      console.log(temp6);
+      console.log("temp6", temp6);
       pass = intersection(temp6);
       console.log(pass);
             
