@@ -154,7 +154,7 @@ $(function(){
           temp1 = temp1 + [temp2];
         }
       }
-      console.log(temp2);      
+      console.log(temp1);      
     });
   });
 
