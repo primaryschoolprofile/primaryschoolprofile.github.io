@@ -229,6 +229,7 @@ $(function(){
           //console.log(pass.length)
 
           for (i = 0; i < pass.length; i++) {
+            console.log(school)
             setTimeout(function(){$(".profile").append(profile(pass[i], school))}, i*100);
            //console.log($(".profile").html()))
           }
