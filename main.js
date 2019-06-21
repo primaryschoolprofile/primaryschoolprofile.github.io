@@ -1,5 +1,5 @@
 function select_all(element){
-  $(this).find("input").prop("checked", true);
+  $(element).find("input").prop("checked", true);
   $(element).siblings().each(function(){
     $(this).find("input").prop("checked", true);
   });
