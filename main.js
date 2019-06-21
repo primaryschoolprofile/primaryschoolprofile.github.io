@@ -201,7 +201,7 @@ $(function(){
         temp1 = [];
         for (i = 0; i < items_chi.length; i++) {
           temp2 = items_chi[i];
-          console.log("temp2", temp2)
+          console.log(temp2, all_selected(temp2))
           if (all_selected(temp2) == false) {
             temp1 = concatenate(temp1, temp2);
           }
