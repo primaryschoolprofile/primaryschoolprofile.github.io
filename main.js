@@ -181,6 +181,15 @@ function profile_of_array(array, school){
   return result
 }
 */
+
+function profile_code(pass){
+  code = ""
+  for (i = 0; i < pass.length; i++) {
+    code = code + '$(".profile").append(profile(pass[' + i + '], school)); '
+  }
+  return code
+}
+
 $(function(){
 
   $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
@@ -233,11 +242,7 @@ $(function(){
           //temp6: [[id, id, ...], [id, id, ...], ...]
           pass = intersection(temp6);
           $(".profile").html("");
-          for (i = 0; i < pass.length; i++) {
-            index = pass[i];
-            console.log(index);
-            $(".profile").append(profile(index, school));
-          }
+          eval(profile_code(pass))
         }
       });
     });
