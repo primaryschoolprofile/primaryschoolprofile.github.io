@@ -29,12 +29,19 @@ function wrap(item){
       all_chosen = false;
       $(this).siblings(".option").each(function(){
         if ($(this).find("input").prop("checked") == true) {
-          none_chosen = false;      
+          none_chosen = false;
+        }
+      });
     }
     if (all_chosen) {
       $(this).siblings(".all").find("input").prop("checked", true);
     } else {
       $(this).siblings(".all").find("input").prop("checked", false);
+    }
+    if (none_chosen) {
+      $(this).siblings(".clear").find("input").prop("checked", true);
+    } else {
+      $(this).siblings(".clear").find("input").prop("checked", false);
     }'><input type='checkbox' checked='checked'>` + item + `</label>`
   return result
 }
