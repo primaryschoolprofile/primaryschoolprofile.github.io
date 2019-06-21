@@ -205,7 +205,13 @@ $(function(){
         }
         console.log(temp1)
         //temp1: ["宗教", "測考"]
-        if (temp1 != []) {
+        if (temp1 == []) {
+          $(".profile").html("");
+          for (i = 0; i < school_original.length; i++) {
+            index = school_original[i][0];
+            $(".profile").append(profile(index, school));
+          }
+        } else {
           temp6 = []
           for (i = 0; i < temp1.length; i++) {
             temp3 = temp1[i];
