@@ -16,9 +16,9 @@ function wrap(item){
   result = `<label class='checkbox-inline pr-2 option' onclick='
     all_chosen = true;
     none_chosen = true;
-    console.log("test1")
+    console.log("test1");
     if ($(this).find("input").prop("checked")) {
-      console.log("test2")
+      console.log("test2");
       none_chosen = false;
       $(this).siblings(".option").each(function(){
         if ($(this).find("input").prop("checked") == false) {
@@ -46,7 +46,7 @@ function wrap(item){
 
 function gen_html_all(options, index){
   result = `<label class='checkbox-inline pr-2 all' onclick='select_all(this)'><input type='checkbox' checked='checked'>全選</label>
-            <label class='checkbox-inline pr-2 clear' onclick='clear_all(this)'><input type='checkbox' checked='checked'>清除</label>`
+            <label class='checkbox-inline pr-2 clear' onclick='clear_all(this)'><input type='checkbox'>清除</label>`
   return result
 }
 
