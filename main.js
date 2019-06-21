@@ -52,20 +52,12 @@ function gen_html_all(options, index){
   return result
 }
 
-function gen_html_clear(options, index){
-  
-  result = "<span class='pr-2' onclick='clear_all(this)'>(清除)</span>"
-  return result
-}
-
 function gen_code_temp(eng, index){
   code = eng + ` = options[` + index + `];
     $(".` + eng + `").append(gen_html_all(options, ` + index + `));
     for (i = 0; i < ` + eng + `.length; i++) {
       $(".` + eng + `").append(wrap(` + eng + `[i]));
-    }
-    $(".` + eng + `").append(gen_html_clear(options, ` + index + `));
-    `
+    }`
   return code
 }
 
