@@ -200,6 +200,7 @@ $(function(){
         items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
         temp1 = [];
         for (i = 0; i < items_chi.length; i++) {
+          console.log(i)
           temp2 = items_chi[i];
           console.log(temp2, all_selected(temp2))
           if (all_selected(temp2) == false) {
