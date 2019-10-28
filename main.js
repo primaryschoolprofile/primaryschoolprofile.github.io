@@ -187,7 +187,7 @@ function profile_code(pass){
 
 $(function(){
 
-  $.get("https://primaryschoolprofile.github.io/options.txt", function(data, status){
+  $.get("options.txt", function(data, status){
     options = eval(data);
     eval(gen_code_filter("地區", "district", 1));
     eval(gen_code_filter("校網", "net", 2));
