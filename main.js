@@ -116,8 +116,7 @@ function profile(index, school){
       display_html("考試", 11, school_original, i) + 
       display_html("分班", 12, school_original, i) + 
       display_html("照顧", 13, school_original, i) + 
-      display_html("融合", 14, school_original, i) + 
-      display_html("調適", 15, school_original, i) + `
+      display_html("融合", 14, school_original, i) + `
     </div>`
   return html
 }
