@@ -147,22 +147,20 @@ function union(array_of_chosen){
   return result
 }
 
-function intersection_of_two_arrays(array1, array2){
-  result = [];
-  for (i = 0; i < array1.length; i++) {
-    element = array1[i];
-    if (array2.indexOf(element) != -1) {
-      result.push(element);
-    }
-  }
-  return result
-}
-
 function intersection(array_of_arrays){
   sorted = array_of_arrays.sort(function(a, b){return a.length-b.length});
-  result = sorted[0];
-  for (i = 1; i < sorted.length; i++) {
-    result = intersection_of_two_arrays(result, sorted[i]);
+  result = []
+  candidates = sorted[0];
+  for (i = 0; i < candidates.length; i++) {
+    pass = true;
+    for (j = 1; j < sorted.length; j++) {
+      if (sorted[j].indexOf(candidates[i]) == -1) {
+        pass = false;
+      }
+    }
+    if (pass) {
+      result.push(candidates[i]);
+    }
   }
   return result
 }
@@ -186,7 +184,7 @@ function profile_code(pass){
 
 $(function(){
 
-  $.get("options.txt", function(data, status){
+  $.get("./options.txt", function(data, status){
     options = eval(data);
     eval(gen_code_filter("地區", "district", 1));
     eval(gen_code_filter("校網", "net", 2));
@@ -196,7 +194,7 @@ $(function(){
     eval(gen_code_filter("測考", "assessment", 6));
   });
   
-  $.get("display.txt", function(data, status){
+  $.get("./display.txt", function(data, status){
     school = eval(data);
     school_original = school[1];
     for (i = 0; i < school_original.length; i++) {
@@ -204,7 +202,7 @@ $(function(){
       $(".profile").append(profile(index, school));
     }
     $(".browse").click(function(){
-      $.get("data.txt", function(info, status){
+      $.get("./data.txt", function(info, status){
         eval(info)
         items_chi = ["地區", "校網", "類別", "宗教", "中學", "測考"];
         items_eng = ["district", "net", "subsidy", "religion", "connection", "assessment"];
@@ -224,7 +222,7 @@ $(function(){
               temp1.push(temp2);
             }
           }
-          //temp1: ["宗教", "測考"]
+          //temp1: ["宗教", "測考"] (example)
           if (temp1.length == 0) {
             $(".profile").html("");
             for (i = 0; i < school_original.length; i++) {
@@ -235,9 +233,9 @@ $(function(){
             temp6 = []
             for (i = 0; i < temp1.length; i++) {
               temp3 = temp1[i];
-              //temp3: "宗教"
+              //temp3: "宗教" (example)
               temp4 = chosen(temp3);
-              //temp4: ["不適用", ...]
+              //temp4: ["不適用", ...] (example)
               temp5 = union(temp4);
               //temp5: [id_0, id_1, id_2, ...]
               temp6 = concatenate(temp6, temp5);
