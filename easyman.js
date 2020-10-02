@@ -39,8 +39,8 @@ $(function(){
             +852 3611 4061
           </div>
           <div class="col-12 col-sm-8 col-lg-4 py-4">
-            Unit 204, 2/F, The Capital,<br>
-            61 Chatham Road South, TST, HK
+            Room 718, 7/F, New Tech Plaza,<br>
+            34 Tai Yau Street, San Po Kong, HK
           </div>
           <div class="col-12 col-sm-4 col-lg-2 py-4">
             <a class="text-white" href="` + home + `">首頁</a><br>
