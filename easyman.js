@@ -231,6 +231,12 @@ $(function(){
           </div>
         </div>
       </div>
+      <img class="w-100" src="https://www.easyman.hk/wp-content/uploads/2019/10/tvp-1024x597.jpg">
+      <img class="w-100" src="https://www.easyman.hk/wp-content/uploads/2019/10/emf-1024x726.png">
+      <img class="w-100" src="https://www.easyman.hk/wp-content/uploads/2019/10/retaas-728x1024.png">
+      <img class="w-100" src="https://www.easyman.hk/wp-content/uploads/2019/10/bud1-722x1024.png">
+      <img class="w-100" src="https://www.easyman.hk/wp-content/uploads/2019/10/bud2-530x1024.png">
+      <img class="w-100" src="https://www.easyman.hk/wp-content/uploads/2019/10/bud3-1024x659.png">
     </div>
   `);
   $(".website").html(`
