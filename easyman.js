@@ -322,8 +322,8 @@ $(function(){
     <div class="container">
       <div class="py-4">
         <div class="row">
-          <div class="col-1 col-lg-2 col-xl-3"></div>
-          <div class="col-5 col-lg-4 col-xl-3 py-3">` +  
+          <div class="col-md-1 col-lg-2 col-xl-3"></div>
+          <div class="col-6 col-md-5 col-lg-4 col-xl-3 py-3">` +  
             slogan("成立有限公司", "快速完成") + 
             pricing("4,800 / 一次性") + 
             point("成立公司諮詢服務") + 
@@ -335,7 +335,7 @@ $(function(){
             point("安排約見銀行開公司賬戶，提示開戶注意事項") + 
             point("已包括政府費用") + `
           </div>
-          <div class="col-5 col-lg-4 col-xl-3 py-3">` +  
+          <div class="col-6 col-md-5 col-lg-4 col-xl-3 py-3">` +  
             slogan("雲端記賬服務", "會計外判") + 
             pricing("1,500 / 每月") + 
             point("會計記賬方式部署及設立") + 
@@ -343,7 +343,7 @@ $(function(){
             point("輸入傳票會計系統") + 
             point("會計系統軟件") + `
           </div>
-          <div class="col-1 col-lg-2 col-xl-3"></div>
+          <div class="col-md-1 col-lg-2 col-xl-3"></div>
         </div>
       </div>
     </div>
