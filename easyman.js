@@ -19,7 +19,7 @@ function logo(img, heading, phase_1, phase_2, phase_3, phase_4, link="") {
 
 function slogan(heading, subheading, badge="") {
   return `
-    <span class="btn btn-secondary">` + heading + `<br>` + subheading + `<br><span class="badge badge-success">` + badge + `</span></span>
+    <span class="text-center badge badge-secondary"><h1>` + heading + `</h1><h3>` + subheading + `</h3><span class="badge badge-success"><h2>` + badge + `</h2></span></span>
   `
 }
 
@@ -193,7 +193,7 @@ $(function(){
       <div class="py-4 d-block">
         <div class="row">
           <div class="col-3">` +  
-            slogan("PLAN A", "一頁網頁製作", "小企業") + `
+            slogan("PLAN A", "一頁網頁製作", "小企業必備") + `
           </div>
         </div>
       </div>
