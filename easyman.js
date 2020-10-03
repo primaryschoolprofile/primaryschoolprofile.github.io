@@ -18,6 +18,16 @@ function logo(img, heading, phase_1, phase_2, phase_3, phase_4, link="") {
 }
 
 $(function(){
+  console.log(logo(
+          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-1.png",
+          "政府基金資助",
+          "科技券計劃",
+          "拓展內銷專項基金",
+          "中小企市場推廣基金",
+          "零售業科技支援計劃",
+          "./funding"
+        ));
+              
   $(".header").html(`
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <a class="navbar-brand" href="` + index + `">
