@@ -33,9 +33,11 @@ function pricing(price) {
 
 function point(content, icon=tick) {
   return `
-    <div class="row">
-      <div class="col-1"><i class='` + icon + `'></i></div>
-      <div class="col-11">` + content + `</div>
+    <div class="m-3">
+      <div class="row">
+        <div class="col-1"><i class='` + icon + `'></i></div>
+        <div class="col-11">` + content + `</div>
+      </div>
     </div>
   `
 }
