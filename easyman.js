@@ -31,7 +31,7 @@ function ribbon(badge) {
 
 function slogan(heading, subheading, badge="") {
   return `
-    <div class="bg-secondary text-white text-center"><h1>` + heading + `</h1><h5>` + subheading + ribbon(badge) + `</div>
+    <div class="py-3 bg-secondary text-white text-center"><h1>` + heading + `</h1><h5>` + subheading + ribbon(badge) + `</div>
   `
 }
 
