@@ -186,7 +186,44 @@ $(function(){
     </div>
   `);
   $(".funding").html(`
-    
+    <div class="container">
+      <div class="py-4">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
+            slogan("TVP", "科技券") + 
+            pricing("10,000") + 
+            point("專業咨詢") + 
+            point("提交申請計劃") + 
+            point("處理投標程序") + 
+            point("提交完成報告") + `
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
+            slogan("ReTAAS", "零售業支援計劃") + 
+            pricing("5,000") + 
+            point("專業咨詢") + 
+            point("提交申請計劃") + 
+            point("處理投標程序") + 
+            point("提交完成報告") + `
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
+            slogan("BUD", "內銷及東盟專項基金") + 
+            pricing("20,000") + 
+            point("專業咨詢") + 
+            point("提交申請計劃") + 
+            point("處理投標程序") + 
+            point("提交完成報告") + `
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
+            slogan("EMF", "出口市場推廣基金") + 
+            pricing("5,000") + 
+            point("專業咨詢") + 
+            point("提交申請計劃") + 
+            point("處理投標程序") + 
+            point("提交完成報告") + `
+          </div>
+        </div>
+      </div>
+    </div>
   `);
   $(".website").html(`
     <div class="container">
