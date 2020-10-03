@@ -199,39 +199,39 @@ $(function(){
             slogan("PLAN A", "一頁網頁製作", "小企業必備") + 
             pricing("2,280") + 
             point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") + 
-            point("1 首頁製作") + 
-            point("1 圖庫插圖選擇") + 
-            point("1 個月寄存服務：500M 網上空間，1 個郵箱") + `
+            point("1 個月寄存服務：500M 網上空間，1 個郵箱") + 
+            point("1 圖庫插圖選擇") +                      
+            point("1 首頁製作") + `
           </div>
           <div class="col-3">` + 
             slogan("PLAN B", "網頁製作及管理培訓", "業務必備") + 
             pricing("11,880") + 
             point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") + 
+            point("6 個月寄存服務：2G 網上空間，2 個郵箱") +                      
+            point("8 圖庫插圖選擇") +                      
             point("4 頁製作，首頁、公司、產品、聯絡表（1 個語言）") + 
-            point("8 圖庫插圖選擇") + 
-            point("6 個月寄存服務：2G 網上空間，2 個郵箱") + 
-            point("域名指向", heart) + 
             point("1 次基本 SEO 設定及基礎網站流量統計", heart) + 
             point("1 次完成檢討（1小時）", heart) + 
             point("2 次相片、內容修改及調整", heart) + 
             point("1 網站後台內容管理設定", heart) + 
             point("1 次培訓修改內容、換圖、加頁面、加聯絡表（1小時）", heart) + 
-            point("1 個月 whatsapp 訊息跟進及諮詢", heart) + `
+            point("1 個月 whatsapp 訊息跟進及諮詢", heart) + 
+            point("域名指向", heart) + `
           </div>
           <div class="col-3">` + 
             slogan("PLAN C", "網誌製作及管理培訓", "推廣必備") + 
             pricing("16,880") +
             point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") + 
+            point("6 個月寄存服務：2G 網上空間，2 個郵箱") +                      
+            point("8 圖庫插圖選擇") +                      
             point("4 頁製作，首頁、公司、產品、聯絡表（1 個語言）") + 
-            point("8 圖庫插圖選擇") + 
-            point("6 個月寄存服務：2G 網上空間，2 個郵箱") + 
-            point("域名指向", heart) + 
             point("1 次基本 SEO 設定及基礎網站流量統計", heart) + 
             point("1 次完成檢討（1 小時）", heart) + 
             point("2 次相片、內容修改及調整", heart) + 
             point("1 網站後台內容管理設定", heart) + 
             point("1 次培訓修改內容、換圖、加頁面、加聯絡表（1 小時）", heart) + 
             point("1 個月 whatsapp 訊息跟進及諮詢", heart) + 
+            point("域名指向", heart) +                      
             point("1 次用戶及文章方向諮詢（1 小時）", file) + 
             point("1 頁製作用戶收集及登記頁", file) + 
             point("1 頁文章製作及發佈", file) + 
@@ -241,16 +241,16 @@ $(function(){
           <div class="col-3">` + 
             slogan("PLAN D", "網店製作及管理培訓", "網購必備") + 
             pricing("26,380") + 
-            point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") + 
-            point("4 頁製作，首頁、公司、產品、聯絡表（1 個語言）") + 
+            point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") +  
+            point("6 個月寄存服務：2G 網上空間，2 個郵箱") +                      
             point("8 圖庫插圖選擇") + 
-            point("6 個月寄存服務：2G 網上空間，2 個郵箱") + 
-            point("域名指向", heart) + 
+            point("4 頁製作，首頁、公司、產品、聯絡表（1 個語言）") + 
             point("1 次基本 SEO 設定及基礎網站流量統計", heart) + 
             point("1 次完成檢討（1 小時）", heart) + 
             point("2 次相片、內容修改及調整", heart) + 
             point("1 網站後台內容管理設定", heart) + 
             point("1 次培訓修改內容、換圖、加頁面、加聯絡表（1 小時）", heart) + 
+            point("域名指向", heart) +                      
             point("1 個月 whatsapp 訊息跟進及諮詢", heart) + 
             point("1 次用戶及文章方向諮詢（1 小時）", file) + 
             point("1 頁製作用戶收集及登記頁", file) + 
