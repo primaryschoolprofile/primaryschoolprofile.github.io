@@ -17,6 +17,30 @@ function logo(img, heading, phase_1, phase_2, phase_3, phase_4, link="") {
   }
 }
 
+function slogan(heading, subheading, badge="") {
+  basic = ``
+  if (badge == "") {
+    return basic
+  } else {
+    return basic
+  }
+}
+
+function pricing(price) {
+  return price
+}
+
+function point(content, icon="tick") {
+  if (icon == "tick") {
+    return content
+  } else if (icon == "heart") {
+    return content
+  } else if (icon == "article") {
+    return content
+  } else if (icon == "cart") {
+    return content
+}
+
 $(function(){
   $(".header").html(`
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -167,6 +191,13 @@ $(function(){
     <div class="container">
       <div class="py-4">
         <img width="1024" height="293" src="https://www.easyman.hk/wp-content/uploads/2019/12/website_banner-1024x293.jpg"
+      </div>
+      <div class="d-block">
+        <div class="row">
+          <div class="col-3">
+            <span class="badge btn-secodnary w-100">PLAN A<br>一頁網頁製作</span>
+          </div>
+        </div>
       </div>
     </div>
   `);
