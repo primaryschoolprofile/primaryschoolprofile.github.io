@@ -325,7 +325,7 @@ $(function(){
           <div class="col-3"></div>
           <div class="col-3 py-3">` +  
             slogan("成立有限公司", "快速完成") + 
-            pricing("4,800（一次性）") + 
+            pricing("4,800 / 一次性") + 
             point("成立公司諮詢服務") + 
             point("公司名稱查冊") + 
             point("準備公司註冊證申請文件") + 
@@ -337,7 +337,7 @@ $(function(){
           </div>
           <div class="col-3 py-3">` +  
             slogan("雲端記賬服務", "會計外判") + 
-            pricing("1,500（每月）") + 
+            pricing("1,500 / 每月") + 
             point("會計記賬方式部署及設立") + 
             point("每週收集會計文件") + 
             point("輸入傳票會計系統") + 
