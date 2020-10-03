@@ -36,7 +36,7 @@ function slogan(heading, subheading, badge="") {
 }
 
 function pricing(price) {
-  return `<div class="p-3 bg-light text-center"><h1>` + price + `</h1></div>`
+  return `<div class="p-3 bg-light text-center"><h2>` + price + `</h2></div>`
 }
 
 function point(content, icon=tick) {
@@ -328,10 +328,10 @@ $(function(){
             pricing("4,800（一次性）") + 
             point("成立公司諮詢服務") + 
             point("公司名稱查冊") + 
-            point("準備公司註冊證書申請文件") + 
+            point("準備公司註冊證申請文件") + 
             point("準備商業登記證文件") + 
-            point("綠盒套裝：公司章程 5 本、董事會議記錄、股東名冊") + 
-            point("印章：支票印、圓印、鋼印") + 
+            point("公司章程 5 本、董事會議記錄、股東名冊") + 
+            point("支票印、圓印、鋼印") + 
             point("安排約見銀行開公司賬戶，提示開戶注意事項") + 
             point("已包括政府費用") + `
           </div>
