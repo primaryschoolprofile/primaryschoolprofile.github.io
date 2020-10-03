@@ -69,7 +69,7 @@ $(function(){
 	    </div>
 	    <div class="row">
 	    	<div class="col-3 py-4">
-	    		<a href="` + funding + `">
+		    <a href="` + funding + `"></a>
             
 	    	</div>
 	    </div>
