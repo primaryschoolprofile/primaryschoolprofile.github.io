@@ -36,6 +36,7 @@ function point(content, icon="tick") {
     return content
   } else if (icon == "cart") {
     return content
+  }
 }
 
 $(function(){
