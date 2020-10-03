@@ -81,7 +81,7 @@ $(function(){
         <b class="text-warning">商管易Easy Man</b>協助初創或發展中企業成長，不同行業及階段有面對不同的需要，透過面談仔細了解經營者的情況，提供全方位的商業發展領域的落地意見；包括政府基金資助、資訊科技應用、財務管理策劃、國內東盟發展、推廣策劃、品質認証、版權商標、商業融資。「商管易」專業的團隊來自多個商業領域，如企業導師、資訊科技專家、數碼營銷專家、會計師、律師等，協助您突破事業瓶頸，商管從此好容易。
       </div>
       <div class="row">
-        <div class="col-3 py-4 text-center">` + logo(
+        <div class="col-6 col-md-3 py-4 text-center">` + logo(
           "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-1.png",
           "政府基金資助",
           "科技券計劃",
@@ -91,7 +91,7 @@ $(function(){
           "./funding"
         ) + `
         </div>
-        <div class="col-3 py-4 text-center">` + logo(
+        <div class="col-6 col-md-3 py-4 text-center">` + logo(
           "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-2.png",
           "資訊科技應用",
           "ERP / CRM / POS",
@@ -101,7 +101,7 @@ $(function(){
           "./website"
         ) + `
         </div>
-        <div class="col-3 py-4 text-center">` + logo(
+        <div class="col-6 col-md-3 py-4 text-center">` + logo(
           "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-3.png",
           "財務管理策劃",
           "成立香港公司",
@@ -111,7 +111,7 @@ $(function(){
           "./accounting"
         ) + `
         </div>
-        <div class="col-3 py-4 text-center">` + logo(
+        <div class="col-6 col-md-3 py-4 text-center">` + logo(
           "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-4.png",
           "國內東盟發展",
           "成立海外公司",
@@ -121,7 +121,7 @@ $(function(){
           "./asia"
         ) + `
         </div>
-        <div class="col-3 py-4 text-center">` + logo(
+        <div class="col-6 col-md-3 py-4 text-center">` + logo(
           "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-5.png",
           "推廣策劃",
           "全面市場策略",
@@ -130,7 +130,7 @@ $(function(){
           "銷售系統建立"
         ) + `
         </div>
-        <div class="col-3 py-4 text-center">` + logo(
+        <div class="col-6 col-md-3 py-4 text-center">` + logo(
           "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-6.png",
           "品質認証",
           "申請ISO認証",
@@ -139,7 +139,7 @@ $(function(){
           "品質手冊編寫"
         ) + `
         </div>
-        <div class="col-3 py-4 text-center">` + logo(
+        <div class="col-6 col-md-3 py-4 text-center">` + logo(
           "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-7.png",
           "商標版權",
           "版權諮詢",
@@ -148,7 +148,7 @@ $(function(){
           "專利申請"
         ) + `
         </div>
-        <div class="col-3 py-4 text-center">` + logo(
+        <div class="col-6 col-md-3 py-4 text-center">` + logo(
           "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-8.png",
           "商業融資",
           "股權設計實施",
