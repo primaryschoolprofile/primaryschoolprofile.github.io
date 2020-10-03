@@ -23,7 +23,7 @@ function logo(img, heading, phase_1, phase_2, phase_3, phase_4, link="") {
 
 function slogan(heading, subheading, badge="") {
   return `
-    <div class="m-3 bg-secondary text-white text-center"><h1>` + heading + `</h1><h5>` + subheading + `</h5><span class="m-2 badge badge-success"><h3>` + badge + `</h3></span></span></div>
+    <div class="bg-secondary text-white text-center"><h1>` + heading + `</h1><h5>` + subheading + `</h5><span class="m-2 badge badge-success"><h3>` + badge + `</h3></span></span></div>
   `
 }
 
