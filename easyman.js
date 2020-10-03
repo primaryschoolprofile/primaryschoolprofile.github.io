@@ -200,7 +200,7 @@ $(function(){
           <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
             slogan("TVP", "科技券") + 
             pricing("10,000") + 
-            point("專業咨詢") + 
+            point("專業諮詢") + 
             point("提交申請計劃") + 
             point("處理投標程序") + 
             point("提交完成報告") + `
@@ -208,7 +208,7 @@ $(function(){
           <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
             slogan("ReTAAS", "零售業支援計劃") + 
             pricing("5,000") + 
-            point("專業咨詢") + 
+            point("專業諮詢") + 
             point("提交申請計劃") + 
             point("處理投標程序") + 
             point("提交完成報告") + `
@@ -216,7 +216,7 @@ $(function(){
           <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
             slogan("BUD", "內銷及東盟專項基金") + 
             pricing("20,000") + 
-            point("專業咨詢") + 
+            point("專業諮詢") + 
             point("提交申請計劃") + 
             point("處理投標程序") + 
             point("提交完成報告") + `
@@ -224,7 +224,7 @@ $(function(){
           <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
             slogan("EMF", "出口市場推廣基金") + 
             pricing("5,000") + 
-            point("專業咨詢") + 
+            point("專業諮詢") + 
             point("提交申請計劃") + 
             point("處理投標程序") + 
             point("提交完成報告") + `
@@ -319,7 +319,31 @@ $(function(){
     </div>
   `);
   $(".accounting").html(`
-
+    <div class="container">
+      <div class="py-4">
+        <div class="row">
+          <div class="col-6 py-3">` +  
+            slogan("成立香港有限公司", "快速完成　創業之選") + 
+            pricing("4,800（一次性，包括政府費用）") + 
+            point("成立公司諮詢服務") + 
+            point("公司名稱查冊") + 
+            point("準備公司註冊證書申請文件") + 
+            point("準備商業登記證文件") + 
+            point("綠盒套裝：公司章程 5 本、董事會議記錄、股東名冊") + 
+            point("印章：支票印、圓印、鋼印") + 
+            point("安排約見銀行開公司賬戶，提示開戶注意事項") + `
+          </div>
+          <div class="col-6 py-3">` +  
+            slogan("雲端記賬服務", "會計外判") + 
+            pricing("1,500（每月）") + 
+            point("會計記賬方式部署及設立") + 
+            point("每週收集會計文件") + 
+            point("輸入傳票會計系統") + 
+            point("會計系統軟件") + `
+          </div>
+        </div>
+      </div>
+    </div>
   `);
    $(".asia").html(`
 
