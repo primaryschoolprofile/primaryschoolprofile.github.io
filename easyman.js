@@ -250,8 +250,8 @@ $(function(){
             point("2 次相片、內容修改及調整", heart) + 
             point("1 網站後台內容管理設定", heart) + 
             point("1 次培訓修改內容、換圖、加頁面、加聯絡表（1 小時）", heart) + 
-            point("域名指向", heart) +                      
             point("1 個月 whatsapp 訊息跟進及諮詢", heart) + 
+            point("域名指向", heart) +                            
             point("1 次用戶及文章方向諮詢（1 小時）", file) + 
             point("1 頁製作用戶收集及登記頁", file) + 
             point("1 頁文章製作及發佈", file) + 
