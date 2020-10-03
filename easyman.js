@@ -28,7 +28,7 @@ function slogan(heading, subheading, badge="") {
 }
 
 function pricing(price) {
-  return `<div class="m-3"><h1>` + price + `</h1></div>`
+  return `<div class="m-3 text-center"><h1>` + price + `</h1></div>`
 }
 
 function point(content, icon=tick) {
