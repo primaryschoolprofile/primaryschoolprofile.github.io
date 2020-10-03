@@ -322,18 +322,20 @@ $(function(){
     <div class="container">
       <div class="py-4">
         <div class="row">
-          <div class="col-6 py-3">` +  
-            slogan("成立香港有限公司", "快速完成　創業之選") + 
-            pricing("4,800（一次性，包括政府費用）") + 
+          <div class="col-3"></div>
+          <div class="col-3 py-3">` +  
+            slogan("成立有限公司", "快速完成") + 
+            pricing("4,800（一次性）") + 
             point("成立公司諮詢服務") + 
             point("公司名稱查冊") + 
             point("準備公司註冊證書申請文件") + 
             point("準備商業登記證文件") + 
             point("綠盒套裝：公司章程 5 本、董事會議記錄、股東名冊") + 
             point("印章：支票印、圓印、鋼印") + 
-            point("安排約見銀行開公司賬戶，提示開戶注意事項") + `
+            point("安排約見銀行開公司賬戶，提示開戶注意事項") + 
+            point("已包括政府費用")`
           </div>
-          <div class="col-6 py-3">` +  
+          <div class="col-3 py-3">` +  
             slogan("雲端記賬服務", "會計外判") + 
             pricing("1,500（每月）") + 
             point("會計記賬方式部署及設立") + 
@@ -341,6 +343,7 @@ $(function(){
             point("輸入傳票會計系統") + 
             point("會計系統軟件") + `
           </div>
+          <div class="col-3"></div>
         </div>
       </div>
     </div>
