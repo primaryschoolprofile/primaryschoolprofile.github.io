@@ -44,7 +44,7 @@ function point(content, icon=tick) {
     <div class="p-3 bg-light">
       <div class="row">
         <div class="col-2"><i class='` + icon + `'></i></div>
-        <div class="col-10">` + content + `</div>
+        <div class="col-10 text-justify">` + content + `</div>
       </div>
     </div>
   `
