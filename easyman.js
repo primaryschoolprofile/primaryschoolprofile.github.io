@@ -191,7 +191,7 @@ $(function(){
   $(".website").html(`
     <div class="container">
       <div class="py-4 text-center">
-        <img width="1024" height="293" class="w-100" src="https://www.easyman.hk/wp-content/uploads/2019/12/website_banner-1024x293.jpg">
+        <img width="1024" height="293" class="d-block w-100" src="https://www.easyman.hk/wp-content/uploads/2019/12/website_banner-1024x293.jpg">
       </div>
       <div class="py-4">
         <div class="row">
