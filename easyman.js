@@ -73,6 +73,7 @@ $(function(){
             
 	    	</div>
 	    </div>
+	</div>
     </div>
   `);
   $(".footer").html(`
