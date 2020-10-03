@@ -353,7 +353,7 @@ $(function(){
       <div class="py-4">
         <div class="row">
           <div class="col-lg-1"></div>
-          <div class="col-6 col-lg-5 py-3">` +  
+          <div class="col-12 col-md-6 col-lg-5 py-3">` +  
             slogan("成立中國有限公司", "申請 BUD") + 
             pricing("CNY 15,800 / 一次性") + 
             point("成立公司諮詢服務") + 
@@ -365,7 +365,7 @@ $(function(){
             point("陪同往深圳稅務機構認証身份") + 
             point("已包括政府費用") + `
           </div>
-          <div class="col-6 col-lg-5 py-3">` +  
+          <div class="col-12 col-md-6 col-lg-5 py-3">` +  
             slogan("理賬及報稅服務", "每月跟進") + 
             pricing("CNY 680 起 / 每月") + 
             point("每月理賬") + 
