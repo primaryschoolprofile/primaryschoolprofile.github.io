@@ -160,6 +160,22 @@ $(function(){
       </div>
     </div>
   `);
+  $(".funding").html(`
+    
+  `);
+  $(".website").html(`
+    <div class="container">
+      <div class="py-4">
+        <img width="1024" height="293" src="https://www.easyman.hk/wp-content/uploads/2019/12/website_banner-1024x293.jpg"
+      </div>
+    </div>
+  `);
+  $(".accounting").html(`
+
+  `);
+   $(".asia").html(`
+
+  `);
   $(".footer").html(`
     <div class="bg-dark text-white">
       <div class="container">
