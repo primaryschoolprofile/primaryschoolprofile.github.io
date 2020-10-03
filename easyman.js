@@ -18,12 +18,9 @@ function logo(img, heading, phase_1, phase_2, phase_3, phase_4, link="") {
 }
 
 function slogan(heading, subheading, badge="") {
-  basic = ``
-  if (badge == "") {
-    return basic
-  } else {
-    return basic
-  }
+  return `
+    <span class="badge badge-secondary">` + heading + `<br>` + subheading + `<br><span class="badge badge-success">` + badge + `</span></span>
+  `
 }
 
 function pricing(price) {
@@ -194,8 +191,8 @@ $(function(){
       </div>
       <div class="d-block">
         <div class="row">
-          <div class="col-3">
-            <span class="badge btn-secodnary w-100">PLAN A<br>一頁網頁製作</span>
+          <div class="col-3">` +  
+            slogan("PLAN A", "一頁網頁製作", "小企業") + `
           </div>
         </div>
       </div>
