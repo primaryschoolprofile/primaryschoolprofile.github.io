@@ -324,7 +324,7 @@ $(function(){
         <div class="row">
           <div class="col-lg-1"></div>
           <div class="col-12 col-md-6 col-lg-5 py-3">` + 
-            slogan("成立有限公司", "快速完成") + 
+            slogan("成立香港有限公司", "快速完成") + 
             pricing("4,800 / 一次性") + 
             point("成立公司諮詢服務") + 
             point("公司名稱查冊") + 
