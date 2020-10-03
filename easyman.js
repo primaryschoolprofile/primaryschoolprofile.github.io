@@ -28,15 +28,15 @@ function slogan(heading, subheading, badge="") {
 }
 
 function pricing(price) {
-  return `<h1>` + price + `</h1>`
+  return `<div class="m-3"><h1>` + price + `</h1></div>`
 }
 
 function point(content, icon=tick) {
   return `
     <div class="m-3">
       <div class="row">
-        <div class="col-1"><i class='` + icon + `'></i></div>
-        <div class="col-11">` + content + `</div>
+        <div class="col-2"><i class='` + icon + `'></i></div>
+        <div class="col-10">` + content + `</div>
       </div>
     </div>
   `
