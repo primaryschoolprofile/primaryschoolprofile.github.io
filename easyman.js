@@ -19,7 +19,7 @@ function logo(img, heading, phase_1, phase_2, phase_3, phase_4, link="") {
 
 function slogan(heading, subheading, badge="") {
   return `
-    <span class="badge badge-secondary">` + heading + `<br>` + subheading + `<br><span class="badge badge-success">` + badge + `</span></span>
+    <span class="btn btn-secondary">` + heading + `<br>` + subheading + `<br><span class="badge badge-success">` + badge + `</span></span>
   `
 }
 
@@ -187,10 +187,10 @@ $(function(){
   `);
   $(".website").html(`
     <div class="container">
-      <div class="py-4">
+      <div class="py-4 text-center">
         <img width="1024" height="293" src="https://www.easyman.hk/wp-content/uploads/2019/12/website_banner-1024x293.jpg"
       </div>
-      <div class="d-block">
+      <div class="py-4 d-block">
         <div class="row">
           <div class="col-3">` +  
             slogan("PLAN A", "一頁網頁製作", "小企業") + `
