@@ -195,7 +195,7 @@ $(function(){
       </div>
       <div class="py-4">
         <div class="row">
-          <div class="col-6 col-lg-3 py-3">` +  
+          <div class="col-12 col-sm-6 col-lg-3 py-3">` +  
             slogan("PLAN A", "一頁網頁製作", "小企業必備") + 
             pricing("2,280") + 
             point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") + 
@@ -203,7 +203,7 @@ $(function(){
             point("1 圖庫插圖選擇") +                      
             point("1 首頁製作") + `
           </div>
-          <div class="col-6 col-lg-3 py-3">` + 
+          <div class="col-12 col-sm-6 col-lg-3 py-3">` + 
             slogan("PLAN B", "網頁製作及管理培訓", "業務必備") + 
             pricing("11,880") + 
             point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") + 
@@ -218,7 +218,7 @@ $(function(){
             point("1 個月 whatsapp 訊息跟進及諮詢", heart) + 
             point("域名指向", heart) + `
           </div>
-          <div class="col-6 col-lg-3 py-3">` + 
+          <div class="col-12 col-sm-6 col-lg-3 py-3">` + 
             slogan("PLAN C", "網誌製作及管理培訓", "推廣必備") + 
             pricing("16,880") +
             point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") + 
@@ -238,7 +238,7 @@ $(function(){
             point("1 Facebook 基本頁面建立及連結", file) + 
             point("1 製作文章及發佈培訓（1 小時）", file) + `
           </div>
-          <div class="col-6 col-lg-3 py-3">` + 
+          <div class="col-12 col-sm-6 col-lg-3 py-3">` + 
             slogan("PLAN D", "網店製作及管理培訓", "網購必備") + 
             pricing("26,380") + 
             point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") +  
