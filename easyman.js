@@ -82,7 +82,7 @@ $(function(){
       </div>
       <div class="row">
         <div class="col-3 py-4 text-center">` + logo(
-          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-2.png",
+          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-1.png",
           "政府基金資助",
           "科技券計劃",
           "拓展內銷專項基金",
@@ -102,63 +102,59 @@ $(function(){
         ) + `
         </div>
         <div class="col-3 py-4 text-center">` + logo(
-          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-2.png",
-          "政府基金資助",
-          "科技券計劃",
-          "拓展內銷專項基金",
-          "中小企市場推廣基金",
-          "零售業科技支援計劃",
-          "./funding"
+          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-3.png",
+          "財務管理策劃",
+          "成立香港公司",
+          "會計 / 核數 / 年報",
+          "會計師稅務策劃",
+          "雲端財務管理系統",
+          "./accounting"
         ) + `
         </div>
         <div class="col-3 py-4 text-center">` + logo(
-          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-2.png",
-          "政府基金資助",
-          "科技券計劃",
-          "拓展內銷專項基金",
-          "中小企市場推廣基金",
-          "零售業科技支援計劃",
-          "./funding"
+          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-4.png",
+          "國內東盟發展",
+          "成立海外公司",
+          "會計 / 核數 / 年報",
+          "境外推廣策劃及管理",
+          "境外人才招聘或外包",
+          "./asia"
         ) + `
         </div>
         <div class="col-3 py-4 text-center">` + logo(
-          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-2.png",
-          "政府基金資助",
-          "科技券計劃",
-          "拓展內銷專項基金",
-          "中小企市場推廣基金",
-          "零售業科技支援計劃",
-          "./funding"
+          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-5.png",
+          "推廣策劃",
+          "全面市場策略",
+          "網上推廣宣傳",
+          "獲取市場資訊",
+          "銷售系統建立"
         ) + `
         </div>
         <div class="col-3 py-4 text-center">` + logo(
-          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-2.png",
-          "政府基金資助",
-          "科技券計劃",
-          "拓展內銷專項基金",
-          "中小企市場推廣基金",
-          "零售業科技支援計劃",
-          "./funding"
+          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-6.png",
+          "品質認証",
+          "申請ISO認証",
+          "ISO核証續期",
+          "各行牌照諮詢",
+          "品質手冊編寫"
         ) + `
         </div>
         <div class="col-3 py-4 text-center">` + logo(
-          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-2.png",
-          "政府基金資助",
-          "科技券計劃",
-          "拓展內銷專項基金",
-          "中小企市場推廣基金",
-          "零售業科技支援計劃",
-          "./funding"
+          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-7.png",
+          "商標版權",
+          "版權諮詢",
+          "商標註冊",
+          "版權申請",
+          "專利申請"
         ) + `
         </div>
         <div class="col-3 py-4 text-center">` + logo(
-          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-2.png",
-          "政府基金資助",
-          "科技券計劃",
-          "拓展內銷專項基金",
-          "中小企市場推廣基金",
-          "零售業科技支援計劃",
-          "./funding"
+          "https://www.easyman.hk/wp-content/uploads/2019/11/EAS-4_Icon_Artboard-8.png",
+          "商業融資",
+          "股權設計實施",
+          "融資規劃實施",
+          "特許經營實施",
+          "企業貸款諮詢"
         ) + `
         </div>
       </div>
