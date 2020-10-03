@@ -94,8 +94,8 @@ $(function(){
           <div class="col-12 col-sm-4 col-lg-2 py-4">
             <a class="text-white" href="` + index + `">首頁</a><br>
             <a class="text-white href="` + funding + `">政府基金資助</a><br>
-            <a class="text-white href="` + website + `">資訊科技應用</a>
-            <a class="text-white href="` + accounting + `">財務管理策劃</a>
+            <a class="text-white href="` + website + `">資訊科技應用</a><br>
+            <a class="text-white href="` + accounting + `">財務管理策劃</a><br>
             <a class="text-white href="` + asia + `">國內東盟發展</a>
           </div>
         </div>
