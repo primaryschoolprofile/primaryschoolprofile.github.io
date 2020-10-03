@@ -1,4 +1,8 @@
 index = "https://kwanyuen.beautysalon.hk";
+tick = "far fa-check-circle";
+heart = "far fa-heart";
+file = "far fa-file-alt";
+cart = "fas fa-shopping-cart";
 
 function logo(img, heading, phase_1, phase_2, phase_3, phase_4, link="") {
   basic = `
@@ -19,24 +23,21 @@ function logo(img, heading, phase_1, phase_2, phase_3, phase_4, link="") {
 
 function slogan(heading, subheading, badge="") {
   return `
-    <div class="m-3 bg-secondary text-white text-center"><h1>` + heading + `</h1><h5>` + subheading + `</h5><span class="m-2 badge badge-success"><h2>` + badge + `</h2></span></span></div>
+    <div class="m-3 bg-secondary text-white text-center"><h1>` + heading + `</h1><h5>` + subheading + `</h5><span class="m-2 badge badge-success"><h3>` + badge + `</h3></span></span></div>
   `
 }
 
 function pricing(price) {
-  return price
+  return `<h1>` + price + `</h1>`
 }
 
-function point(content, icon="tick") {
-  if (icon == "tick") {
-    return content
-  } else if (icon == "heart") {
-    return content
-  } else if (icon == "article") {
-    return content
-  } else if (icon == "cart") {
-    return content
-  }
+function point(content, icon=tick) {
+  return `
+    <div class="row">
+      <div class="col-1"><i class='` + icon + `'></i></div>
+      <div class="col-11">` + content + `</div>
+    </div>
+  `
 }
 
 $(function(){
@@ -190,10 +191,15 @@ $(function(){
       <div class="py-4 text-center">
         <img width="1024" height="293" class="w-100" src="https://www.easyman.hk/wp-content/uploads/2019/12/website_banner-1024x293.jpg">
       </div>
-      <div class="py-4 d-block">
+      <div class="py-4">
         <div class="row">
           <div class="col-3">` +  
-            slogan("PLAN A", "一頁網頁製作", "小企業必備") + `
+            slogan("PLAN A", "一頁網頁製作", "小企業必備") + 
+            pricing("2,280") + 
+            point("1 次初步咨詢、整理概念及內容、選擇外觀設計（1 小時）") + 
+            point("1 首頁製作") + 
+            point("1 圖庫插圖選擇") + 
+            point("1 個月寄存服務：500M 網上空間，1 個郵箱") + `
           </div>
         </div>
       </div>
