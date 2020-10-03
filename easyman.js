@@ -277,19 +277,19 @@ $(function(){
     <div class="bg-dark text-white">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-8 col-lg-3 py-4">
+          <div class="col-12 col-sm-8 col-lg-3 py-4 text-center text-sm-left">
             Easy Man Business Solution<br>
             商管易商業方案
           </div>
-          <div class="col-12 col-sm-4 col-lg-3 py-4">
+          <div class="col-12 col-sm-4 col-lg-3 py-4 text-center text-sm-left">
             info@easyman.hk<br>
             +852 3611 4061
           </div>
-          <div class="col-12 col-sm-8 col-lg-4 py-4">
+          <div class="col-12 col-sm-8 col-lg-4 py-4 text-center text-sm-left">
             Room 718, 7/F, New Tech Plaza,<br>
             34 Tai Yau Street, San Po Kong, HK
           </div>
-          <div class="col-12 col-sm-4 col-lg-2 py-4">
+          <div class="col-12 col-sm-4 col-lg-2 py-4 text-center text-sm-left">
             <a class="text-white" href="` + index + `">首頁</a><br>
             <a class="text-white" href="./funding">政府基金資助</a><br>
             <a class="text-white" href="./website">資訊科技應用</a><br>
